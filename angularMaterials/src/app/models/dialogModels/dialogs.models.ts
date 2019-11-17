@@ -1,3 +1,4 @@
 export interface DialogData {
-    animal: 'kot';
+    header: '';
+    content: '';
   }
