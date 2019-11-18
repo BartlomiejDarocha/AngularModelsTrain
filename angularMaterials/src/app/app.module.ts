@@ -9,6 +9,7 @@ import { MainMaterialModule } from './material-modules';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogsComponent } from './components/dialogs/dialogs.component';
+import { InputDialogComponent } from './components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
 // tslint:disable-next-line:max-line-length
 import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
 import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
@@ -20,7 +21,8 @@ import { DialogService } from './providers/dialog.service';
     AppComponent,
     DialogsComponent,
     SimpleDialogTemplateComponent,
-    ConstConfirmDialogComponent
+    ConstConfirmDialogComponent,
+    InputDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { DialogService } from './providers/dialog.service';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent],
+  entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent],
   providers: [DialogService],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,7 @@ import { DialogService } from 'src/app/providers/dialog.service';
   styleUrls: ['./dialogs.component.less']
 })
 export class DialogsComponent {
+  public dialogInputname = '';
   public msg1 = {
     header: 'Wiadomość1',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sequi quas, ipsa quae architecto?'
