@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
-import { MatDialog } from '@angular/material';
-import {SimpleDialogTemplateComponent} from '../dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
-import { DialogData } from 'src/app/models/dialogModels/dialogs.models';
+import { MatDialog } from '@angular/material'; // do stworzenie funkci odp za dialog
+import {SimpleDialogTemplateComponent} from '../dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component'; //  jw
+import { DialogData } from 'src/app/models/dialogModels/dialogs.models'; // do przekazania agrumenut
 import { DialogService } from 'src/app/providers/dialog.service';
 
 @Component({
@@ -18,6 +18,7 @@ export class DialogsComponent {
     header: 'Wiadomość2',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sequi quas, ipsa quae architecto?'
   };
+
   constructor(public dialogService: DialogService) {}
 
   // constructor(public dialog: MatDialog) {}

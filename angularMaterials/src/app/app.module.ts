@@ -11,13 +11,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogsComponent } from './components/dialogs/dialogs.component';
 // tslint:disable-next-line:max-line-length
 import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
+import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { DialogService } from './providers/dialog.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogsComponent,
-    SimpleDialogTemplateComponent
+    SimpleDialogTemplateComponent,
+    ConstConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { DialogService } from './providers/dialog.service';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [SimpleDialogTemplateComponent],
+  entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent],
   providers: [DialogService],
   bootstrap: [AppComponent]
 })
