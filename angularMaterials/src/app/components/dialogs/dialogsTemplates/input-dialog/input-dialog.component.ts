@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { NameAndColor } from 'src/app/models/dialogModels/dialogs.models';
+import { NameAndColor } from 'src/app/models/dialogs.models';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({

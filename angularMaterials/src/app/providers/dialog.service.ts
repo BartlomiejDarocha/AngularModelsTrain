@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {SimpleDialogTemplateComponent} from '../components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
 import {ConstConfirmDialogComponent} from '../components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import {InputDialogComponent} from '../components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
-import { DialogData } from 'src/app/models/dialogModels/dialogs.models';
+import { DialogData } from 'src/app/models/dialogs.models';
 import { MatDialog } from '@angular/material';
 
 @Injectable({

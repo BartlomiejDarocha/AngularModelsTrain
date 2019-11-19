@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { MatDialog } from '@angular/material'; // do stworzenie funkci odp za dialog
 import {SimpleDialogTemplateComponent} from '../dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component'; //  jw
-import { DialogData } from 'src/app/models/dialogModels/dialogs.models'; // do przekazania agrumenut
+import { DialogData } from 'src/app/models/dialogs.models'; // do przekazania agrumenut
 import { DialogService } from 'src/app/providers/dialog.service';
 
 @Component({
