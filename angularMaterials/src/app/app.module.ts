@@ -14,6 +14,7 @@ import { InputDialogComponent } from './components/dialogs/dialogsTemplates/inpu
 import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
 import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { DialogService } from './providers/dialog.service';
+import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DialogService } from './providers/dialog.service';
     DialogsComponent,
     SimpleDialogTemplateComponent,
     ConstConfirmDialogComponent,
-    InputDialogComponent
+    InputDialogComponent,
+    InterceptorDialogComponent
   ],
   imports: [
     BrowserModule,
