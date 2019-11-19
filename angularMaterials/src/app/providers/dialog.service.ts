@@ -48,14 +48,21 @@ export class DialogService {
     if (this.HttpDialogOpen) {
       return false;
     }
-    const dialogReference = this.dialog.open(InterceptorDialogComponent, {
+
+    this.dialog.open(InterceptorDialogComponent, {
       width: '300px',
       data: data,
     });
-    dialogReference.afterClosed().subscribe(result => {
-      console.log('dialog Close ', result);
-      this.HttpDialogOpen = false;
-    });
+    // z odpowiedzi obslugą dialogu
+
+    // const dialogReference = this.dialog.open(InterceptorDialogComponent, {
+    //   width: '300px',
+    //   data: data,
+    // });
+    // dialogReference.afterClosed().subscribe(result => {
+    //   console.log('dialog Close ', result);
+    //   this.HttpDialogOpen = false;
+    // });
 
   }
 }

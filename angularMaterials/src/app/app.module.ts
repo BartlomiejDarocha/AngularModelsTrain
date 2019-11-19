@@ -7,14 +7,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainMaterialModule } from './material-modules';
 // import {MatNativeDateModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DialogsComponent } from './components/dialogs/dialogs.component';
 import { InputDialogComponent } from './components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
+import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
 // tslint:disable-next-line:max-line-length
 import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
 import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { DialogService } from './providers/dialog.service';
-import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
+import { HttpConfigInterceptor } from './providers/intercereptor/httpConfig.intercereptor';
+import { LoginComponent } from './components/login/login.component';
+import { ApiService } from './providers/api.service';
 
 
 @NgModule({
@@ -24,7 +27,8 @@ import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplate
     SimpleDialogTemplateComponent,
     ConstConfirmDialogComponent,
     InputDialogComponent,
-    InterceptorDialogComponent
+    InterceptorDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +40,12 @@ import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplate
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent],
-  providers: [DialogService],
+  entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent, InterceptorDialogComponent],
+  providers: [
+    DialogService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

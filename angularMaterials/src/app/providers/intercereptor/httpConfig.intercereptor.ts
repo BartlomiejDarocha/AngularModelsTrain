@@ -25,16 +25,20 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         }
         request = request.clone({headers: request.headers.set('Accept', 'application/json')});
         return next.handle(request).pipe(
-            map((event: HttpEvent<any>) => {
-                if (event instanceof HttpResponse) {
-                    console.log('event--->>>', event );
-                }
-                return event;
-                // tylko że to nie jest potrzebne ....
-            }),
+
+            // przechwycenia eventu
+
+            // map((event: HttpEvent<any>) => {
+            //     if (event instanceof HttpResponse) {
+            //         console.log('event--->>>', event );
+            //     }
+            //     return event;
+            //     // tylko że to nie jest potrzebne ....
+            //     // cała ta mapa nie jest potrzbena zobacze to w testach
+            // }),
             catchError((error: HttpErrorResponse) => {
                 const data = {
-                    reason: error && error.error && error.error.reason ? error.error.reason : '',
+                    reason: error && error.error ? error.message : '',
                     status: error.status,
                 };
                 this.dialogService.openInterceptorDialog(data);
