@@ -9,7 +9,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public get(url: string): Observable<any> {
-    return this.http.get(url);
+  public get(url: string, param: any = null): Observable<any> {
+    const paramTeset = {'people1': '1', 'people2': '3' };
+    return this.http.get(url, {params: param});
+  }
+  public async getOnPromise(url: string, param: any = null) {
+    return await this.http.get(url, {params: param}).toPromise();
   }
 }
