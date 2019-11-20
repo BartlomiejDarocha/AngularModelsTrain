@@ -11,7 +11,8 @@ export class InputDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<InputDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: NameAndColor) {}
+    @Inject(MAT_DIALOG_DATA) public data: NameAndColor
+    ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
