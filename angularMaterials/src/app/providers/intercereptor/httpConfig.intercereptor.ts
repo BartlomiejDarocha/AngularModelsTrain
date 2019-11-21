@@ -9,13 +9,18 @@ import {
     HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, finalize } from 'rxjs/operators';
+import { LoaderService } from 'src/app/components/shared/loader/loader.service';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
 
-    constructor(public dialogService: DialogService) {}
+    constructor(
+        public dialogService: DialogService,
+        private loaderService: LoaderService
+        ) {}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        this.loaderService.show();
         const token: string = localStorage.getItem('token');
         if (token) {
             request = request.clone({headers: request.headers.set('Authorization', 'test' + token )});
@@ -43,6 +48,9 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                 };
                 this.dialogService.openInterceptorDialog(data);
                 return throwError(error);
+            }),
+            finalize(() => {
+                this.loaderService.hide();
             })
         );
     }

@@ -21,6 +21,8 @@ import { HttpConfigInterceptor } from './providers/intercereptor/httpConfig.inte
 import { ApiService } from './providers/api.service';
 
 import { LoginComponent } from './components/login/login.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
+import { LoaderService } from './components/shared/loader/loader.service';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { LoginComponent } from './components/login/login.component';
     ConstConfirmDialogComponent,
     InputDialogComponent,
     InterceptorDialogComponent,
-    LoginComponent
+    LoginComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { LoginComponent } from './components/login/login.component';
   providers: [
     DialogService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
-    ApiService
+    ApiService,
+    LoaderService
   ],
   bootstrap: [AppComponent]
 })
