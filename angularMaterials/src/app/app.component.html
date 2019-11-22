@@ -11,4 +11,16 @@
 <button mat-button>Click me!</button>
 <app-dialogs></app-dialogs>
 <app-login></app-login>
+<div class="d-flex justify-content-center">
+  <ngb-datepicker #dp [(ngModel)]="dataModel" (navigate)="date = $event.next"></ngb-datepicker>
+</div>
+<hr />
+<div class="d-flex justify-content-center">
+  <div>
+    <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
+    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
