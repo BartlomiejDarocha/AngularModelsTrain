@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainMaterialModule } from './material-modules';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import {MatNativeDateModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -45,6 +46,7 @@ import { LoaderService } from './components/shared/loader/loader.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule
   ],
   entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent, InterceptorDialogComponent],
   providers: [
