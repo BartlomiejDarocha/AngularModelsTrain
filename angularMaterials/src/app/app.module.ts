@@ -24,6 +24,8 @@ import { ApiService } from './providers/api.service';
 import { LoginComponent } from './components/login/login.component';
 import { LoaderComponent } from './components/shared/loader/loader.component';
 import { LoaderService } from './components/shared/loader/loader.service';
+import { FrutsListComponent } from './components/fruts/fruts-list/fruts-list.component';
+import { AppleComponent } from './components/fruts/apple/apple.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { LoaderService } from './components/shared/loader/loader.service';
     InputDialogComponent,
     InterceptorDialogComponent,
     LoginComponent,
-    LoaderComponent
+    LoaderComponent,
+    FrutsListComponent,
+    AppleComponent
   ],
   imports: [
     BrowserModule,
