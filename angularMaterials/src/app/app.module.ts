@@ -26,6 +26,9 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
 import { LoaderService } from './components/shared/loader/loader.service';
 import { FrutsListComponent } from './components/fruts/fruts-list/fruts-list.component';
 import { AppleComponent } from './components/fruts/apple/apple.component';
+import { AdvanceRoutingComponent } from './components/advance-routing/advance-routing.component';
+import { AdvanceOneComponent } from './components/advance-routing/advance-one/advance-one.component';
+import { AdvanceTwoComponent } from './components/advance-routing/advance-two/advance-two.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { AppleComponent } from './components/fruts/apple/apple.component';
     LoginComponent,
     LoaderComponent,
     FrutsListComponent,
-    AppleComponent
+    AppleComponent,
+    AdvanceRoutingComponent,
+    AdvanceOneComponent,
+    AdvanceTwoComponent
   ],
   imports: [
     BrowserModule,
