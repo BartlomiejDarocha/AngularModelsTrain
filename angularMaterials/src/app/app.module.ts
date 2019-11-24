@@ -29,6 +29,9 @@ import { AppleComponent } from './components/fruts/apple/apple.component';
 import { AdvanceRoutingComponent } from './components/advance-routing/advance-routing.component';
 import { AdvanceOneComponent } from './components/advance-routing/advance-one/advance-one.component';
 import { AdvanceTwoComponent } from './components/advance-routing/advance-two/advance-two.component';
+import { AdvanceAppRoutingModule } from './components/advance-routing/advance-routing.module';
+import { NonePageComponent } from './components/shared/none-page/none-page.component';
+import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
 
 
 @NgModule({
@@ -45,18 +48,22 @@ import { AdvanceTwoComponent } from './components/advance-routing/advance-two/ad
     AppleComponent,
     AdvanceRoutingComponent,
     AdvanceOneComponent,
-    AdvanceTwoComponent
+    AdvanceTwoComponent,
+    NonePageComponent,
+    AdvanceTwoGomoreComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MainMaterialModule,
     // MatNativeDateModule, // dodaje guziki i podstawowe widoki
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
+    // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
+    AppRoutingModule,
   ],
   entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent, InterceptorDialogComponent],
   providers: [
