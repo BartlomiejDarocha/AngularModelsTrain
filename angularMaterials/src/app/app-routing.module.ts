@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'fruts-list', component: FrutsListComponent},
   {path: 'apple/:id', component: AppleComponent},
   {path: '', redirectTo: '/fruts-list' , pathMatch: 'full'},
-  //{path: '**', component: NonePageComponent}
+  {path: '**', component: NonePageComponent}
 ];
 
 @NgModule({

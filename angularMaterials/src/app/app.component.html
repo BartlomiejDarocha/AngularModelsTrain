@@ -33,7 +33,10 @@
         <a routerLinkActive="active" routerLink="apple/1">apple</a>
       </li>
       <li>
-        <a routerLinkActive="active" routerLink="advance-one/5">advenceOne</a>
+        <a routerLinkActive="active" [routerLink]="['advance-one']"
+        [queryParams]="{ order: 'popular', number: 1}">
+          advenceOne
+        </a>
       </li>
       <li>
         <a routerLinkActive="active" routerLink="advance-two">advenceTwo</a>

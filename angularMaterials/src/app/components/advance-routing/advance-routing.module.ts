@@ -6,7 +6,7 @@ import { AdvanceTwoRoutingModule } from './advance-two/advance-two-routing.modul
 
 
 const routes: Routes = [
-    { path: 'advance-one/:id', component: AdvanceOneComponent },
+    { path: 'advance-one', component: AdvanceOneComponent },
     { path: 'advance-two', component: AdvanceTwoComponent },
 ];
 
