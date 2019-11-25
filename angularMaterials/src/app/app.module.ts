@@ -32,6 +32,7 @@ import { AdvanceTwoComponent } from './components/advance-routing/advance-two/ad
 import { AdvanceAppRoutingModule } from './components/advance-routing/advance-routing.module';
 import { NonePageComponent } from './components/shared/none-page/none-page.component';
 import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
+import { CollapseDirective } from './directives/collapse.directive';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-
     AdvanceOneComponent,
     AdvanceTwoComponent,
     NonePageComponent,
-    AdvanceTwoGomoreComponent
+    AdvanceTwoGomoreComponent,
+    CollapseDirective
   ],
   imports: [
     BrowserModule,
