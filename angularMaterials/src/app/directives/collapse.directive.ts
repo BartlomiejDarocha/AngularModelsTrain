@@ -6,6 +6,7 @@ import { Directive, ElementRef, Input, HostListener, OnInit } from '@angular/cor
 export class CollapseDirective implements OnInit {
   @Input() child: HTMLElement;
   @Input() startHeight = 0;
+  @Input() duration = 1500;
   @HostListener('click')
   onclick() {
     if (this.child.classList.contains('active')) {
@@ -23,7 +24,9 @@ export class CollapseDirective implements OnInit {
     private element: ElementRef
   ) { }
   ngOnInit(): void {
+    this.child.style.transition = `height ${this.duration}ms ease-out`;
     this.child.style.height = `${this.startHeight}px`;
+    this.child.style.overflow = 'hidden';
   }
 
 }

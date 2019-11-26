@@ -32,7 +32,7 @@ import { AdvanceTwoComponent } from './components/advance-routing/advance-two/ad
 import { AdvanceAppRoutingModule } from './components/advance-routing/advance-routing.module';
 import { NonePageComponent } from './components/shared/none-page/none-page.component';
 import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
-import { CollapseDirective } from './directives/collapse.directive';
+import { DirectivesModule } from './directives/directives.module';
 
 
 @NgModule({
@@ -52,7 +52,6 @@ import { CollapseDirective } from './directives/collapse.directive';
     AdvanceTwoComponent,
     NonePageComponent,
     AdvanceTwoGomoreComponent,
-    CollapseDirective
   ],
   imports: [
     BrowserModule,
@@ -63,6 +62,7 @@ import { CollapseDirective } from './directives/collapse.directive';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
+    DirectivesModule,
     AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
     // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
     AppRoutingModule,

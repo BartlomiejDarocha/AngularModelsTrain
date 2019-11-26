@@ -10,8 +10,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class InputDialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<InputDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: NameAndColor
+    public dialogRef: MatDialogRef<InputDialogComponent>, // zwraca dane z inputa itp
+    @Inject(MAT_DIALOG_DATA) public data: NameAndColor // przyjmuje dane najlepiej model
     ) {}
 
   onNoClick(): void {
