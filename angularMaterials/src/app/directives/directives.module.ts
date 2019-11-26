@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapseDirective } from './collapse.directive';
+import { LevelBarDirective } from './level-bar.directive';
 
 @NgModule({
-  declarations: [CollapseDirective],
+  declarations: [CollapseDirective, LevelBarDirective],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
-    CollapseDirective
+    CollapseDirective,
+    LevelBarDirective
   ]
 })
 export class DirectivesModule { }
