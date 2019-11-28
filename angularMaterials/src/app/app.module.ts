@@ -33,6 +33,7 @@ import { AdvanceAppRoutingModule } from './components/advance-routing/advance-ro
 import { NonePageComponent } from './components/shared/none-page/none-page.component';
 import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
 import { DirectivesModule } from './directives/directives.module';
+import { InsidetestRouteComponent } from './components/advance-routing/insidetest-route/insidetest-route.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { DirectivesModule } from './directives/directives.module';
     AdvanceTwoComponent,
     NonePageComponent,
     AdvanceTwoGomoreComponent,
+    InsidetestRouteComponent,
   ],
   imports: [
     BrowserModule,

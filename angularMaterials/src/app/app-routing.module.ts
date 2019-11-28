@@ -8,7 +8,9 @@ const routes: Routes = [
   {path: 'fruts-list', component: FrutsListComponent},
   {path: 'apple/:id', component: AppleComponent},
   {path: '', redirectTo: '/fruts-list' , pathMatch: 'full'},
+  // pusty lin przkerowuje do /fruts-list
   {path: '**', component: NonePageComponent}
+  // ** brak strony
 ];
 
 @NgModule({
