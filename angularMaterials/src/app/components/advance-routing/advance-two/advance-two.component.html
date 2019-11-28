@@ -1,8 +1,18 @@
-<p>
-  advance-two works!
-  <a routerLinkActive="active" routerLink="advance-twoMore">advance Two go more</a>
-</p>
-<h4>InsideRouteTEST</h4>
-<a [routerLink]="['insidetest-route']" routerLinkActive="router-link-active">insidetest-route</a>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis voluptatibus ut possimus voluptate sed, libero, nihil, rem sit tenetur facere quo! Possimus, perferendis? Aliquid?</p>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <p>
+        advance-two works!
+        <a routerLinkActive="active" routerLink="advance-twoMore">advance Two go more</a>
+      </p>
+      <h4>InsideRouteTEST</h4>
+      <a [routerLink]="['insidetest-route']" routerLinkActive="router-link-active">insidetest-route</a>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis voluptatibus ut possimus voluptate sed,
+        libero, nihil, rem sit tenetur facere quo! Possimus, perferendis? Aliquid?</p>
+      </div>
+      <div class="col-sm-9">
+        <h1>Stronka</h1>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
