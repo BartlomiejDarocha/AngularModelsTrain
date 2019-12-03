@@ -16,5 +16,9 @@ export class LoaderComponent {
 
   constructor(
     public loaderService: LoaderService
-  ) { }
+  ) {
+    this.loaderService.isLoading.subscribe(data => {
+      console.log(data, 'loader Subject');
+    });
+   }
 }

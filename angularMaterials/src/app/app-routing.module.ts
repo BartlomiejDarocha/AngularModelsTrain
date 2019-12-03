@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FrutsListComponent } from './components/fruts/fruts-list/fruts-list.component';
 import { AppleComponent } from './components/fruts/apple/apple.component';
-import { NonePageComponent } from './components/shared/none-page/none-page.component';
+import { NonePageComponent } from './components/mainComponents/none-page/none-page.component';
 
 const routes: Routes = [
   {path: 'fruts-list', component: FrutsListComponent},

@@ -10,7 +10,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, finalize } from 'rxjs/operators';
-import { LoaderService } from 'src/app/components/shared/loader/loader.service';
+import { LoaderService } from 'src/app/components/mainComponents/loader/loader.service';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {

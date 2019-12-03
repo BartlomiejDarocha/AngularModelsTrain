@@ -22,18 +22,17 @@ import { HttpConfigInterceptor } from './providers/intercereptor/httpConfig.inte
 import { ApiService } from './providers/api.service';
 
 import { LoginComponent } from './components/login/login.component';
-import { LoaderComponent } from './components/shared/loader/loader.component';
-import { LoaderService } from './components/shared/loader/loader.service';
 import { FrutsListComponent } from './components/fruts/fruts-list/fruts-list.component';
 import { AppleComponent } from './components/fruts/apple/apple.component';
 import { AdvanceRoutingComponent } from './components/advance-routing/advance-routing.component';
 import { AdvanceOneComponent } from './components/advance-routing/advance-one/advance-one.component';
 import { AdvanceTwoComponent } from './components/advance-routing/advance-two/advance-two.component';
 import { AdvanceAppRoutingModule } from './components/advance-routing/advance-routing.module';
-import { NonePageComponent } from './components/shared/none-page/none-page.component';
 import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
 import { DirectivesModule } from './directives/directives.module';
 import { InsidetestRouteComponent } from './components/advance-routing/insidetest-route/insidetest-route.component';
+import { LoaderService } from './components/mainComponents/loader/loader.service';
+import { MainComponentModule } from './components/mainComponents/main-component.module';
 
 
 @NgModule({
@@ -45,13 +44,11 @@ import { InsidetestRouteComponent } from './components/advance-routing/insidetes
     InputDialogComponent,
     InterceptorDialogComponent,
     LoginComponent,
-    LoaderComponent,
     FrutsListComponent,
     AppleComponent,
     AdvanceRoutingComponent,
     AdvanceOneComponent,
     AdvanceTwoComponent,
-    NonePageComponent,
     AdvanceTwoGomoreComponent,
     InsidetestRouteComponent,
   ],
@@ -59,12 +56,12 @@ import { InsidetestRouteComponent } from './components/advance-routing/insidetes
     BrowserModule,
     BrowserAnimationsModule,
     MainMaterialModule,
-    // MatNativeDateModule, // dodaje guziki i podstawowe widoki
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
     DirectivesModule,
+    MainComponentModule,
     AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
     // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
     AppRoutingModule,
