@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   public getStarWarsParam() {
-    this.api.get('https://swapi.co/api/people', {'people1': '1', 'people2': '3' }).subscribe(data => {
+    this.api.get('https://swapi.co/api/peoplessss', {'people1': '1', 'people2': '3' }).subscribe(data => {
       console.log(data, 'starwars Data');
     });
   }
