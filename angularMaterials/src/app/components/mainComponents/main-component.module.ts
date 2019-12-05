@@ -10,6 +10,8 @@ import { SimpleDialogTemplateComponent } from './dialogsTemplates/simple-dialog-
 import { ConstConfirmDialogComponent } from './dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,18 +22,21 @@ import { FormsModule } from '@angular/forms';
     InputDialogComponent,
     InterceptorDialogComponent,
     SimpleDialogTemplateComponent,
-    ConstConfirmDialogComponent
+    ConstConfirmDialogComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     MainMaterialModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,
     NonePageComponent,
     LoaderComponent,
+    FooterComponent,
     InputDialogComponent,
     InterceptorDialogComponent,
     SimpleDialogTemplateComponent,

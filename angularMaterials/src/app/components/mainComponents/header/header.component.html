@@ -20,3 +20,21 @@
     <h1>logo Anulara</h1>
   </div>
 </div>
+<div>
+  <ul class="nav navbar-nav">
+    <li>
+      <a routerLinkActive="active" routerLink="fruts-list">fruts-list</a>
+    </li>
+    <li>
+      <a routerLinkActive="active" routerLink="apple/1">apple</a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['advance-one']" [queryParams]="{ order: 'popular', number: 1}">
+        advenceOne
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" routerLink="advance-two">advenceTwo</a>
+    </li>
+  </ul>
+</div>
