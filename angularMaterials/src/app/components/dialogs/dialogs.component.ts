@@ -19,13 +19,5 @@ export class DialogsComponent {
     header: 'Wiadomość2',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sequi quas, ipsa quae architecto?'
   };
-
   constructor(public dialogService: DialogService) {}
-
-  // constructor(public dialog: MatDialog) {}
-  // openDialog(message: DialogData) {
-  //   this.dialog.open(SimpleDialogTemplateComponent, {
-  //     data: message
-  //   });
-  // }
 }
