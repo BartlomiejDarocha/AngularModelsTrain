@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     NonePageComponent,
     LoaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
     NonePageComponent,
     LoaderComponent,
     FooterComponent,
+    HomeComponent
   ]
 })
 export class MainComponentModule { }

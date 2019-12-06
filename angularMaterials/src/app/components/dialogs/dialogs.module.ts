@@ -5,6 +5,7 @@ import { InterceptorDialogComponent } from './dialogsTemplates/interceptor-dialo
 import { InputDialogComponent } from './dialogsTemplates/input-dialog/input-dialog.component';
 import { ConstConfirmDialogComponent } from './dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { MainMaterialModule } from 'src/app/material-modules';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MainMaterialModule
   ],
   exports: [
     SimpleDialogTemplateComponent,

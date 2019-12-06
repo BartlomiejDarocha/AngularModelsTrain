@@ -31,6 +31,7 @@ import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTempl
 import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
 import { InputDialogComponent } from './components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
 import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
+import { DialogsModule } from './components/dialogs/dialogs.module';
 
 // entry components
 // tslint:disable-next-line:max-line-length
@@ -58,6 +59,7 @@ import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplate
     ReactiveFormsModule,
     NgbModule,
     DirectivesModule,
+    DialogsModule,
     MainComponentModule,
     AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
     // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
