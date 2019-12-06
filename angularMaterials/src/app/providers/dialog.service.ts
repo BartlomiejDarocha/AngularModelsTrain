@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-// tslint:disable-next-line:max-line-length
 import { DialogData, InterceptorError } from 'src/app/models/dialogs.models';
 import { MatDialog } from '@angular/material';
 // tslint:disable-next-line:max-line-length
-import { SimpleDialogTemplateComponent } from '../components/mainComponents/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
-// tslint:disable-next-line:max-line-length
-import { ConstConfirmDialogComponent } from '../components/mainComponents/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
-import { InputDialogComponent } from '../components/mainComponents/dialogsTemplates/input-dialog/input-dialog.component';
-import { InterceptorDialogComponent } from '../components/mainComponents/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
+import { SimpleDialogTemplateComponent } from '../components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
+import { ConstConfirmDialogComponent } from '../components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
+import { InputDialogComponent } from '../components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
+import { InterceptorDialogComponent } from '../components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
 
 @Injectable({
   providedIn: 'root'

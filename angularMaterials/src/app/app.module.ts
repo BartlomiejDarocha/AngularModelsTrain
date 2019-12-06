@@ -10,7 +10,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { DialogsComponent } from './components/dialogs/dialogs.component';
 import { DialogService } from './providers/dialog.service';
 import { HttpConfigInterceptor } from './providers/intercereptor/httpConfig.intercereptor';
 import { ApiService } from './providers/api.service';
@@ -27,20 +26,20 @@ import { DirectivesModule } from './directives/directives.module';
 import { InsidetestRouteComponent } from './components/advance-routing/insidetest-route/insidetest-route.component';
 import { LoaderService } from './components/mainComponents/loader/loader.service';
 import { MainComponentModule } from './components/mainComponents/main-component.module';
+// tslint:disable-next-line:max-line-length
+import { SimpleDialogTemplateComponent } from './components/dialogs/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
+import { ConstConfirmDialogComponent } from './components/dialogs/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
+import { InputDialogComponent } from './components/dialogs/dialogsTemplates/input-dialog/input-dialog.component';
+import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
 
 // entry components
 // tslint:disable-next-line:max-line-length
-import { SimpleDialogTemplateComponent } from './components/mainComponents/dialogsTemplates/simple-dialog-template/simple-dialog-template.component';
-// tslint:disable-next-line:max-line-length
-import { ConstConfirmDialogComponent } from './components/mainComponents/dialogsTemplates/const-confirm-dialog/const-confirm-dialog.component';
-import { InputDialogComponent } from './components/mainComponents/dialogsTemplates/input-dialog/input-dialog.component';
-import { InterceptorDialogComponent } from './components/mainComponents/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogsComponent,
     LoginComponent,
     FrutsListComponent,
     AppleComponent,
