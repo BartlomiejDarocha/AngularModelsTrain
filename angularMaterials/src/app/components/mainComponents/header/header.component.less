@@ -1,0 +1,29 @@
+#iconButton {
+    line-height: normal;
+}
+
+#iconButton:focus {
+    outline: 0;
+}
+
+.headerWrapper {
+    .mobileNav {
+        max-height: 4rem;
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
+    .navbar {
+        display: none;
+    }
+
+    @media (min-width: 991px) {
+        .mobileNav {
+            display: none;
+        }
+
+        .navbar {
+            display: block;
+        }
+    }
+}
