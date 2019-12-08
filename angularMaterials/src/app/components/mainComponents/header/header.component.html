@@ -3,17 +3,30 @@
     <svg-icon class="my-2 ml-2" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDMyXzEtYW5ndWxhciI+PGc+PHBhdGggZD0iTTIxNi44NzksMjY4LjQyNmg3OC4yNDFMMjU2LDE3NC4zNzJMMjE2Ljg3OSwyNjguNDI2TDIxNi44NzksMjY4LjQyNnogTTI1NiwyNi4wMDFMNDIuNjM1LDEwMi4zOTUgICAgbDMyLjY1MiwyODMuMDgxTDI1Niw0ODUuOTk5bDE4MC43MTItMTAwLjUyM2wzMi42NTMtMjgzLjA4MUwyNTYsMjYuMDAxeiBNMzg5LjY4OCwzNzYuOTU3aC00OS45MDRsLTI2LjktNjcuMTUzSDE5OS4zMjEgICAgbC0yNi45MDMsNjcuMTUzaC01MC4wMDNMMjU2LDc2LjgyN0wzODkuNjg4LDM3Ni45NTd6IiBzdHlsZT0iZmlsbDojREQwMDMxOyIvPjwvZz48L2c+PGcgaWQ9IkxheWVyXzEiLz48L3N2Zz4="
       [svgStyle]="{'width.rem': 3, 'height.rem': 3 }"></svg-icon>
     <h1 class="text-light">Angular Materials</h1>
-    <div class="dropdown">
-      <button class="mr-3 dropdown-toggle" type="button" id="iconButton" type="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" mat-icon-button>
+    <!-- menu -->
+    <div>
+      <!-- <button class="mr-3" id="iconButton" [matMenuTriggerFor]="menu" mat-icon-button>
         <svg-icon src="assets/icons8-menu.svg" [svgStyle]="{'width.%': 100, 'height.%': 100 }"></svg-icon>
       </button>
-      <div class="dropdown-menu" aria-labelledby="iconButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu> -->
+
+      <mat-sidenav-container class="example-container" (backdropClick)="close()">
+        <mat-sidenav position="end" #sidenav disableClose>
+          <p><button mat-button (click)="close()">Toggsle</button></p>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <button (click)="sidenav.open()" class="mr-3" id="iconButton" mat-icon-button>
+            <svg-icon src="assets/icons8-menu.svg" [svgStyle]="{'width.%': 100, 'height.%': 100 }"></svg-icon>
+          </button>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
     </div>
+
+    <!-- koniec menu -->
   </div>
   <nav class="navbar">
     <ul class="nav">
