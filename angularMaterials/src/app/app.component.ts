@@ -21,5 +21,8 @@ export class AppComponent {
     this.dataModel = this.calendar.getToday();
     console.log(this.dataModel, 'dataModel');
   }
+  test() {
+    console.log('tests');
+  }
 
 }

@@ -1,11 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header></app-header>
-<app-loader></app-loader>
-<!-- <div class="d-flex justify-content-start">
+<mat-sidenav-container (backdropClick)="test()" class="example-container">
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <app-loader></app-loader>
+    <!-- <div class="d-flex justify-content-start">
   <div class="row">
     <div class="col-xl-4"> -->
 
-      <!-- <button mat-button>Click me!</button>
+    <!-- <button mat-button>Click me!</button>
         <app-dialogs></app-dialogs>
         <app-login></app-login>
         <div class="d-flex justify-content-center">
@@ -25,5 +27,7 @@
     </div>
   </div>
 </div> -->
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

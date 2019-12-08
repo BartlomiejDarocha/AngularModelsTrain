@@ -4,28 +4,14 @@
       [svgStyle]="{'width.rem': 3, 'height.rem': 3 }"></svg-icon>
     <h1 class="text-light">Angular Materials</h1>
     <!-- menu -->
+    <mat-sidenav position="end" #sidenav>
+      <button mat-button (click)="close()">Toggsle</button>
+    </mat-sidenav>
     <div>
-      <!-- <button class="mr-3" id="iconButton" [matMenuTriggerFor]="menu" mat-icon-button>
+      <button (click)="sidenav.open()" class="mr-3" id="iconButton" mat-icon-button>
         <svg-icon src="assets/icons8-menu.svg" [svgStyle]="{'width.%': 100, 'height.%': 100 }"></svg-icon>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-      </mat-menu> -->
-
-      <mat-sidenav-container class="example-container" (backdropClick)="close()">
-        <mat-sidenav position="end" #sidenav disableClose>
-          <p><button mat-button (click)="close()">Toggsle</button></p>
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-          <button (click)="sidenav.open()" class="mr-3" id="iconButton" mat-icon-button>
-            <svg-icon src="assets/icons8-menu.svg" [svgStyle]="{'width.%': 100, 'height.%': 100 }"></svg-icon>
-          </button>
-        </mat-sidenav-content>
-      </mat-sidenav-container>
     </div>
-
     <!-- koniec menu -->
   </div>
   <nav class="navbar">
@@ -48,3 +34,5 @@
     </ul>
   </nav>
 </div>
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
