@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +6,11 @@ import { MatSidenav } from '@angular/material';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
+  @Input() public menuList = [];
+  @Output() public  mobileMenuExecuter = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    console.log(this.menuList, 'menuList Handler');
   }
 }

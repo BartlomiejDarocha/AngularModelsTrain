@@ -5,9 +5,8 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-header></app-header>
+    <app-header [menuList]="menuList" (mobileMenuExecuter)="openMenu($event)"></app-header>
     <app-loader></app-loader>
-    <h1 (click)="sidenav.open()">Open Menu</h1>
     <!-- <div class="d-flex justify-content-start">
   <div class="row">
     <div class="col-xl-4"> -->
