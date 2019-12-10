@@ -7,15 +7,8 @@ import { MatSidenav } from '@angular/material';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MatSidenav;
   constructor() { }
 
   ngOnInit() {
-  }
-  close() {
-    this.sidenav.close();
-  }
-  test() {
-    console.log('test');
   }
 }

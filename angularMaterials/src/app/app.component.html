@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-sidenav-container (backdropClick)="test()" class="example-container">
+<mat-sidenav-container (backdropClick)="closeMenu()" class="example-container">
+  <mat-sidenav position="end" #sidenav>
+    <button mat-button (click)="closeMenu()">Toggsle</button>
+  </mat-sidenav>
+
   <mat-sidenav-content>
     <app-header></app-header>
     <app-loader></app-loader>
+    <h1 (click)="sidenav.open()">Open Menu</h1>
     <!-- <div class="d-flex justify-content-start">
   <div class="row">
     <div class="col-xl-4"> -->
