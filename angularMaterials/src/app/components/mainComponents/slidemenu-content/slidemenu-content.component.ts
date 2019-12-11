@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-slidemenu-content',
@@ -7,10 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SlidemenuContentComponent implements OnInit {
   @Input() public menuList = [];
+  @Input() public activeMenu = 0;
+  @Output() public activeMenuOut = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
-    // console.log(this.menuList,  'menuList');
+  ngOnInit(): void {
+    console.log(this.menuList,  'menuList');
   }
+  public menuActiveHandler(index: number): void {
+    this.activeMenu = index;
+    this.activeMenuOut.emit(index);
+  }
+
 
 }

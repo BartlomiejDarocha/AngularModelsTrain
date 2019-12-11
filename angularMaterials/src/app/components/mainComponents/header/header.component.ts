@@ -11,6 +11,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.menuList, 'menuList header');
+    console.log(this.menuList , 'header Component');
   }
 }

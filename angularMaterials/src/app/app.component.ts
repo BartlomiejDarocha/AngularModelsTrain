@@ -8,6 +8,7 @@ import { MatSidenav } from '@angular/material';
 })
 export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
+  public activeItemMenu = 0;
   public menuList = [
     { name: 'Home', url: '' },
     { name: 'Angular', url: '' },
@@ -28,6 +29,11 @@ export class AppComponent {
     if (value) {
       this.sidenav.open();
     }
+  }
+  public mobileMenuHandler(index: number) {
+    this.activeItemMenu = index;
+    this.closeMenu();
+    console.log(this.activeItemMenu, 'activeItemMenu APPCOMPONENT');
   }
   public closeMenu(): void {
     this.sidenav.close();
