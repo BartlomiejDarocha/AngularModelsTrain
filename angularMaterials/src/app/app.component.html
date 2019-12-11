@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-sidenav-container (backdropClick)="closeMenu()" class="example-container">
   <mat-sidenav position="end" #sidenav>
-    <button mat-button (click)="closeMenu()">Toggsle</button>
+    <app-slidemenu-content [menuList]="menuList"></app-slidemenu-content>
   </mat-sidenav>
 
   <mat-sidenav-content>

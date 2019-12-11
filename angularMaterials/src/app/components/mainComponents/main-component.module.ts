@@ -10,6 +10,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { SlidemenuContentComponent } from './slidemenu-content/slidemenu-content.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     NonePageComponent,
     LoaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SlidemenuContentComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     NonePageComponent,
     LoaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SlidemenuContentComponent
   ]
 })
 export class MainComponentModule { }
