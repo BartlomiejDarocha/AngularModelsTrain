@@ -1,8 +1,7 @@
 <div class="menuWrapper">
   <div class="list-group list-group-flush">
-    <a (click)="menuActiveHandler(0)" [class.active]="activeMenu === 0" class="list-group-item">item 1</a>
-    <a (click)="menuActiveHandler(1)" [class.active]="activeMenu === 1" class="list-group-item">item 2</a>
-    <a  class="list-group-item">item 3</a>
-    <a  class="list-group-item">item 4</a>
+    <a *ngFor="let itemMenu of menuList; let i=index" (click)="menuActiveHandler(i)" [class.active]="activeMenu === i" class="list-group-item">
+      {{itemMenu.name}}
+    </a>
   </div>
 </div>
