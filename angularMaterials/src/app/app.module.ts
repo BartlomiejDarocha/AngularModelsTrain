@@ -67,9 +67,9 @@ import { AngularRoutingModule } from './components/angular/angular-routing.modul
     AngularSvgIconModule,
     AngularModule,
     // routinig
-    AngularRoutingModule,
-    AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
     // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
+    // AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
+    // AngularRoutingModule,
     AppRoutingModule,
   ],
   entryComponents: [SimpleDialogTemplateComponent, ConstConfirmDialogComponent, InputDialogComponent, InterceptorDialogComponent],

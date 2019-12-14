@@ -10,7 +10,7 @@
   <nav class="navbar">
     <ul class="nav">
       <li class="nav-item" *ngFor="let itemList of menuList">
-        <a class="nav-link text-light"[routerLink]="itemList.url" [innerText]="itemList.name">Home</a>
+        <a class="nav-link text-light" routerLinkActive="router-link-active" [routerLink]="itemList.url" [innerText]="itemList.name">Home</a>
       </li>
     </ul>
   </nav>

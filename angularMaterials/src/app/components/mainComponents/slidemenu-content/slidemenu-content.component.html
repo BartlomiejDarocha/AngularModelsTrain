@@ -1,6 +1,6 @@
 <div class="menuWrapper">
   <div class="list-group list-group-flush">
-    <a *ngFor="let itemMenu of menuList; let i=index" [routerLink]="itemMenu.url" (click)="menuActiveHandler(i)" [class.active]="activeMenu === i" class="list-group-item">
+    <a *ngFor="let itemMenu of menuList; let i=index" routerLinkActive="router-link-active" [routerLink]="itemMenu.url" (click)="menuActiveHandler(i)" [class.active]="activeMenu === i" class="list-group-item">
       {{itemMenu.name}}
     </a>
   </div>
