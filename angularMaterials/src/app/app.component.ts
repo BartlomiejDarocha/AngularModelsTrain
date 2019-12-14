@@ -12,7 +12,6 @@ export class AppComponent {
     { name: 'Home', url: '' },
     { name: 'Angular', url: '' },
     { name: 'Angular Materials', url: '' },
-    { name: 'BootStrap', url: '' },
   ];
   // zaszłość
   public title = 'AngularMaterials';
