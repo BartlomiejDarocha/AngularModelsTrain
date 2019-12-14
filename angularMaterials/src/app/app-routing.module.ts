@@ -8,11 +8,11 @@ import { AngularHomeComponent } from './components/angular/angular-home/angular-
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'angular', component: AngularHomeComponent},
+  // {path: 'angular', component: AngularHomeComponent},
   {path: 'fruts-list', component: FrutsListComponent},
   {path: 'apple/:id', component: AppleComponent},
   {path: '', redirectTo: '/home' , pathMatch: 'full'},
-  {path: '**', component: NonePageComponent}
+  // {path: '**', component: NonePageComponent}
   // pusty link przkerowuje do home
   // ** brak strony przekierwuje do brak NonePageComponent
 ];
