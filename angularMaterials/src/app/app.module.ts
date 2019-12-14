@@ -33,6 +33,7 @@ import { InputDialogComponent } from './components/dialogs/dialogsTemplates/inpu
 import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplates/interceptor-dialog/interceptor-dialog.component';
 import { DialogsModule } from './components/dialogs/dialogs.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { AngularModule } from './components/angular/angular.module';
 
 // entry components
 // tslint:disable-next-line:max-line-length
@@ -63,6 +64,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     DialogsModule,
     MainComponentModule,
     AngularSvgIconModule,
+    AngularModule,
     AdvanceAppRoutingModule, // potem przenieść do modulu componentu który importuje specyficzne componenty
     // pamiętać żeby routingModule z root był na samym dole tak by poprawnie działa mechanizm pustej strony
     AppRoutingModule,

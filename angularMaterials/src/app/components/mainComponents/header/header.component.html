@@ -9,20 +9,8 @@
   </div>
   <nav class="navbar">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link text-light" routerLinkActive="active" routerLink="home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#">Angular</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#">Angular Materials</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#">BootStrap</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="#">Google Maps</a>
+      <li class="nav-item" *ngFor="let itemList of menuList">
+        <a class="nav-link text-light"[routerLink]="itemList.url" [innerText]="itemList.name">Home</a>
       </li>
     </ul>
   </nav>

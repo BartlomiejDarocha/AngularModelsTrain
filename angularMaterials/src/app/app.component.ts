@@ -9,8 +9,8 @@ import { MatSidenav } from '@angular/material';
 export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
   public menuList = [
-    { name: 'Home', url: '' },
-    { name: 'Angular', url: '' },
+    { name: 'Home', url: 'home' },
+    { name: 'Angular', url: 'angular' },
     { name: 'Angular Materials', url: '' },
   ];
   // zaszłość
