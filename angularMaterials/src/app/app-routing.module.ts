@@ -21,7 +21,7 @@ const routes: Routes = [
   imports: [
     AdvanceAppRoutingModule,
     AngularRoutingModule,
-    RouterModule.forRoot(routes, { enableTracing: true })],
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

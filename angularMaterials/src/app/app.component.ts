@@ -7,7 +7,8 @@ import { MatSidenav } from '@angular/material';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  @ViewChild('sidenav') sidenav: MatSidenav;
+  @ViewChild('sidenav') public sidenav: MatSidenav;
+  @ViewChild('leftSidenav') public leftSidenav: MatSidenav;
   public menuList = [
     { name: 'Home', url: 'home' },
     { name: 'Angular', url: 'angular' },
@@ -23,9 +24,9 @@ export class AppComponent {
   constructor(
     private calendar: NgbCalendar,
   ) { }
-  public openMenu(value: boolean): void {
+  public openMenu(value: boolean, menu: MatSidenav): void {
     if (value) {
-      this.sidenav.open();
+      menu.open();
     }
   }
   public mobileMenuHandler(value: boolean) {
@@ -35,6 +36,7 @@ export class AppComponent {
   }
   public closeMenu(): void {
     this.sidenav.close();
+    this.leftSidenav.close();
   }
 
   public selectToday() {

@@ -3,12 +3,14 @@
   <mat-sidenav position="end" #sidenav>
     <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event)"></app-slidemenu-content>
   </mat-sidenav>
+  <mat-sidenav position="start" #leftSidenav>
+    <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event)"></app-slidemenu-content>
+  </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-header [menuList]="menuList" (mobileMenuExecuter)="openMenu($event)"></app-header>
+    <app-header [menuList]="menuList" (mobileMenuExecuter)="openMenu($event, sidenav)"></app-header>
+    <button (click)="openMenu($event, leftSidenav)">Opel left Menu</button>
     <app-loader></app-loader>
-    <a [routerLink]="[ '/advance-one' ]" routerLinkActive="active">advance-one</a>
-    <a [routerLink]="[ '/advance-two' ]" routerLinkActive="active">advance-two</a>
     <!-- <div class="d-flex justify-content-start">
   <div class="row">
     <div class="col-xl-4"> -->
