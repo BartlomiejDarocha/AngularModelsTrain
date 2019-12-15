@@ -1,10 +1,5 @@
 <div class="menuWrapper">
   <div class="list-group list-group-flush">
-    <a>link1</a>
-    <a>link2</a>
-    <a>link3</a>
-    <a>link4</a>
-    <a>link5</a>
-    <a>link6</a>
+    <a *ngFor="let itemSubMenu of subMenu" routerLinkActive="router-link-active" [routerLink]="[itemSubMenu.url]" [innerText]="itemSubMenu.name"></a>
   </div>
 </div>

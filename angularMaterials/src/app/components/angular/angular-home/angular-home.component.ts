@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./angular-home.component.less']
 })
 export class AngularHomeComponent implements OnInit {
-
+  public subMenu = [
+    {url: 'inOutPut', name: 'Input i Output'},
+    {url: 'routing', name: 'Routing'},
+    {url: 'modules', name: 'Modułowość'},
+    {url: 'services', name: 'Servisy'},
+    {url: 'validation', name: 'Validacja'},
+    {url: 'entryComponent', name: 'Componenty Wejscia'},
+    {url: 'intercereptors', name: 'Intercereptory'},
+    {url: 'pipes', name: 'Rurki'},
+    {url: 'directives', name: 'Derektywy'},
+  ];
   constructor() { }
 
   ngOnInit() {

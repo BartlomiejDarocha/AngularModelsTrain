@@ -9,7 +9,7 @@
 
   <mat-sidenav-content>
     <app-header [menuList]="menuList" (mobileMenuExecuter)="openMenu($event, sidenav)"></app-header>
-    <button (click)="openMenu($event, leftSidenav)">Opel left Menu</button>
+    <!-- <button (click)="openMenu($event, leftSidenav)">Opel left Menu</button> -->
     <app-loader></app-loader>
     <!-- <div class="d-flex justify-content-start">
   <div class="row">
@@ -36,6 +36,6 @@
   </div>
 </div> -->
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
