@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AngularHomeComponent } from './angular-home/angular-home.component';
 import { InoutPutComponent } from './inout-put/inout-put.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -10,7 +11,8 @@ import { RouterModule } from '@angular/router';
     ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     AngularHomeComponent,

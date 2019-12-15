@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-sidenav-container (backdropClick)="closeMenu()" class="example-container">
   <mat-sidenav position="end" #sidenav>
-    <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event)"></app-slidemenu-content>
+    <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event, sidenav)"></app-slidemenu-content>
   </mat-sidenav>
   <mat-sidenav position="start" #leftSidenav>
-    <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event)"></app-slidemenu-content>
+    <app-slidemenu-content [menuList]="menuList" (activeMenuOut)="mobileMenuHandler($event, leftSidenav)"></app-slidemenu-content>
   </mat-sidenav>
 
   <mat-sidenav-content>

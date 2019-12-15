@@ -29,9 +29,9 @@ export class AppComponent {
       menu.open();
     }
   }
-  public mobileMenuHandler(value: boolean) {
+  public mobileMenuHandler(value: boolean, menu: MatSidenav) {
     if (value) {
-      this.closeMenu();
+      menu.close();
     }
   }
   public closeMenu(): void {

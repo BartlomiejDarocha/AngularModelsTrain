@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { SlidemenuContentComponent } from './slidemenu-content/slidemenu-content.component';
-import { LeftMenuComponent } from './left-menu/left-menu.component';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
     FooterComponent,
     HomeComponent,
     SlidemenuContentComponent,
-    LeftMenuComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +36,7 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
     LoaderComponent,
     FooterComponent,
     HomeComponent,
-    SlidemenuContentComponent
+    SlidemenuContentComponent,
   ]
 })
 export class MainComponentModule { }
