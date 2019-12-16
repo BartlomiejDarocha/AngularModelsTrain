@@ -23,7 +23,9 @@ export class AppComponent {
   // zaszłosć
   constructor(
     private calendar: NgbCalendar,
-  ) { }
+  ) {
+    this.testIncrementation1();
+  }
   public openMenu(value: boolean, menu: MatSidenav): void {
     if (value) {
       menu.open();
@@ -37,6 +39,18 @@ export class AppComponent {
   public closeMenu(): void {
     this.sidenav.close();
     this.leftSidenav.close();
+  }
+  public testIncrementation1() {
+    let a = 0;
+    const b = ++a; // najpier podniesie "a" następnie przypisze a do b;
+    console.log('a =', a);
+    console.log('b =', b);
+    let c = 0;
+    const d = c++; // najpierw przypisze "c" następnie podniensie b
+    console.log('c =', c);
+    console.log('d =', d);
+
+
   }
 
   public selectToday() {
