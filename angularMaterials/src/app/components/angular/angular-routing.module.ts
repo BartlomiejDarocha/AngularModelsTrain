@@ -10,6 +10,7 @@ import { EntrycomponentComponent } from './entrycomponent/entrycomponent.compone
 import { IntercereptorsComponent } from './intercereptors/intercereptors.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { PromiseComponent } from './promise/promise.component';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
@@ -22,7 +23,8 @@ const routes: Routes = [
       {path: 'entryComponent', component: EntrycomponentComponent},
       {path: 'intercereptors', component: IntercereptorsComponent},
       {path: 'pipes', component: PipesComponent},
-      {path: 'directives', component: DirectivesComponent}
+      {path: 'directives', component: DirectivesComponent},
+      {path: 'promise', component: PromiseComponent }
     ]
   }
 ];

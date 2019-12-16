@@ -12,6 +12,8 @@ import { EntrycomponentComponent } from './entrycomponent/entrycomponent.compone
 import { PipesComponent } from './pipes/pipes.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { IntercereptorsComponent } from './intercereptors/intercereptors.component';
+import { PromiseComponent } from './promise/promise.component';
+import { MatButtonModule } from '@angular/material';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -23,12 +25,14 @@ import { IntercereptorsComponent } from './intercereptors/intercereptors.compone
     EntrycomponentComponent,
     PipesComponent,
     DirectivesComponent,
-    IntercereptorsComponent
+    IntercereptorsComponent,
+    PromiseComponent
     ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatButtonModule,
   ],
   exports: [
     AngularHomeComponent,
@@ -40,7 +44,8 @@ import { IntercereptorsComponent } from './intercereptors/intercereptors.compone
     EntrycomponentComponent,
     PipesComponent,
     DirectivesComponent,
-    IntercereptorsComponent
+    IntercereptorsComponent,
+    PromiseComponent
   ]
 })
 export class AngularModule { }
