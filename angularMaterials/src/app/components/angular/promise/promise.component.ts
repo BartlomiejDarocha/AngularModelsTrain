@@ -66,7 +66,7 @@ export class PromiseComponent implements OnInit {
 
   public testGeOnTry() {
     try {
-      this.getStarWarsBypromiseSimple('https://swapi.co/api/people').then(result => {
+      this.getStarWarsBypromiseSimple('https://swapi.co/api/peoplessss').then(result => {
         console.log(result, 'result then');
       }).catch(error => {
         console.log(error, 'ERROR');

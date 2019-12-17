@@ -45,9 +45,9 @@ export class DialogService {
   }
   // interceptor dialogError
   public openInterceptorDialog(data: InterceptorError) {
-    if (this.HttpDialogOpen) {
-      return false;
-    }
+    // if (this.HttpDialogOpen) {
+    //   return false;
+    // }
     this.dialog.open(InterceptorDialogComponent, {
       width: '300px',
       data: data,
