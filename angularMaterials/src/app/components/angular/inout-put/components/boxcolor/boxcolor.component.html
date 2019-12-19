@@ -2,7 +2,8 @@
   <h4 [innerText]="'Moje ID to '+ id"></h4>
   <h5 [innerText]="'Mój orginalny kolor to ' + orginColor"></h5>
   <div class="boxesWraper">
+    <p class="text-center" *ngIf="infected">Zarażony przez {{infected.infectorId}}</p>
     <p class="text-center">Zaraź</p>
-    
+    <button *ngFor="let item of otherBoxes" mat-button (click)="infectHandler(item.id)"> Box {{item.id}}</button>
   </div>
 </div>
