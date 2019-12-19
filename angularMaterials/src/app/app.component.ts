@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(
     private calendar: NgbCalendar,
   ) {
-    this.testIncrementation1();
+    // this.testIncrementation1();
   }
   public openMenu(value: boolean, menu: MatSidenav): void {
     if (value) {
@@ -49,8 +49,6 @@ export class AppComponent {
     const d = c++; // najpierw przypisze "c" następnie podniensie b
     console.log('c =', c);
     console.log('d =', d);
-
-
   }
 
   public selectToday() {

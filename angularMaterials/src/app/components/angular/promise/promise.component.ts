@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/providers/api.service';
 
 @Component({
   selector: 'app-promise',
@@ -23,7 +24,10 @@ export class PromiseComponent implements OnInit {
   //////
   ///// sec Example
   promiseCount = 0;
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private api: ApiService
+    ) { }
 
   public ngOnInit(): void {
   }
@@ -63,17 +67,20 @@ export class PromiseComponent implements OnInit {
   public async getStarWarsBypromiseSimple(url: string) {
     return await this.http.get(url).toPromise();
   }
-
-  public testGeOnTry() {
+  public async testGeOnTry() {
+    let test: any;
     try {
-      this.getStarWarsBypromiseSimple('https://swapi.co/api/peoplessss').then(result => {
-        console.log(result, 'result then');
-      }).catch(error => {
-        console.log(error, 'ERROR');
-      });
+      test = await this.getStarWarsBypromiseSimple(this.testUrl);
     } catch (error) {
-      console.log(error, '22222');
+      console.log(error, 'error Cath result');
     }
-    return;
+  }
+  public async useApiServiceOnpromise() {
+    try {
+      const data = await this.api.getOnPromise(this.testUrl);
+      console.log(data, 'data userApiServiceOn primiser');
+    } catch (error) {
+      console.log(error, 'catch error on prmiser');
+    }
   }
 }
