@@ -11,17 +11,17 @@ export class BoxcolorComponent implements OnInit, OnChanges {
   @Output() public infects = new EventEmitter<any>();
   public backGroundColor = '';
   constructor() {}
-  ngOnInit(): void {
-    this.backGroundColor = this.boxStats.color;
-  }
   ngOnChanges(changes: SimpleChanges): void {
+    this.backGroundColor = this.boxStats.color;
     console.log(changes, 'changes');
-    console.log(changes.boxStats.currentValue.infectedColor, 'changes.boxStats.currentValue.infectedColor');
     if (changes.boxStats.currentValue.infectedColor) {
-      console.log('111111');
+      this.backGroundColor = changes.boxStats.currentValue.infectedColor;
     }
   }
-
+  ngOnInit(): void {
+    console.log('odpalam się za każdą zmiana!');
+    console.log(this.backGroundColor, 'bg ON init');
+  }
   public infectHandler(id: number) {
     this.infects.next({color: this.boxStats.color, targetId: id, infectorId: this.boxStats.id});
   }

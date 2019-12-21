@@ -29,6 +29,5 @@ export class InoutPutComponent implements OnInit {
       }
     });
     this.simpleBoxesTable[lokingindex] = tempNewObj;
-    console.log(this.simpleBoxesTable);
   }
 }
