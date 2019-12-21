@@ -1,9 +1,9 @@
-<div class="wrapper p-4" [ngStyle]="{'background': orginColor}">
-  <h4 [innerText]="'Moje ID to '+ id"></h4>
-  <h5 [innerText]="'Mój orginalny kolor to ' + orginColor"></h5>
+<div class="wrapper p-4" [ngStyle]="{'background': boxStats.color}">
+  <h4 [innerText]="'Moje ID to '+ boxStats.id"></h4>
+  <h5 [innerText]="'Mój orginalny kolor to ' + boxStats.color"></h5>
   <div class="boxesWraper">
-    <p class="text-center" *ngIf="infected">Zarażony przez {{infected.infectorId}}</p>
-    <p class="text-center">Zaraź</p>
+    <p class="text-center" [innerText]="'Zarażony przez ID ' +  boxStats.infectedby"></p>
+    <p class="text-center">Zaraź:</p>
     <button *ngFor="let item of otherBoxes" mat-button (click)="infectHandler(item.id)"> Box {{item.id}}</button>
   </div>
 </div>

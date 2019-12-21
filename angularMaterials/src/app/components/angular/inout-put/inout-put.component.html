@@ -4,10 +4,8 @@
         <app-boxcolor 
             class="m-2" 
             *ngFor="let simplebox of simpleBoxesTable" 
-            [orginColor]="simplebox.color" 
-            [id]="simplebox.id" 
+            [boxStats]="simplebox"
             [otherBoxes]="simpleBoxesTable"
-            [infected]="(infected ? (infected.targetId === simplebox.id ? infected : null )  : null)"
             (infects)="infectsHandler($event)">
         </app-boxcolor>
     </div>

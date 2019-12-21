@@ -7,17 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InoutPutComponent implements OnInit {
   public simpleBoxesTable = [
-    {id: 0, color: 'gray'},
-    {id: 1, color: 'silver'},
-    {id: 2, color: 'green'},
-    {id: 3, color: 'blue'},
+    {id: 0, color: 'gray', infectedby: null },
+    {id: 1, color: 'silver', infectedby: null},
+    {id: 2, color: 'green', infectedby: null},
+    {id: 3, color: 'blue', infectedby: null},
   ];
-  public infected: any;
   constructor() { }
 
   ngOnInit() {
   }
   public infectsHandler(infectBox: any): void  {
-    this.infected =  infectBox;
+    console.log(infectBox, 'infectBOx');
   }
 }
