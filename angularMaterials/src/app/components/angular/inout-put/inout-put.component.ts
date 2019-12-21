@@ -7,16 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InoutPutComponent implements OnInit {
   public simpleBoxesTable = [
-    {id: 0, color: 'gray', infectedby: null },
-    {id: 1, color: 'silver', infectedby: null},
-    {id: 2, color: 'green', infectedby: null},
-    {id: 3, color: 'blue', infectedby: null},
+    {id: 0, color: 'gray', infectedby: -1, infectedColor: null},
+    {id: 1, color: 'silver', infectedby: -1, infectedColor: null},
+    {id: 2, color: 'green', infectedby: -1, infectedColor: null},
+    {id: 3, color: 'blue', infectedby: -1, infectedColor: null},
   ];
   constructor() { }
 
   ngOnInit() {
   }
   public infectsHandler(infectBox: any): void  {
-    console.log(infectBox, 'infectBOx');
+    const tempNewObj: any = {};
+    let lokingindex: number;
+    this.simpleBoxesTable.forEach((box, index) => {
+      if (infectBox.targetId === box.id) {
+        lokingindex = index;
+        tempNewObj['id'] = box.id;
+        tempNewObj['color'] = box.color;
+        tempNewObj['infectedby'] = infectBox.infectorId;
+        tempNewObj['infectedColor'] = infectBox.color;
+      }
+    });
+    this.simpleBoxesTable[lokingindex] = tempNewObj;
+    console.log(this.simpleBoxesTable);
   }
 }
