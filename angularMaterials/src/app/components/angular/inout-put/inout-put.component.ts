@@ -17,7 +17,12 @@ export class InoutPutComponent implements OnInit {
   ngOnInit() {
   }
   public infectsHandler(infectBox: any): void  {
-    const tempNewObj: any = {};
+    const tempNewObj = {
+      id: 0,
+      color: '',
+      infectedby: -1,
+      infectedColor: null
+    };
     let lokingindex: number;
     this.simpleBoxesTable.forEach((box, index) => {
       if (infectBox.targetId === box.id) {
