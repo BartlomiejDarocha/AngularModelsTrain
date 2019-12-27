@@ -15,6 +15,7 @@ import { IntercereptorsComponent } from './intercereptors/intercereptors.compone
 import { PromiseComponent } from './promise/promise.component';
 import { MatButtonModule } from '@angular/material';
 import { InputOutputModule } from './inout-put/input-output.module';
+import { ServpageModule } from './services/servpage.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -34,7 +35,8 @@ import { InputOutputModule } from './inout-put/input-output.module';
     RouterModule,
     SharedModule,
     MatButtonModule,
-    InputOutputModule
+    InputOutputModule,
+    ServpageModule
   ],
   exports: [
     AngularHomeComponent,
