@@ -4,20 +4,22 @@ import { MatButtonModule, MatCardModule } from '@angular/material';
 import { TaskComponent } from './components/task/task.component';
 import { TaskslistComponent } from './components/taskslist/taskslist.component';
 import { HandlerService } from './handler.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     TaskComponent,
-    TaskslistComponent
+    TaskslistComponent,
   ],
   imports: [
+    BrowserModule,
     CommonModule,
     MatButtonModule,
     MatCardModule,
   ],
   exports: [
     TaskComponent,
-    TaskslistComponent
+    TaskslistComponent,
   ],
   providers: [HandlerService]
 })

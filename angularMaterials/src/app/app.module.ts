@@ -20,7 +20,6 @@ import { AppleComponent } from './components/fruts/apple/apple.component';
 import { AdvanceRoutingComponent } from './components/advance-routing/advance-routing.component';
 import { AdvanceOneComponent } from './components/advance-routing/advance-one/advance-one.component';
 import { AdvanceTwoComponent } from './components/advance-routing/advance-two/advance-two.component';
-import { AdvanceAppRoutingModule } from './components/advance-routing/advance-routing.module';
 import { AdvanceTwoGomoreComponent } from './components/advance-routing/advance-two/advance-two-gomore/advance-two-gomore.component';
 import { DirectivesModule } from './directives/directives.module';
 import { InsidetestRouteComponent } from './components/advance-routing/insidetest-route/insidetest-route.component';

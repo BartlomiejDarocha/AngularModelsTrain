@@ -36,7 +36,7 @@ import { ServpageModule } from './services/servpage.module';
     SharedModule,
     MatButtonModule,
     InputOutputModule,
-    ServpageModule
+    ServpageModule,
   ],
   exports: [
     AngularHomeComponent,
