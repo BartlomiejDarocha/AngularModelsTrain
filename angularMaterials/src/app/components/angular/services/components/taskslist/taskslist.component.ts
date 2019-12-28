@@ -9,6 +9,7 @@ import { EventEmitter } from 'protractor';
 })
 export class TaskslistComponent implements OnInit {
   @Input() public taskList: Array<TaskMedium>;
+  @Input() public listOpctions: any;
   @Output() private taskListMod = new EventEmitter();
   public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver'];
   public rateList = [0, 1, 2, 3, 4 , 5];
