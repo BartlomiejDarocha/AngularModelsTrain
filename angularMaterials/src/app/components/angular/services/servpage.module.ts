@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { TaskComponent } from './components/task/task.component';
 import { TaskslistComponent } from './components/taskslist/taskslist.component';
 import { HandlerService } from './handler.service';
@@ -16,6 +16,7 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     MatButtonModule,
     MatCardModule,
+    MatMenuModule
   ],
   exports: [
     TaskComponent,
