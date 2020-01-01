@@ -1,9 +1,16 @@
-<div class="p-2 wrapper" [ngClass]="{'taskActive': task.active}">
-  <div (click)="activeHandler()" class="d-flex">
-    <div class="checkbox" (click)="checkboxHandler()">
-      <mat-checkbox></mat-checkbox>
+<div class="p-2 wrapper" [ngClass]="{'taskActive': task.active}" [ngStyle]="{'background': task.color}">
+  <div (click)="activeHandler()">
+    <div class="d-flex">
+      <div class="checkbox" (click)="borderActiveDisable()">
+        <mat-checkbox></mat-checkbox>
+      </div>
+      <span [innerText]="task.name"></span>
+      <span [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yyyy')"></span>
+      <span [innerText]="'Skala' + task.rate"></span>
+      <span appCollapse [child]="detail" [startHeight]="0" [duration]="250" (click)="borderActiveDisable()">pokaż więcej</span>
     </div>
-    <span>Task1</span>
-    <span [innerText]="task.date | date:'dd-MM-yyyy'"></span>
+    <div #detail>
+      <p [innerText]="task.description"></p>
+    </div>
   </div>
 </div>

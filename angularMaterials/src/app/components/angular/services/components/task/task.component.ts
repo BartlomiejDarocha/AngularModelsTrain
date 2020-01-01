@@ -19,7 +19,7 @@ export class TaskComponent implements OnInit {
     this.task.active = !this.task.active;
     console.log(this.task.active, 'task Active');
   }
-  public checkboxHandler() {
+  public borderActiveDisable() {
     this.task.active = !this.task.active;
   }
 

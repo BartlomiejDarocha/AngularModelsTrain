@@ -5,6 +5,7 @@ import { TaskComponent } from './components/task/task.component';
 import { TaskslistComponent } from './components/taskslist/taskslist.component';
 import { HandlerService } from './handler.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { DirectivesModule } from 'src/app/directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserModule } from '@angular/platform-browser';
     MatCardModule,
     MatMenuModule,
     MatCheckboxModule,
-    MatListModule
+    MatListModule,
+    DirectivesModule
   ],
   exports: [
     TaskComponent,
