@@ -3,6 +3,7 @@
     <mat-card-title>Lista zadań</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <app-task [task]="testTask"></app-task>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque sapiente debitis voluptatem aperiam
       maxime cum ullam, veritatis beatae ut.
@@ -12,7 +13,7 @@
     <button mat-button>Sortuj</button>
     <button mat-button [matMenuTriggerFor]="menu">Kolor</button>
     <mat-menu class="colorMenu" #menu="matMenu">
-      <button *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
+      <button (click)="colorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="rate">Stopień</button>
     <mat-menu #rate="matMenu">

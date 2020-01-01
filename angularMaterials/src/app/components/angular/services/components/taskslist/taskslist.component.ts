@@ -9,12 +9,29 @@ import { TaskMedium } from 'src/app/models/tasks.models';
 export class TaskslistComponent implements OnInit {
   @Input() public taskList: Array<TaskMedium>;
   @Input() public listOpctions: any;
-  @Output() private taskListMod = new EventEmitter<Array<TaskMedium>>();
+  // @Output() private taskListMod = new EventEmitter<Array<TaskMedium>>();
   public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver'];
   public rateList = [0, 1, 2, 3, 4 , 5];
-  constructor() { }
+  public testTask: TaskMedium = {
+    id: 0,
+    name: 'zadanie1',
+    date: new Date(),
+    active: false,
+    description: 'Opis Zadanie 1',
+    done: false,
+    color: 'none',
+    rate: 0
+  };
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+  public colorHandler(color: string, task: TaskMedium = null) {
+    console.log(color);
+  }
+  public rateHandler(rate: number, task: TaskMedium = null) {
+    console.log(rate, 'rate');
   }
 
 }
