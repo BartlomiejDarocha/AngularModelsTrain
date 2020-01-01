@@ -14,7 +14,10 @@
     <mat-menu class="colorMenu" #menu="matMenu">
       <button *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
     </mat-menu>
-    <button mat-button>Stopień</button>
+    <button mat-button [matMenuTriggerFor]="rate">Stopień</button>
+    <mat-menu #rate="matMenu">
+      <button *ngFor="let rate of rateList" mat-menu-item [innerText]="'Nadaj stopień ' + (rate + 1)"></button>
+    </mat-menu>
     <button mat-button>pokaż więcej</button>
   </mat-card-actions>
 </mat-card>
