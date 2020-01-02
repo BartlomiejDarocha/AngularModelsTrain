@@ -4,10 +4,16 @@
       <div class="checkbox" (click)="borderActiveDisable()">
         <mat-checkbox></mat-checkbox>
       </div>
-      <span [innerText]="task.name"></span>
-      <span [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yyyy')"></span>
-      <span [innerText]="'Skala' + task.rate"></span>
-      <span appCollapse [child]="detail" [startHeight]="0" [duration]="250" (click)="borderActiveDisable()">pokaż więcej</span>
+      <div>
+        <mat-form-field>
+          <input matInput value="zadanie">
+        </mat-form-field>
+      </div>
+      <div [innerText]="task.name"></div>
+      <div [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yyyy')"></div>
+      <div [innerText]="'Skala' + task.rate"></div>
+      <button mat-button (click)="editTaskHandler()">Edytuj</button>
+      <button mat-button appCollapse [child]="detail" [startHeight]="0" [duration]="250" (click)="borderActiveDisable()">Pokaż więcej</button>
     </div>
     <div #detail>
       <p [innerText]="task.description"></p>

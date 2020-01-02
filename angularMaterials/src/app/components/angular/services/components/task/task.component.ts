@@ -9,18 +9,21 @@ import { TaskMedium } from 'src/app/models/tasks.models';
 export class TaskComponent implements OnInit {
   @Input() public task: TaskMedium;
   @Output() public outTask = new EventEmitter<TaskMedium>();
+  public editName = false;
+  public newName = '';
   constructor() {
-
   }
   ngOnInit() {
-    console.log(this.task, ' task');
   }
-  public activeHandler() {
+  public activeHandler(): void {
     this.task.active = !this.task.active;
-    console.log(this.task.active, 'task Active');
   }
-  public borderActiveDisable() {
+  public borderActiveDisable(): void {
     this.task.active = !this.task.active;
+  }
+  public editTaskHandler(): void {
+    this.borderActiveDisable();
+    this.newName = this.task.name;
   }
 
 }

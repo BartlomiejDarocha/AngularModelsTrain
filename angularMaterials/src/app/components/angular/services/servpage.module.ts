@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatCheckboxModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatCheckboxModule, MatListModule, MatInputModule } from '@angular/material';
 import { TaskComponent } from './components/task/task.component';
 import { TaskslistComponent } from './components/taskslist/taskslist.component';
 import { HandlerService } from './handler.service';
@@ -20,7 +20,8 @@ import { DirectivesModule } from 'src/app/directives/directives.module';
     MatMenuModule,
     MatCheckboxModule,
     MatListModule,
-    DirectivesModule
+    DirectivesModule,
+    MatInputModule
   ],
   exports: [
     TaskComponent,
