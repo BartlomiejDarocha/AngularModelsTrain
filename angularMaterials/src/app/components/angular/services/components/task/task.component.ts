@@ -18,11 +18,7 @@ export class TaskComponent implements OnInit {
   public activeHandler(): void {
     this.task.active = !this.task.active;
   }
-  public borderActiveDisable(): void {
-    this.task.active = !this.task.active;
-  }
   public editTaskHandler(): void {
-    this.borderActiveDisable();
     if (!this.editName) {
       this.newName = this.task.name;
       this.editName = true;
@@ -30,13 +26,18 @@ export class TaskComponent implements OnInit {
       this.task.name = this.newName;
       this.editName = false;
     }
-    console.log(this.task.name, 'test task name');
   }
   public checkedHandler(event: any): void {
-    this.borderActiveDisable();
+    const endDate = new Date();
     this.task.done = event.checked;
-    console.log(event, 'event');
-    console.log(this.task.done);
+    if (event.checked && this.editName) {
+      this.editName = false;
+    }
+    if ( event.checked) {
+      this.task.doneDate = endDate;
+    } else {
+      this.task.doneDate =  null;
+    }
   }
 
 }
