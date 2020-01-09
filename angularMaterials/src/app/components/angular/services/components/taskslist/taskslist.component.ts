@@ -14,7 +14,7 @@ export class TaskslistComponent implements OnInit {
   public rateList = [0, 1, 2, 3, 4 , 5];
   public testTask: TaskMedium = {
     id: 0,
-    name: 'zadanie1',
+    name: 'Task',
     date: new Date(),
     active: false,
     description: 'Opis Zadanie 1',

@@ -2,17 +2,15 @@
   <div (click)="activeHandler()">
     <div class="d-flex">
       <div class="checkbox" (click)="borderActiveDisable()">
-        <mat-checkbox></mat-checkbox>
+        <mat-checkbox (change)="checkedHandler($event)"></mat-checkbox>
       </div>
-      <div>
-        <mat-form-field>
-          <input matInput value="zadanie">
-        </mat-form-field>
+      <div *ngIf="editName">
+        <input matInput [(ngModel)]="newName">
+        <button mat-button (click)="editTaskHandler()">Zapisz</button>
       </div>
-      <div [innerText]="task.name"></div>
+      <div (click)="task.done ? null: editTaskHandler()" *ngIf="!editName" [innerText]="task.name"></div>
       <div [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yyyy')"></div>
       <div [innerText]="'Skala' + task.rate"></div>
-      <button mat-button (click)="editTaskHandler()">Edytuj</button>
       <button mat-button appCollapse [child]="detail" [startHeight]="0" [duration]="250" (click)="borderActiveDisable()">Pokaż więcej</button>
     </div>
     <div #detail>

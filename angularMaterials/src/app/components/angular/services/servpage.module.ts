@@ -6,6 +6,7 @@ import { TaskslistComponent } from './components/taskslist/taskslist.component';
 import { HandlerService } from './handler.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { DirectivesModule } from 'src/app/directives/directives.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DirectivesModule } from 'src/app/directives/directives.module';
   imports: [
     BrowserModule,
     CommonModule,
+    FormsModule,
     MatButtonModule,
     MatCardModule,
     MatMenuModule,

@@ -23,7 +23,20 @@ export class TaskComponent implements OnInit {
   }
   public editTaskHandler(): void {
     this.borderActiveDisable();
-    this.newName = this.task.name;
+    if (!this.editName) {
+      this.newName = this.task.name;
+      this.editName = true;
+    } else {
+      this.task.name = this.newName;
+      this.editName = false;
+    }
+    console.log(this.task.name, 'test task name');
+  }
+  public checkedHandler(event: any): void {
+    this.borderActiveDisable();
+    this.task.done = event.checked;
+    console.log(event, 'event');
+    console.log(this.task.done);
   }
 
 }
