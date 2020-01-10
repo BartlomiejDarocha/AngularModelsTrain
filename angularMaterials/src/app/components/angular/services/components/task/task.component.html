@@ -9,14 +9,13 @@
         <button mat-button (click)="editTaskHandler()">Zapisz</button>
       </div>
       <div (click)="task.done ? null: editTaskHandler()" *ngIf="!editName" [innerText]="task.name"></div>
-      <div [innerText]="'Skala' + task.rate"></div>
       <button mat-button (click)="activeHandler()" [innerText]="task.active? 'Odznacz': 'Zaznacz'"></button>
       <button mat-button appCollapse [child]="detail" [startHeight]="0" [duration]="250" [innerText]="detail.classList.contains('active') ? 'Pokaż mniej':'Pokaż więcej'"></button>
     </div>
     <div #detail>
       <div [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yy')"></div>
       <div *ngIf="task.doneDate != null" [innerText]="'data zakończenia: ' + (task.doneDate | date:'dd-MM-yy')"></div>
-      <p [innerText]="task.description"></p>
+      <div [innerText]="'Skala' + task.rate"></div>
     </div>
   </div>
 </div>
