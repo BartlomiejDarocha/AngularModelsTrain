@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TaskMedium } from 'src/app/models/tasks.models';
+import { TaskMedium, MediumTaskList } from 'src/app/models/tasks.models';
 
 @Component({
   selector: 'app-taskslist',
@@ -7,8 +7,7 @@ import { TaskMedium } from 'src/app/models/tasks.models';
   styleUrls: ['./taskslist.component.less']
 })
 export class TaskslistComponent implements OnInit {
-  @Input() public taskList: Array<TaskMedium>;
-  @Input() public listOpctions: any;
+  @Input() public taskList: MediumTaskList;
   public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver'];
   public rateList = [0, 1, 2, 3, 4 , 5];
   public sortList = [

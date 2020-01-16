@@ -1,10 +1,12 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Nazwa listy</mat-card-title>
-    <input matInput [(ngModel)]="taskname">
-    <button mat-button (click)="newTaskHandler()">Dodaj</button>
   </mat-card-header>
   <mat-card-content>
+    <div>
+      <input matInput [(ngModel)]="taskname">
+      <button mat-button (click)="newTaskHandler()">Dodaj zadanie</button>
+    </div>
     <app-task [task]="testTask"></app-task>
   </mat-card-content>
   <mat-card-actions>
@@ -12,7 +14,7 @@
     <mat-menu #sort="matMenu">
       <button (click)="elOfList.func" *ngFor="let elOfList of sortList" mat-menu-item [innerText]="elOfList.name"></button>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="menu">Kolor</button>
+    <button mat-button [matMenuTriggerFor]="menu">Kolor zadania</button>
     <mat-menu class="colorMenu" #menu="matMenu">
       <button (click)="colorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
     </mat-menu>
@@ -20,6 +22,9 @@
     <mat-menu #rate="matMenu">
       <button *ngFor="let rate of rateList" mat-menu-item [innerText]="'Nadaj stopień ' + (rate + 1)"></button>
     </mat-menu>
-    <button mat-button>pokaż więcej</button>
+    <button mat-button appCollapse [child]="moreListOptions" [startHeight]="0" [duration]="250" [innerText]="moreListOptions.classList.contains('active') ? 'Pokaż mniej':'Pokaż więcej'"></button>
+  </mat-card-actions>
+  <mat-card-actions #moreListOptions>
+    <button mat-button>Kolor listy</button>
   </mat-card-actions>
 </mat-card>
