@@ -8,3 +8,12 @@ export interface TaskMedium {
   color: string;
   rate?: number;
 }
+export interface MediumTaskList {
+  id: number;
+  listTitle: string;
+  createDate: Date;
+  completeDate?: Date;
+  backgroundColor?: string;
+  backgroundImg?: string;
+  tasks: Array<TaskMedium>;
+}
