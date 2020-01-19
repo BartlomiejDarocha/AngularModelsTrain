@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TaskMedium, MediumTaskList } from 'src/app/models/tasks.models';
+import { HandlerService } from '../../handler.service';
 
 @Component({
   selector: 'app-taskslist',
@@ -18,23 +19,20 @@ export class TaskslistComponent implements OnInit {
     {name: 'datą zakończenia', func: null},
   ];
   public newTaskname = '';
-  constructor() {
-    console.log(this.taskList, 'taskList Component');
+  constructor(
+    private handler: HandlerService
+  ) {
   }
 
-  ngOnInit() {
-  }
-  public colorHandler(color: string, task: TaskMedium = null) {
+  ngOnInit() {}
+  public colorHandler(color: string, task: TaskMedium = null): void {
     console.log(color);
   }
-  public rateHandler(rate: number, task: TaskMedium = null) {
+  public rateHandler(rate: number, task: TaskMedium = null): void {
     console.log(rate, 'rate');
   }
   public newTaskHandler(): void  {
     console.log(this.newTaskname, 'nowe zadanie');
-  }
-  public TaskHandlerEmiter(task: TaskMedium) {
-    console.log(task, 'task TaskHanderEmiter');
   }
 
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { TaskMedium } from 'src/app/models/tasks.models';
+import { HandlerService } from '../../handler.service';
 
 @Component({
   selector: 'app-task',
@@ -8,10 +9,11 @@ import { TaskMedium } from 'src/app/models/tasks.models';
 })
 export class TaskComponent implements OnInit {
   @Input() public task: TaskMedium;
-  @Output() public outTask = new EventEmitter<TaskMedium>();
   public editName = false;
   public newName = '';
-  constructor() {
+  constructor(
+    private handler: HandlerService
+  ) {
   }
   ngOnInit() {
   }
