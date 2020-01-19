@@ -6,8 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HandlerService {
-  private taskListIdCounter = 1;
-  private taskIdCounter = 5;
+  public taskListIdCounter = 1;
+  public taskIdCounter = 5;
   private taskListObs = new BehaviorSubject<Array<MediumTaskList>>([]);
   private tasksLists: MediumTaskList[] = [
     {
@@ -84,11 +84,17 @@ export class HandlerService {
   constructor() {
     this.taskListObs.next(this.tasksLists);
    }
+  public addTaskId(): void {
+    this.taskIdCounter++;
+  }
   public addNewTaskList(): void {
   }
   public colorHandler(): void {
   }
   public getTaskList(): Observable<Array<MediumTaskList>> {
     return this.taskListObs.asObservable();
+  }
+  public checkLists(): void {
+    console.log(this.tasksLists, 'TaskLists Services');
   }
 }

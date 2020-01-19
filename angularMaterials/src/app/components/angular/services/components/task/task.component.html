@@ -11,6 +11,7 @@
       <div (click)="task.done ? null: editTaskHandler()" *ngIf="!editName" [innerText]="task.name"></div>
       <button mat-button (click)="activeHandler()" [innerText]="task.active? 'Odznacz': 'Zaznacz'"></button>
       <button mat-button appCollapse [child]="detail" [startHeight]="0" [duration]="250" [innerText]="detail.classList.contains('active') ? 'Pokaż mniej':'Pokaż więcej'"></button>
+      <button mat-button (click)="removeTask()" [innerText]="'Usuń'"></button>
     </div>
     <div #detail>
       <div [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yy')"></div>

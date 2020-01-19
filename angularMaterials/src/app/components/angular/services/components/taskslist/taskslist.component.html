@@ -7,7 +7,7 @@
       <input matInput [(ngModel)]="newTaskname">
       <button mat-button (click)="newTaskHandler()">Dodaj zadanie</button>
     </div>
-    <app-task [task]="task" *ngFor="let task of taskList.tasks"></app-task>
+    <app-task [task]="task" (outTask)="removeTaskhandler($event)" *ngFor="let task of taskList.tasks"></app-task>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button [matMenuTriggerFor]="sort">Sortuj</button>

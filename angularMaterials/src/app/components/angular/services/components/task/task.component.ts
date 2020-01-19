@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { TaskMedium } from 'src/app/models/tasks.models';
 import { HandlerService } from '../../handler.service';
 
@@ -9,6 +9,7 @@ import { HandlerService } from '../../handler.service';
 })
 export class TaskComponent implements OnInit {
   @Input() public task: TaskMedium;
+  @Output() public outTask = new EventEmitter<TaskMedium>();
   public editName = false;
   public newName = '';
   constructor(
@@ -40,6 +41,9 @@ export class TaskComponent implements OnInit {
     } else {
       this.task.doneDate =  null;
     }
+  }
+  public removeTask() {
+    this.outTask.next(this.task);
   }
 
 }
