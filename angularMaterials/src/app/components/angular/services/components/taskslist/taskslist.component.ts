@@ -17,17 +17,9 @@ export class TaskslistComponent implements OnInit {
     {name: 'datą dodania', func: null},
     {name: 'datą zakończenia', func: null},
   ];
-  public testTask: TaskMedium = {
-    id: 0,
-    name: 'Task',
-    date: new Date(),
-    active: false,
-    done: false,
-    color: 'none',
-    rate: 0
-  };
-  public taskname = '';
+  public newTaskname = '';
   constructor() {
+    console.log(this.taskList, 'taskList');
   }
 
   ngOnInit() {
@@ -39,7 +31,7 @@ export class TaskslistComponent implements OnInit {
     console.log(rate, 'rate');
   }
   public newTaskHandler(): void  {
-    console.log(this.taskname, 'nowe zadanie');
+    console.log(this.newTaskname, 'nowe zadanie');
   }
 
 }
