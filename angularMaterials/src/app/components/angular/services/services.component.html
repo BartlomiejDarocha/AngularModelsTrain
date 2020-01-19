@@ -1,9 +1,6 @@
 <h3>Dwie listy, komunikacja na zasadzie service</h3>
 <div class="d-inline-flex">
-  <div>
-    <app-taskslist></app-taskslist>
-  </div>
-  <div>
-    <app-taskslist></app-taskslist>
+  <div class="taskListWrapper" *ngFor="let list of tasksLists">
+    <app-taskslist [taskList]="list"></app-taskslist>
   </div>
 </div>

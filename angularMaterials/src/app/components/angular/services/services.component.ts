@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HandlerService } from './handler.service';
 import { MediumTaskList } from 'src/app/models/tasks.models';
 
 @Component({
@@ -7,81 +8,15 @@ import { MediumTaskList } from 'src/app/models/tasks.models';
   styleUrls: ['./services.component.less']
 })
 export class ServicesComponent implements OnInit {
-
-  constructor() { }
-  public tasksLists: MediumTaskList[] = [
-    {
-      id: 0,
-      listTitle: 'lista 0',
-      createDate: new Date(),
-      backgroundColor: 'none',
-      tasks: [
-        {
-          id: 0,
-          name: 'lista 0 zadnaie 1',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        },
-        {
-          id: 1,
-          name: 'lista 0 zadnaie 2',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        },
-        {
-          id: 2,
-          name: 'lista 0 zadnaie 3',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        }
-      ]
-    },
-    {
-      id: 1,
-      listTitle: 'lista 1',
-      createDate: new Date(),
-      backgroundColor: 'none',
-      tasks: [
-        {
-          id: 3,
-          name: 'lista 1 zadnaie 1',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        },
-        {
-          id: 4,
-          name: 'lista 1 zadnaie 2',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        },
-        {
-          id: 5,
-          name: 'lista 1 zadnaie 3',
-          active: false,
-          done: false,
-          color: 'none',
-          date:  new Date(),
-          rate: 0,
-        }
-      ]
-    }
-  ];
-
+  public tasksLists: Array<MediumTaskList> = [];
+  constructor(
+    private handler: HandlerService
+  ) {
+    this.handler.getTaskList().subscribe(tasksLists => {
+      this.tasksLists = tasksLists;
+      console.log(this.tasksLists, 'this.tasksLists Z service');
+    });
+   }
   ngOnInit() {
   }
 

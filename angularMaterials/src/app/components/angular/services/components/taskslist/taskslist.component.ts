@@ -19,7 +19,7 @@ export class TaskslistComponent implements OnInit {
   ];
   public newTaskname = '';
   constructor() {
-    console.log(this.taskList, 'taskList');
+    console.log(this.taskList, 'taskList Component');
   }
 
   ngOnInit() {
@@ -32,6 +32,9 @@ export class TaskslistComponent implements OnInit {
   }
   public newTaskHandler(): void  {
     console.log(this.newTaskname, 'nowe zadanie');
+  }
+  public TaskHandlerEmiter(task: TaskMedium) {
+    console.log(task, 'task TaskHanderEmiter');
   }
 
 }
