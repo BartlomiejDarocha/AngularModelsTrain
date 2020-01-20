@@ -16,7 +16,8 @@ export class AngularHomeComponent implements OnInit {
     {url: 'intercereptors', name: 'Intercereptory'},
     {url: 'pipes', name: 'Rurki'},
     {url: 'directives', name: 'Derektywy'},
-    {url: 'promise', name: 'Obietnice'}
+    {url: 'promise', name: 'Obietnice'},
+    {url: 'viewChild', name: 'viewChild, Js'}
   ];
   constructor() { }
 

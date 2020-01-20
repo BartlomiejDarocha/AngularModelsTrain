@@ -11,6 +11,7 @@ import { IntercereptorsComponent } from './intercereptors/intercereptors.compone
 import { PipesComponent } from './pipes/pipes.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PromiseComponent } from './promise/promise.component';
+import { VievchildComponent } from './vievchild/vievchild.component';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
@@ -24,7 +25,8 @@ const routes: Routes = [
       {path: 'intercereptors', component: IntercereptorsComponent},
       {path: 'pipes', component: PipesComponent},
       {path: 'directives', component: DirectivesComponent},
-      {path: 'promise', component: PromiseComponent }
+      {path: 'promise', component: PromiseComponent },
+      {path: 'viewChild', component: VievchildComponent }
     ]
   }
 ];

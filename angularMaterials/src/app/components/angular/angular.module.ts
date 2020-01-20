@@ -16,6 +16,8 @@ import { PromiseComponent } from './promise/promise.component';
 import { MatButtonModule } from '@angular/material';
 import { InputOutputModule } from './inout-put/input-output.module';
 import { ServpageModule } from './services/servpage.module';
+import { VievchildComponent } from './vievchild/vievchild.component';
+import { ViewchildModule } from './vievchild/viewchild.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -29,6 +31,7 @@ import { ServpageModule } from './services/servpage.module';
     DirectivesComponent,
     IntercereptorsComponent,
     PromiseComponent,
+    VievchildComponent,
     ],
   imports: [
     CommonModule,
@@ -37,6 +40,7 @@ import { ServpageModule } from './services/servpage.module';
     MatButtonModule,
     InputOutputModule,
     ServpageModule,
+    ViewchildModule
   ],
   exports: [
     AngularHomeComponent,
@@ -49,7 +53,8 @@ import { ServpageModule } from './services/servpage.module';
     PipesComponent,
     DirectivesComponent,
     IntercereptorsComponent,
-    PromiseComponent
+    PromiseComponent,
+    VievchildComponent
   ]
 })
 export class AngularModule { }
