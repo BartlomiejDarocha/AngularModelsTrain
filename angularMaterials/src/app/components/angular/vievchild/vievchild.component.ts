@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-vievchild',
@@ -8,11 +8,10 @@ import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angula
 export class VievchildComponent implements OnInit, AfterViewInit {
   public buttonId = '';
   public scollHeight = '';
-  @ViewChild('container') public container: ElementRef;
   public boxesArray = [
-    {id: 'box1', name: 'box1'},
-    {id: 'box2', name: 'box2'},
-    {id: 'box3', name: 'box3'}
+    { id: 'box1', name: 'box1' },
+    { id: 'box2', name: 'box2' },
+    { id: 'box3', name: 'box3' }
   ];
   constructor() { }
 
@@ -21,6 +20,16 @@ export class VievchildComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
   public scrollToHeight(): void {
+    console.log('scorll');
+    // poniważ window scoll działa tylko na html or body ellelemnt
+    if (this.scollHeight) {
+      document.querySelector('mat-sidenav-content').scroll({
+        // tslint:disable-next-line:radix
+        top: parseInt(this.scollHeight),
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   }
   public scrollByGetElement(boxID: string): void {
     if (boxID) {
@@ -29,7 +38,6 @@ export class VievchildComponent implements OnInit, AfterViewInit {
       console.log(lookingElement);
       console.log(position, 'pozycja');
       lookingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // lookingElement.scrollTo(0, 500);
     } else {
       console.log('nie wybrano boxa');
     }
