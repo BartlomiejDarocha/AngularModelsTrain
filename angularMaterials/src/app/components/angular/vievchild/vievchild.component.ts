@@ -6,7 +6,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./vievchild.component.less']
 })
 export class VievchildComponent implements OnInit, AfterViewInit {
-
+  public buttonId = '';
   public boxesArray = [
     {id: 'box1', name: 'box1'},
     {id: 'box2', name: 'box2'},
@@ -17,14 +17,18 @@ export class VievchildComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit(): void {
-    // this.scrollByGetElement();
   }
-  public scrollByGetElement(): void {
-    const lookingElement = document.getElementById('box1');
-    console.log(lookingElement);
-    console.log(document.getElementById('box1').offsetHeight);
-    console.log(lookingElement.offsetHeight + lookingElement.offsetTop, 'pozycja');
-    lookingElement.scrollIntoView();
+  public scrollByGetElement(boxID: string): void {
+    if (boxID) {
+      const lookingElement = document.getElementById(boxID);
+      const position = lookingElement.offsetHeight + lookingElement.offsetTop;
+      console.log(lookingElement);
+      console.log(document.getElementById(boxID).offsetHeight);
+      console.log(position, 'pozycja');
+      lookingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      console.log('nie wybrano boxa');
+    }
   }
 
 }

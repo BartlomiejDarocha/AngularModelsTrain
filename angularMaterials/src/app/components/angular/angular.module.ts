@@ -18,6 +18,7 @@ import { InputOutputModule } from './inout-put/input-output.module';
 import { ServpageModule } from './services/servpage.module';
 import { VievchildComponent } from './vievchild/vievchild.component';
 import { ViewchildModule } from './vievchild/viewchild.module';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -35,6 +36,7 @@ import { ViewchildModule } from './vievchild/viewchild.module';
     ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
     SharedModule,
     MatButtonModule,
