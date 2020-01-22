@@ -1,8 +1,12 @@
-<div>
+<div #container>
   <h3>Scrolowanie przez getElemnetByID</h3>
   <div>
     <input placeholder="box id" [(ngModel)]="buttonId">
     <button mat-button (click)="scrollByGetElement(buttonId)">Scroll i test</button>
+  </div>
+  <div>
+      <input placeholder="wysokość" [(ngModel)]="scollHeight">
+      <button mat-button (click)="scrollToHeight()">Scroll do wysokosc</button>
   </div>
   <app-child *ngFor="let box of boxesArray" [options]="box"></app-child>
 </div>

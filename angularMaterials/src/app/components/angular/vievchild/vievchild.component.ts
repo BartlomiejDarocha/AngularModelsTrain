@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-vievchild',
@@ -7,6 +7,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class VievchildComponent implements OnInit, AfterViewInit {
   public buttonId = '';
+  public scollHeight = '';
+  @ViewChild('container') public container: ElementRef;
   public boxesArray = [
     {id: 'box1', name: 'box1'},
     {id: 'box2', name: 'box2'},
@@ -18,14 +20,16 @@ export class VievchildComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
   }
+  public scrollToHeight(): void {
+  }
   public scrollByGetElement(boxID: string): void {
     if (boxID) {
       const lookingElement = document.getElementById(boxID);
       const position = lookingElement.offsetHeight + lookingElement.offsetTop;
       console.log(lookingElement);
-      console.log(document.getElementById(boxID).offsetHeight);
       console.log(position, 'pozycja');
       lookingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // lookingElement.scrollTo(0, 500);
     } else {
       console.log('nie wybrano boxa');
     }
