@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-vievchild',
@@ -6,6 +6,9 @@ import { Component, OnInit, AfterViewInit} from '@angular/core';
   styleUrls: ['./vievchild.component.less']
 })
 export class VievchildComponent implements OnInit, AfterViewInit {
+  @ViewChild('blicker') public blicker: ElementRef;
+  public blickerOn = false;
+  public blickerInterval: any;
   public buttonId = '';
   public scollHeight = '';
   public boxesArray = [
@@ -18,6 +21,23 @@ export class VievchildComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit(): void {
+  }
+  public blikingHandler(): void {
+    if (!this.blickerOn) {
+      this.blickerInterval = setInterval(() => {
+        if (this.blicker.nativeElement.style.background === 'red') {
+          this.blicker.nativeElement.style.background = 'blue';
+          this.blicker.nativeElement.style.color = 'red';
+        } else {
+          this.blicker.nativeElement.style.background = 'red';
+          this.blicker.nativeElement.style.color = 'blue';
+        }
+      }, 12);
+      this.blickerOn = true;
+    } else {
+      clearInterval(this.blickerInterval);
+      this.blickerOn = false;
+    }
   }
   public scrollToHeight(): void {
     console.log('scorll');

@@ -9,9 +9,10 @@
       <button mat-button (click)="scrollToHeight()">Scroll do wysokosc</button>
   </div>
   <app-child *ngFor="let box of boxesArray" [options]="box"></app-child>
-  <div class="lightBox">
+  <div #blicker class="lightBox">
     migajacy box
   </div>
+  <button mat-button (click)="blikingHandler()" [innerText]="blickerOn ? 'Wyłącz' : 'Włącz'"></button>
 </div>
 
 
