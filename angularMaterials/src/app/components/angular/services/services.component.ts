@@ -14,7 +14,6 @@ export class ServicesComponent implements OnInit {
   ) {
     this.handler.getTaskList().subscribe(tasksLists => {
       this.tasksLists = tasksLists;
-      console.log('Odpalone');
       console.log(this.tasksLists, 'this.tasksLists Z service');
     });
    }
