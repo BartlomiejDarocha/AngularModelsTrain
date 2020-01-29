@@ -56,7 +56,6 @@ export class TaskslistComponent implements OnInit {
     });
     tempTaskList.splice(indexId, 1);
     this.taskList.tasks = tempTaskList;
-    this.handler.checkLists();
   }
 
 }

@@ -14,10 +14,12 @@ export class ServicesComponent implements OnInit {
   ) {
     this.handler.getTaskList().subscribe(tasksLists => {
       this.tasksLists = tasksLists;
-      console.log(this.tasksLists, 'this.tasksLists Z service');
     });
    }
   ngOnInit() {
+  }
+  public checkListForTest(): void {
+    this.handler.checkLists();
   }
 
 }
