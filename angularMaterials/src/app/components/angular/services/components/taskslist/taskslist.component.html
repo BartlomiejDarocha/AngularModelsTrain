@@ -7,20 +7,20 @@
       <input matInput [(ngModel)]="newTaskname">
       <button mat-button (click)="newTaskHandler()">Dodaj zadanie</button>
     </div>
-    <app-task [task]="task" (outTask)="removeTaskhandler($event)" *ngFor="let task of taskList.tasks"></app-task>
+    <app-task [task]="task" (outTask)="removeTaskhandler($event)" (activeTaskOut)="activeTaskHandler()" *ngFor="let task of taskList.tasks"></app-task>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button [matMenuTriggerFor]="sort">Sortuj</button>
     <mat-menu #sort="matMenu">
       <button (click)="elOfList.func" *ngFor="let elOfList of sortList" mat-menu-item [innerText]="elOfList.name"></button>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="menu">Kolor zadania</button>
+    <button mat-button [disabled]="!functionsButtonsActive" [matMenuTriggerFor]="menu">Kolor zadania</button>
     <mat-menu class="colorMenu" #menu="matMenu">
-      <button (click)="colorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
+      <button (click)="taskFunctionsHandler(0, color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="rate">Stopień</button>
+    <button mat-button [disabled]="!functionsButtonsActive" [matMenuTriggerFor]="rate">Stopień</button>
     <mat-menu #rate="matMenu">
-      <button *ngFor="let rate of rateList" mat-menu-item [innerText]="'Nadaj stopień ' + (rate + 1)"></button>
+      <button (click)="taskFunctionsHandler(1, rate)" *ngFor="let rate of rateList" mat-menu-item [innerText]="'Nadaj stopień ' + (rate + 1)"></button>
     </mat-menu>
     <button mat-button appCollapse [child]="moreListOptions" [startHeight]="0" [duration]="250" [innerText]="moreListOptions.classList.contains('active') ? 'Pokaż mniej':'Pokaż więcej'"></button>
   </mat-card-actions>

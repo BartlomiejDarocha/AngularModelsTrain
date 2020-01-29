@@ -10,6 +10,7 @@ import { HandlerService } from '../../handler.service';
 export class TaskComponent implements OnInit {
   @Input() public task: TaskMedium;
   @Output() public outTask = new EventEmitter<TaskMedium>();
+  @Output() public activeTaskOut = new EventEmitter();
   public editName = false;
   public newName = '';
   constructor(
@@ -20,6 +21,7 @@ export class TaskComponent implements OnInit {
   }
   public activeHandler(): void {
     this.task.active = !this.task.active;
+    this.activeTaskOut.next();
   }
   public editTaskHandler(): void {
     if (!this.editName) {

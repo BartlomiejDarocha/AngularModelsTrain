@@ -9,7 +9,7 @@ import { HandlerService } from '../../handler.service';
 })
 export class TaskslistComponent implements OnInit {
   @Input() public taskList: MediumTaskList;
-  public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver'];
+  public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver', 'none'];
   public rateList = [0, 1, 2, 3, 4 , 5];
   public sortList = [
     {name: 'Kolorami', func: null},
@@ -19,17 +19,30 @@ export class TaskslistComponent implements OnInit {
     {name: 'datą zakończenia', func: null},
   ];
   public newTaskname = '';
+  public functionsButtonsActive = false;
   constructor(
     private handler: HandlerService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {}
-  public colorHandler(color: string, task: TaskMedium = null): void {
-    console.log(color);
+  public activeTaskHandler(): void {
+    this.functionsButtonsActive = this.functionsButtonsActiveHandler();
   }
-  public rateHandler(rate: number, task: TaskMedium = null): void {
-    console.log(rate, 'rate');
+  public taskFunctionsHandler(type: number, value: number | string): void {
+    console.log(type, ' type');
+    console.log(value, ' value');
+    this.taskList.tasks.forEach(task => {
+      if (task.active) {
+        if (type === 0 && typeof value === 'string') {
+          task.color = value;
+        } else if (type === 1 && typeof value === 'number') {
+          task.rate = value;
+        }
+      }
+    });
+  }
+  public functionsButtonsActiveHandler(): boolean {
+    return this.taskList.tasks.some(task => task.active === true);
   }
   public newTaskHandler(): void  {
     this.handler.addTaskId();
@@ -42,7 +55,6 @@ export class TaskslistComponent implements OnInit {
       color: 'none',
       rate: 0,
     };
-    // this.taskList.tasks.push(tempNewTask);
     this.taskList.tasks.unshift(tempNewTask);
     this.newTaskname = '';
   }

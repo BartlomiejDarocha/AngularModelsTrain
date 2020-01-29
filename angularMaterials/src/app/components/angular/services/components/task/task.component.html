@@ -16,7 +16,7 @@
     <div #detail>
       <div [innerText]="'data dodania: ' + (task.date | date:'dd-MM-yy')"></div>
       <div *ngIf="task.doneDate != null" [innerText]="'data zakończenia: ' + (task.doneDate | date:'dd-MM-yy')"></div>
-      <div [innerText]="'Skala' + task.rate"></div>
+      <div [innerText]="'Skala' + (task.rate + 1)"></div>
     </div>
   </div>
 </div>
