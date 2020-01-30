@@ -12,7 +12,7 @@ export class LoaderComponent {
   public color = 'primary';
   public mode = 'indeterminate';
   public value = 50;
-  public isLoading: Subject<boolean> = this.loaderService.isLoading;
+  public $isLoading: Subject<boolean> = this.loaderService.isLoading;
 
   constructor(
     public loaderService: LoaderService

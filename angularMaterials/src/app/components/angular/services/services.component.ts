@@ -15,7 +15,8 @@ export class ServicesComponent implements OnInit {
     this.handler.getTaskList().subscribe(tasksLists => {
       this.tasksLists = tasksLists;
     });
-   }
+    // this.handler.getTaskList().
+    }
   ngOnInit() {
   }
   public checkListForTest(): void {
