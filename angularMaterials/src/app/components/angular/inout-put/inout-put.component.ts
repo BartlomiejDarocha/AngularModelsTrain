@@ -16,42 +16,22 @@ export class InoutPutComponent implements OnInit {
 
   ngOnInit() {
   }
-  // public infectsHandler(infectBox: any): void  {
-  //   const tempNewObj = {
-  //     id: 0,
-  //     color: '',
-  //     infectedby: -1,
-  //     infectedColor: null
-  //   };
-  //   let lokingindex: number;
-  //   this.simpleBoxesTable.forEach((box, index) => {
-  //     if (infectBox.targetId === box.id) {
-  //       lokingindex = index;
-  //       tempNewObj['id'] = box.id;
-  //       tempNewObj['color'] = box.color;
-  //       tempNewObj['infectedby'] = infectBox.infectorId;
-  //       tempNewObj['infectedColor'] = infectBox.color;
-  //     }
-  //   });
-  //   this.simpleBoxesTable[lokingindex] = tempNewObj;
-  // }
   public infectsHandler(infectBox: any): void  {
-    const tempNewObj = {
-      id: 0,
-      color: '',
-      infectedby: -1,
-      infectedColor: null
-    };
-    let lokingindex: number;
+    console.log(infectBox, 'infectBox');
+    let targetIndex: number;
+    let newBox: any;
     this.simpleBoxesTable.forEach((box, index) => {
       if (infectBox.targetId === box.id) {
-        lokingindex = index;
-        tempNewObj['id'] = box.id;
-        tempNewObj['color'] = box.color;
-        tempNewObj['infectedby'] = infectBox.infectorId;
-        tempNewObj['infectedColor'] = infectBox.color;
+        targetIndex = index;
+        box.infectedby = infectBox.infectorId;
+        box.infectedColor = infectBox.color;
+        newBox = { ...box}; // { ...box }budujne nowy obiekt a nie zmienia refenrecje juz isnteiajcego
+        // jest to kolejny spoosb na gleboko kopie obiektu ale to do sprawdznia;
+        console.log(newBox, 'newBox');
       }
     });
-    this.simpleBoxesTable[lokingindex] = tempNewObj;
+    this.simpleBoxesTable[targetIndex] = newBox;
+    // przypisanie do nowego obiketu do tablicy spowoduje wywloanie metody w Input onChange
+    // ponieważ zosały przypisane nowy obiekt a nie zmienione jego referencje.
   }
 }
