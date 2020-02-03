@@ -1,4 +1,10 @@
-<h3>Listy na service oraz input, OutPut</h3>
+<div>
+  <h3>Listy na service oraz input, OutPut</h3>
+  <div>
+    <input matInput placeholder="nowa lista" [(ngModel)]="newTaskListName">
+    <button mat-button (click)="addTaskList()">Dodaj</button>
+  </div>
+</div>
 <button mat-button (click)="checkListForTest()">TestLists</button>
 <div class="d-inline-flex">
   <div class="taskListWrapper" *ngFor="let list of tasksLists">

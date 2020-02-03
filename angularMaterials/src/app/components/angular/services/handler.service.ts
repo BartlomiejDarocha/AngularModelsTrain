@@ -87,7 +87,9 @@ export class HandlerService {
   public addTaskId(): void {
     this.taskIdCounter++;
   }
-  public addNewTaskList(): void {
+  public addNewTaskList(taskList: MediumTaskList): void {
+    this.tasksLists.push(taskList);
+    this.taskListObs.next(this.tasksLists);
   }
   public colorHandler(): void {
   }

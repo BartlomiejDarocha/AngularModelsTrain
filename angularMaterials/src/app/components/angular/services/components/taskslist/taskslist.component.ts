@@ -29,8 +29,6 @@ export class TaskslistComponent implements OnInit {
     this.functionsButtonsActive = this.functionsButtonsActiveHandler();
   }
   public taskFunctionsHandler(type: number, value: number | string): void {
-    console.log(type, ' type');
-    console.log(value, ' value');
     this.taskList.tasks.forEach(task => {
       if (task.active) {
         if (type === 0 && typeof value === 'string') {
