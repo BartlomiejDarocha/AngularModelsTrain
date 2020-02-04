@@ -15,5 +15,6 @@ export class ApiService {
   }
   public async getOnPromise(url: string, param: any = null) {
     return await this.http.get(url, {params: param}).toPromise();
+    // toPromise i teraz jakos pormis i musi byc async i await
   }
 }

@@ -65,7 +65,7 @@ export class PromiseComponent implements OnInit {
   /// http example asynchonic on promise
   /// promise
   public async getStarWarsBypromiseSimple(url: string) {
-    return await this.http.get(url).toPromise(); // tutaj pobieranie api na
+    return await this.http.get(url).toPromise(); // tutaj pobieranie api na promis angularowego http
   }
   public async testGeOnTry() {
     let test: any;
@@ -88,5 +88,21 @@ export class PromiseComponent implements OnInit {
     this.api.get(this.testUrl).subscribe(data => {
       console.log(data, ' data RXJS');
     });
+  }
+  public async trainApiPromiser() {
+    try {
+      const dataApi = await this.api.getOnPromise(this.testUrl);
+      console.log(dataApi, 'dataApi');
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  public async trainPromis2() {
+    try {
+      const dataApi2 = await this.api.getOnPromise(this.testUrl);
+      console.log(dataApi2, 'dataApi2');
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
