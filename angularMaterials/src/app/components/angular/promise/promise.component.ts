@@ -62,6 +62,14 @@ export class PromiseComponent implements OnInit {
     });
     console.log(newPromiseCounter, 'newPromiseCounter last');
   }
+  public testThen() {
+    const testPromis = this.api.getOnPromise(this.testUrl);
+    testPromis.then((vallComplete) => {
+      console.log(vallComplete, 'vallComplete Test');
+    }).catch((vallError) => {
+      console.log(vallError, 'vallError');
+    });
+  }
   /// http example asynchonic on promise
   /// promise
   public async getStarWarsBypromiseSimple(url: string) {
