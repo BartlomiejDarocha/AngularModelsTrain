@@ -9,8 +9,8 @@ import { AdvanceAppRoutingModule } from './components/advance-routing/advance-ro
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'fruts-list', component: FrutsListComponent},
-  {path: 'apple/:id', component: AppleComponent},
+  // {path: 'fruts-list', component: FrutsListComponent},
+  // {path: 'apple/:id', component: AppleComponent},
   {path: '', redirectTo: '/home' , pathMatch: 'full'},
   {path: '**', component: NonePageComponent}
   // pusty link przkerowuje do home
