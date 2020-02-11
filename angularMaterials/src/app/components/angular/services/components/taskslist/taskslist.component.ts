@@ -71,10 +71,12 @@ export class TaskslistComponent implements OnInit {
     this.taskList.tasks = tempTaskList;
   }
 
-  // public sortTaskBY(type: string): void {
-  //   const
+  public sortTaskBY(type: string): void {
+    const sortingFunc = {
+      color: (a , b ) => ('' + a.color).localeCompare(b.color),
+    };
 
-  //   this.taskList.tasks.sort()
-  // }
+    this.taskList.tasks.sort();
+  }
 
 }
