@@ -12,11 +12,11 @@ export class TaskslistComponent implements OnInit {
   public colorList = ['red', 'green', 'yellow', 'gray', 'orange', 'silver', 'none'];
   public rateList = [0, 1, 2, 3, 4 , 5];
   public sortList = [
-    {name: 'Kolorami', func: null},
-    {name: 'Stopniem', func: null},
-    {name: 'Statusem', func: null},
-    {name: 'datą dodania', func: null},
-    {name: 'datą zakończenia', func: null},
+    {name: 'Kolorami', type: 'color'},
+    {name: 'Stopniem', type: 'rate'},
+    {name: 'Statusem', type: 'stat'},
+    {name: 'datą dodania', type: 'addDate'},
+    {name: 'datą zakończenia', type: 'endDate'},
   ];
   public newTaskname = '';
   public functionsButtonsActive = false;
@@ -39,9 +39,11 @@ export class TaskslistComponent implements OnInit {
       }
     });
   }
+
   public functionsButtonsActiveHandler(): boolean {
     return this.taskList.tasks.some(task => task.active === true);
   }
+
   public newTaskHandler(): void  {
     this.handler.addTaskId();
     const tempNewTask: TaskMedium = {
@@ -56,6 +58,7 @@ export class TaskslistComponent implements OnInit {
     this.taskList.tasks.unshift(tempNewTask);
     this.newTaskname = '';
   }
+
   public removeTaskhandler(task: TaskMedium): void  {
     const tempTaskList = this.taskList.tasks.slice();
     let indexId = 0;
@@ -67,5 +70,11 @@ export class TaskslistComponent implements OnInit {
     tempTaskList.splice(indexId, 1);
     this.taskList.tasks = tempTaskList;
   }
+
+  // public sortTaskBY(type: string): void {
+  //   const
+
+  //   this.taskList.tasks.sort()
+  // }
 
 }
