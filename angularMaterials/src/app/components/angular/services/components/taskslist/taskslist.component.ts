@@ -74,9 +74,11 @@ export class TaskslistComponent implements OnInit {
   public sortTaskBY(type: string): void {
     const sortingFunc = {
       color: (a , b ) => ('' + a.color).localeCompare(b.color),
+      rate: (a , b ) => ( a.rate - b.rate),
+      stat: (a , b ) => ((a.done === b.done) ? 0 : (a.done ? -1 : 1)),
     };
-
-    this.taskList.tasks.sort();
+    this.taskList.tasks.sort(sortingFunc[type]);
+    console.log(this.taskList.tasks, 'this.taskList.tasks');
   }
 
 }
