@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [ngStyle]="{'background': taskList.backgroundColor}">
   <mat-card-header>
     <mat-card-title [innerText]="taskList.listTitle"></mat-card-title>
   </mat-card-header>
@@ -25,6 +25,9 @@
     <button mat-button appCollapse [child]="moreListOptions" [startHeight]="0" [duration]="250" [innerText]="moreListOptions.classList.contains('active') ? 'Pokaż mniej':'Pokaż więcej'"></button>
   </mat-card-actions>
   <mat-card-actions #moreListOptions>
-    <button mat-button>Kolor listy</button>
+    <button mat-button [matMenuTriggerFor]="menuColorList">Kolor listy</button>
+    <mat-menu class="colorMenu" #menuColorList="matMenu">
+      <button (click)="taskListColorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
+    </mat-menu>
   </mat-card-actions>
 </mat-card>

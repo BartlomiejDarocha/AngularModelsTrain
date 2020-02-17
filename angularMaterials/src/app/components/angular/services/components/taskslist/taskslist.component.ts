@@ -40,6 +40,11 @@ export class TaskslistComponent implements OnInit {
     });
   }
 
+  public taskListColorHandler(color: string): void {
+    this.taskList.backgroundColor = color;
+    console.log(this.taskList.backgroundColor);
+  }
+
   public functionsButtonsActiveHandler(): boolean {
     return this.taskList.tasks.some(task => task.active === true);
   }
