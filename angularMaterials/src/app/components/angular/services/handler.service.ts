@@ -81,22 +81,21 @@ export class HandlerService {
       ]
     }
   ];
+  
   constructor() {
     this.taskListObs.next(this.tasksLists);
    }
+
   public addTaskId(): void {
     this.taskIdCounter++;
   }
+
   public addNewTaskList(taskList: MediumTaskList): void {
     this.tasksLists.push(taskList);
     this.taskListObs.next(this.tasksLists);
   }
-  public colorHandler(): void {
-  }
+
   public getTaskList(): Observable<Array<MediumTaskList>> {
     return this.taskListObs.asObservable();
-  }
-  public checkLists(): void {
-    console.log(this.tasksLists, 'TaskLists Services');
   }
 }

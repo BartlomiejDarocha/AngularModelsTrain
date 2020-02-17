@@ -31,8 +31,5 @@ export class ServicesComponent implements OnInit {
     this.handler.addNewTaskList(newTaskList);
     this.newTaskListName = '';
   }
-  public checkListForTest(): void {
-    this.handler.checkLists();
-  }
 
 }

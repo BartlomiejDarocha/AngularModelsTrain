@@ -5,7 +5,6 @@
     <button mat-button (click)="addTaskList()">Dodaj</button>
   </div>
 </div>
-<button mat-button (click)="checkListForTest()">TestLists</button>
 <div class="d-inline-flex">
   <div class="taskListWrapper" *ngFor="let list of tasksLists">
     <app-taskslist [taskList]="list"></app-taskslist>
