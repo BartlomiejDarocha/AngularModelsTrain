@@ -1,11 +1,19 @@
 .menuWrapper {
-  border: 1px solid silver;
-  div {
+  border: 2px solid black;
+  overflow: hidden;
+   > div {
+     display: flex;
+     flex-direction: column;
     a {
       padding: 10px;
       text-align: center;
-      color: black;
-      border: 1px solid black;
+      color: #000000;
+    }
+    a:hover {
+      color: #ffff;
+      text-decoration: none;
+      background-color: #343a40;
+      font-weight: 600;
     }
   }
 }

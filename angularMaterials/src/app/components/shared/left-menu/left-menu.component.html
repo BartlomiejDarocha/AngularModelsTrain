@@ -1,5 +1,6 @@
 <div class="menuWrapper">
-  <div class="list-group list-group-flush">
-    <a *ngFor="let itemSubMenu of subMenu" routerLinkActive="router-link-active" [routerLink]="[itemSubMenu.url]" [innerText]="itemSubMenu.name"></a>
+  <div>
+      <!-- routerLinkActive="router-link-active" -->
+    <a *ngFor="let itemSubMenu of subMenu" [routerLink]="[itemSubMenu.url]" [innerText]="itemSubMenu.name"></a>
   </div>
 </div>
