@@ -19,6 +19,7 @@ import { ServpageModule } from './services/servpage.module';
 import { VievchildComponent } from './vievchild/vievchild.component';
 import { ViewchildModule } from './vievchild/viewchild.module';
 import { FormsModule } from '@angular/forms';
+import { ValidationModule } from './validation/validation.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -42,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     InputOutputModule,
     ServpageModule,
-    ViewchildModule
+    ViewchildModule,
+    ValidationModule
   ],
   exports: [
     AngularHomeComponent,

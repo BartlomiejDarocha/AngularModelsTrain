@@ -81,7 +81,7 @@ export class HandlerService {
       ]
     }
   ];
-  
+
   constructor() {
     this.taskListObs.next(this.tasksLists);
    }
