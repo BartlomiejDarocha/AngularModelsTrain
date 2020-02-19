@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/providers/api.service';
 export class PromiseComponent implements OnInit {
   ///// first Example
   public simplePromisResult = 'test';
+  public lernData: any;
   public testUrl = 'https://swapi.co/api/people';
   public simplePromose = new Promise((resolves, rejects) => {
     const mathTest = Math.floor(Math.random() * 8) + 2;
@@ -62,6 +63,7 @@ export class PromiseComponent implements OnInit {
     });
     console.log(newPromiseCounter, 'newPromiseCounter last');
   }
+
   public testThen() {
     const testPromis = this.api.getOnPromise(this.testUrl);
     testPromis.then((vallComplete) => {
@@ -75,6 +77,16 @@ export class PromiseComponent implements OnInit {
   public async getStarWarsBypromiseSimple(url: string) {
     return await this.http.get(url).toPromise(); // tutaj pobieranie api na promis angularowego http
   }
+
+  public async getbyThemWithApiPromise(): Promise<any> {
+    this.api.getOnPromise(this.testUrl).then(data => {
+      this.lernData = data;
+      console.log(this.lernData, '>>> lern data success');
+    }).catch(err => {
+      console.error(err, '>>>> error');
+    });
+  }
+
   public async testGeOnTry() {
     let test: any;
     try {

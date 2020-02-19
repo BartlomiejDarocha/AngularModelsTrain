@@ -13,7 +13,7 @@ export class ApiService {
     const paramTeset = {'people1': '1', 'people2': '3' };
     return this.http.get(url, {params: param});
   }
-  public async getOnPromise(url: string, param: any = null) {
+  public async getOnPromise(url: string, param: any = null): Promise<any> {
     return await this.http.get(url, {params: param}).toPromise();
     // toPromise i teraz jakos pormis i musi byc async i await
   }
