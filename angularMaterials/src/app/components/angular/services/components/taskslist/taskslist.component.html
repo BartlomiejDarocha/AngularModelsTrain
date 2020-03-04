@@ -16,7 +16,8 @@
     </mat-menu>
     <button mat-button [disabled]="!functionsButtonsActive" [matMenuTriggerFor]="menu">Kolor zadania</button>
     <mat-menu class="colorMenu" #menu="matMenu">
-      <button (click)="taskFunctionsHandler(0, color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
+      <button (click)="taskFunctionsHandler(0, color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}"
+        mat-menu-item></button>
     </mat-menu>
     <button mat-button [disabled]="!functionsButtonsActive" [matMenuTriggerFor]="rate">Stopień</button>
     <mat-menu #rate="matMenu">
@@ -27,7 +28,8 @@
   <mat-card-actions #moreListOptions>
     <button mat-button [matMenuTriggerFor]="menuColorList">Kolor listy</button>
     <mat-menu class="colorMenu" #menuColorList="matMenu">
-      <button (click)="taskListColorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}" mat-menu-item></button>
+      <button (click)="taskListColorHandler(color)" *ngFor="let color of colorList" [ngStyle]="{'background': color}"
+        mat-menu-item></button>
     </mat-menu>
   </mat-card-actions>
 </mat-card>
