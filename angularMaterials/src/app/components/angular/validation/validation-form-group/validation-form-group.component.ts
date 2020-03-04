@@ -25,6 +25,11 @@ export class ValidationFormGroupComponent implements OnInit {
       age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
       password: new FormControl('', [Validators.required])
     });
+    this.checkValidation();
+  }
+
+  public resetForm(): void {
+    this.form1.reset();
   }
 
   public submitTestForm(): void {
@@ -33,6 +38,13 @@ export class ValidationFormGroupComponent implements OnInit {
 
   public checkValidation(): void {
     console.log(this.form1, '>>>form1');
+  }
+
+  public markAsTouched(): void {
+    this.form1.markAsTouched();
+    this.form1.get('name').markAsTouched();
+    this.form1.get('age').markAsTouched();
+    this.form1.get('password').markAsTouched();
   }
 
 }
