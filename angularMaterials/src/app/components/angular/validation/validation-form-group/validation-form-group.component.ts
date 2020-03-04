@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-const AGEPATTERN = 
+const AGEPATTERN = /^\d+$/;
 
 @Component({
   selector: 'app-validation-form-group',
@@ -12,7 +12,6 @@ export class ValidationFormGroupComponent implements OnInit {
   public data = {
     name: '',
     age: '',
-    emial: '',
     password: '',
   };
 
@@ -20,11 +19,20 @@ export class ValidationFormGroupComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.form1 = new FormGroup({
       name: new FormControl(' ', [Validators.required]),
-      age: new FormControl(' ', [Validators.required, Validators.pattern()]),
+      age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
+      password: new FormControl('', [Validators.required])
     });
+  }
+
+  public submitTestForm(): void {
+    console.log('submit testForm');
+  }
+
+  public checkValidation(): void {
+    console.log(this.form1, '>>>form1');
   }
 
 }
