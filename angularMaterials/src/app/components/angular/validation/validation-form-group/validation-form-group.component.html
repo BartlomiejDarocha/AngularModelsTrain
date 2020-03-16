@@ -5,23 +5,28 @@
     </mat-card-header>
     <mat-card-content>
       <div>
-        <input matInput placeholder="name" [(ngModel)]="data.name" formControlName="name">
+        <input matInput placeholder="name" formControlName="name">
       </div>
       <div *ngIf="form1.get('name').hasError('required') && form1.get('name').touched">Error name</div>
       <div>
-        <input matInput placeholder="age" [(ngModel)]="data.age" formControlName="age">
+        <input matInput placeholder="age" formControlName="age">
       </div>
       <div *ngIf="(form1.get('age').hasError('required') || form1.get('age').hasError('pattern')) && form1.get('age').touched">ErrorAge</div>
       <div>
-        <input matInput placeholder="password" type="password" [(ngModel)]="data.password" formControlName="password">
+        <input matInput placeholder="password" type="password" formControlName="password">
       </div>
       <div *ngIf="form1.get('password').hasError('required') && form1.get('password').touched">Error password</div>
+      <div>
+        <input matInput placeholder="NickName" type="text" formControlName="nickName">
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button [disabled]="form1.invalid" type="submit">Submit</button>
       <button mat-button (click)="checkValidation()" type="button">testValidaton</button>
       <button mat-button (click)="resetForm()" type="button">resetForm</button>
-      <button mat-button (click)="setNewValue()" type="button">setNewValue</button>
+      <button mat-button (click)="patchValue()" type="button">patchValue</button>
+      <button mat-button (click)="setValue()" type="button">setValue</button>
+      <button mat-button (click)="checkFormValue()" type="button">checkFormValues</button>
     </mat-card-actions>
   </form>
 </mat-card>
