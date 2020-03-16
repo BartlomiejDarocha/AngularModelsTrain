@@ -17,11 +17,21 @@ export class ValidationFormGroupComponent implements OnInit {
     this.form1 = new FormGroup({
       name: new FormControl('test', [Validators.required]),
       age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
+      nickName: new FormControl(''),
       password: new FormControl('', [Validators.required]),
-      nickName: new FormControl('')
+      confirmPassword: new FormControl('', [Validators.required])
     });
-    // this.checkValidation();
   }
+
+  private confirmPassHandler(input: FormControl) {
+    if (!input.root || !input.root.get('confirmPassword')) {
+      return null;
+    }
+    const exactMatch = this.form1.get('password').value === input.value;
+    console.log(exactMatch, 'exactMatch');
+    return exactMatch ? null : {missMatchPassword: true};
+  }
+
 
   public resetForm(): void {
     this.form1.reset();
@@ -52,6 +62,7 @@ export class ValidationFormGroupComponent implements OnInit {
     this.form1.updateValueAndValidity();
   }
 
+
   public setValue(): void {
     this.form1.get('age').setValue('valid test');
     this.form1.get('age').markAsTouched();
@@ -60,6 +71,7 @@ export class ValidationFormGroupComponent implements OnInit {
   public checkFormValue(): void {
     console.log(this.form1.value, 'form1 values');
   }
+
 
 
 }
