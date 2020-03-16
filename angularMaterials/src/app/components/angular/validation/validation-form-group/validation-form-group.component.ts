@@ -40,11 +40,22 @@ export class ValidationFormGroupComponent implements OnInit {
     console.log(this.form1, '>>>form1');
   }
 
+  // funckaj do zaznaczna różnych błędów
   public markAsTouched(): void {
-    this.form1.markAsTouched();
+    //this.form1.markAsTouched();
     this.form1.get('name').markAsTouched();
     this.form1.get('age').markAsTouched();
     this.form1.get('password').markAsTouched();
   }
+
+
+  // funckja do dodawanianowej wartosci oraz updateFormu
+  public setNewValue(): void {
+    this.form1.patchValue({
+      name: 'namePatchValeTest'
+    });
+    this.form1.updateValueAndValidity();
+  }
+
 
 }
