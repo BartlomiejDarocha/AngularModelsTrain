@@ -13,11 +13,11 @@
       </div>
       <div *ngIf="(form1.get('age').hasError('required') || form1.get('age').hasError('pattern')) && form1.get('age').touched">ErrorAge</div>
       <div>
-        <input matInput placeholder="password" type="password" formControlName="password">
+        <input (keyup)="passwordHandler($event)" matInput placeholder="password" type="text" formControlName="password">
       </div>
       <div *ngIf="form1.get('password').hasError('required') && form1.get('password').touched">Error password</div>
       <div>
-        <input matInput placeholder="Confrim password" type="password" formControlName="confirmPassword">
+        <input matInput placeholder="Confrim password" type="text" formControlName="confirmPassword">
       </div>
       <div>
         <div *ngIf="form1.get('confirmPassword').hasError('required') && form1.get('confirmPassword').touched">Error confirmPassword</div>
@@ -27,6 +27,7 @@
       <div>
         <input matInput placeholder="NickName" type="text" formControlName="nickName">
       </div>
+      <div *ngIf="(form1.get('nickName').hasError('required') || form1.get('nickName').hasError('pattern')) && form1.get('nickName').touched">NickName Error</div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button [disabled]="form1.invalid" type="submit">Submit</button>
@@ -35,6 +36,7 @@
       <button mat-button (click)="patchValue()" type="button">patchValue</button>
       <button mat-button (click)="setValue()" type="button">setValue</button>
       <button mat-button (click)="checkFormValue()" type="button">checkFormValues</button>
+      <button mat-button (click)="changeValidationControl()" type="button">AddToNickName required</button>
     </mat-card-actions>
   </form>
 </mat-card>

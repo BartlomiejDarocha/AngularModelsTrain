@@ -10,6 +10,7 @@ const AGEPATTERN = /^\d+$/;
 })
 export class ValidationFormGroupComponent implements OnInit {
   public form1: FormGroup;
+  private passwordValue = '';
 
   constructor() { }
 
@@ -19,13 +20,17 @@ export class ValidationFormGroupComponent implements OnInit {
       age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
       nickName: new FormControl(''),
       password: new FormControl('', [Validators.required]),
-      confirmPassword: new FormControl('', [Validators.required, this.confirmPassHandler('test')])
+      confirmPassword: new FormControl('', [Validators.required, this.confirmPassHandler()])
     });
   }
-  private confirmPassHandler(password: string): ValidatorFn {
+
+  public passwordHandler($event: any): void {
+    this.passwordValue = $event.target.value;
+  }
+
+  private confirmPassHandler(): ValidatorFn {
     return(currentControl: AbstractControl): { [key: string]: boolean } => {
-      console.log(currentControl.value, 'currentControl.value');
-      if (currentControl.value !== password) {
+      if (currentControl.value !== this.passwordValue) {
         return {missMatchPassword: true};
       }
     };
@@ -69,6 +74,10 @@ export class ValidationFormGroupComponent implements OnInit {
 
   public checkFormValue(): void {
     console.log(this.form1.value, 'form1 values');
+  }
+
+  public changeValidationControl(): void {
+    this.form1.get('nickName').setValidators([Validators.required, Validators.pattern(AGEPATTERN)]);
   }
 
 
