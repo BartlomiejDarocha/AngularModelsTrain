@@ -17,6 +17,14 @@
       </div>
       <div *ngIf="form1.get('password').hasError('required') && form1.get('password').touched">Error password</div>
       <div>
+        <input matInput placeholder="Confrim password" type="password" formControlName="confirmPassword">
+      </div>
+      <div>
+        <div *ngIf="form1.get('confirmPassword').hasError('required') && form1.get('confirmPassword').touched">Error confirmPassword</div>
+        <div *ngIf="form1.get('confirmPassword').hasError('missMatchPassword') && form1.get('confirmPassword').dirty">Error confirmPassword notMatch</div>
+        <!-- dirty gdy juz piszmey, touched jak nazwa wskazuje -->
+      </div>
+      <div>
         <input matInput placeholder="NickName" type="text" formControlName="nickName">
       </div>
     </mat-card-content>
