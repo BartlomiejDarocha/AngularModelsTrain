@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 const AGEPATTERN = /^\d+$/;
 
@@ -19,17 +19,29 @@ export class ValidationFormGroupComponent implements OnInit {
       age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
       nickName: new FormControl(''),
       password: new FormControl('', [Validators.required]),
-      confirmPassword: new FormControl('', [Validators.required])
+      confirmPassword: new FormControl('', [Validators.required, this.confirmPassHandler('test') ])
     });
   }
 
-  private confirmPassHandler(input: FormControl) {
-    if (!input.root || !input.root.get('confirmPassword')) {
-      return null;
-    }
-    const exactMatch = this.form1.get('password').value === input.value;
-    console.log(exactMatch, 'exactMatch');
-    return exactMatch ? null : {missMatchPassword: true};
+  // private confirmPassHandler(input: FormControl) {
+  //   if (!input.root || !input.root.get('confirmPassword')) {
+  //     return null;
+  //   }
+  //   const exactMatch = this.form1.get('password').value === input.value;
+  //   console.log(exactMatch, 'exactMatch');
+  //   return exactMatch ? null : {missMatchPassword: true};
+  // }
+
+  private confirmPassHandler(password: string): ValidatorFn {
+    return(currentControl: AbstractControl): { [key: string]: boolean } => {
+      const tempCurrentValue = currentControl.value;
+      console.log(currentControl.value, 'currentControl.value');
+      // tempCurrentValue = parseInt(tempCurrentValue);
+      // if (tempCurrentValue > num) {
+      //   return { seatsValid: true };
+      // }
+      return { test: true};
+    };
   }
 
 
