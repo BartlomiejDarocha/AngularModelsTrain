@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ValidationFormGroupComponent } from './validation-form-group/validation-form-group.component';
 import { MatInputModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidationNgmodelComponent } from './validation-ngmodel/validation-ngmodel.component';
 
 @NgModule({
   declarations: [
-    ValidationFormGroupComponent
+    ValidationFormGroupComponent,
+    ValidationNgmodelComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule
   ],
   exports: [
-    ValidationFormGroupComponent
+    ValidationFormGroupComponent,
+    ValidationNgmodelComponent
   ]
 })
 export class ValidationModule { }

@@ -1,0 +1,23 @@
+<p>
+  validation-ngmodel works!
+</p>
+<form>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>FormGroup Validation</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <input matInput placeholder="name" [(ngModel)]="newData.name" name="name" #name="ngModel" required>
+      </div>
+      <div *ngIf="name.hasError('required') && name.touched">Error name</div>
+      <div>
+        <input matInput placeholder="age" [(ngModel)]="newData.age" name="age" #age="ngModel" required>
+      </div>
+      <div *ngIf="age.hasError('required') && age.touched">Error age</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [disabled]="true" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
