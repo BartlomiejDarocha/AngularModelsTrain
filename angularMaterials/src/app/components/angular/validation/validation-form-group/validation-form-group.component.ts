@@ -26,6 +26,12 @@ export class ValidationFormGroupComponent implements OnInit {
 
   public passwordHandler($event: any): void {
     this.passwordValue = $event.target.value;
+    this.form1.updateValueAndValidity();
+    // console.log(this.form1, 'this.form1');
+    console.log(this.form1.get('confirmPassword'), 'confirmPassword control');
+    // if (this.form1.get('confirmPassword').getError('missMatchPassword')) {
+    //   console.log('jest missMatchPassword');
+    // }
   }
 
   private confirmPassHandler(): ValidatorFn {
