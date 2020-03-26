@@ -11,6 +11,7 @@ const AGEPATTERN = /^\d+$/;
 export class ValidationFormGroupComponent implements OnInit {
   public form1: FormGroup;
   private passwordValue = '';
+  private confirmPasswrodValue = '';
 
   constructor() { }
 
@@ -26,12 +27,7 @@ export class ValidationFormGroupComponent implements OnInit {
 
   public passwordHandler($event: any): void {
     this.passwordValue = $event.target.value;
-    this.form1.updateValueAndValidity();
-    // console.log(this.form1, 'this.form1');
-    console.log(this.form1.get('confirmPassword'), 'confirmPassword control');
-    // if (this.form1.get('confirmPassword').getError('missMatchPassword')) {
-    //   console.log('jest missMatchPassword');
-    // }
+    this.form1.get('confirmPassword').setValue(this.form1.get('confirmPassword').value);
   }
 
   private confirmPassHandler(): ValidatorFn {
@@ -72,7 +68,7 @@ export class ValidationFormGroupComponent implements OnInit {
     this.form1.updateValueAndValidity();
   }
 
-
+  // odrazu po SetValue odpala się sprawdzanie validacji
   public setValue(): void {
     this.form1.get('age').setValue('valid test');
     this.form1.get('age').markAsTouched();
