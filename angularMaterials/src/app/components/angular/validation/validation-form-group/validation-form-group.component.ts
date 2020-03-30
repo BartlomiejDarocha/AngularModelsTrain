@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { GetterSetterService } from 'src/app/providers/getter-setter.service';
 
 const AGEPATTERN = /^\d+$/;
 
@@ -11,10 +12,14 @@ const AGEPATTERN = /^\d+$/;
 export class ValidationFormGroupComponent implements OnInit {
   public form1: FormGroup;
   private passwordValue = '';
+  public getStarWarsDataByGetterTest: any;
 
-  constructor() { }
+  constructor(private getterSetterService: GetterSetterService) { }
 
   public ngOnInit(): void {
+    this.getterSetterService.loadData().subscribe((data: any) => {
+      this.getterSetterService.setStarWarsPeople(data);
+    });
     this.form1 = new FormGroup({
       name: new FormControl('test', [Validators.required]),
       age: new FormControl('', [Validators.required, Validators.pattern(AGEPATTERN)]),
@@ -44,6 +49,8 @@ export class ValidationFormGroupComponent implements OnInit {
 
   public submitTestForm(): void {
     console.log('submit testForm');
+    this.getStarWarsDataByGetterTest = this.getterSetterService.getStarWarsPeople();
+    console.log(this.getStarWarsDataByGetterTest, 'this.getStarWarsDataByGetterTest');
   }
 
   public checkValidation(): void {

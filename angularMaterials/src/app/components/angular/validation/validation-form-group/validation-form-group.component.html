@@ -13,11 +13,11 @@
       </div>
       <div *ngIf="(form1.get('age').hasError('required') || form1.get('age').hasError('pattern')) && form1.get('age').touched">ErrorAge</div>
       <div>
-        <input (keyup)="passwordHandler($event)" matInput placeholder="password" type="text" formControlName="password">
+        <input (keyup)="passwordHandler($event)" matInput placeholder="password" type="password" formControlName="password">
       </div>
       <div *ngIf="form1.get('password').hasError('required') && form1.get('password').touched">Error password</div>
       <div>
-        <input matInput placeholder="Confrim password" type="text" formControlName="confirmPassword">
+        <input matInput placeholder="Confrim password" type="password" formControlName="confirmPassword">
       </div>
       <div>
         <div *ngIf="form1.get('confirmPassword').hasError('required') && form1.get('confirmPassword').touched">Error confirmPassword</div>

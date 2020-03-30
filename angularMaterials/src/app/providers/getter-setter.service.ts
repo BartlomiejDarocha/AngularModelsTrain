@@ -15,12 +15,11 @@ export class GetterSetterService {
   }
 
   public setStarWarsPeople(data: any): void {
-    this.setStarWarsPeople = data;
-    console.log(this.setStarWarsPeople, 'this.setStarWarsPeople');
+    this.starWarsPeople = data;
   }
 
   public getStarWarsPeople(): any {
-    return this.setStarWarsPeople;
+    return this.starWarsPeople;
   }
 
 

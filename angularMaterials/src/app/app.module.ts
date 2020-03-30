@@ -33,6 +33,7 @@ import { InterceptorDialogComponent } from './components/dialogs/dialogsTemplate
 import { DialogsModule } from './components/dialogs/dialogs.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AngularModule } from './components/angular/angular.module';
+import { GetterSetterService } from './providers/getter-setter.service';
 // entry components
 // tslint:disable-next-line:max-line-length
 
@@ -74,7 +75,8 @@ import { AngularModule } from './components/angular/angular.module';
     DialogService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
     ApiService,
-    LoaderService
+    LoaderService,
+    GetterSetterService
   ],
   bootstrap: [AppComponent]
 })
