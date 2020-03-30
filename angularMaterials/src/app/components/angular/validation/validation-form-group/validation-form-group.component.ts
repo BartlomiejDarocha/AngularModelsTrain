@@ -11,7 +11,6 @@ const AGEPATTERN = /^\d+$/;
 export class ValidationFormGroupComponent implements OnInit {
   public form1: FormGroup;
   private passwordValue = '';
-  private confirmPasswrodValue = '';
 
   constructor() { }
 
