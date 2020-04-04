@@ -3,6 +3,19 @@
     Tu sa Wyświetlanie dzieci tego modułu:
   </div>
   <div>
+    <h4>
+      Poziom pierwszy Lista elementów, <br>
+      Wyszykiwanie po id oraz filtrowanie w kompnencie
+    </h4>
+    <div>
+      <ul>
+        <li *ngFor="let item of onelvlRoutingData">
+          <a [routerLink]="'onelvl/' + item.id">{{item.name}} o kolorze {{item.color}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
     <router-outlet></router-outlet>
   </div>
 </div>

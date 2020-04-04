@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModService } from './router-mod.service';
 
 @Component({
   selector: 'app-routing',
@@ -7,14 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoutingComponent implements OnInit {
 
-  public onelvlRoutingData = [
-    {id: 1, name: 'box1', color: 'red'},
-    {id: 2, name: 'box2', color: 'orange'},
-    {id: 3, name: 'box3', color: 'blue'},
-    {id: 4, name: 'box4', color: 'gray'},
-  ];
+  public onelvlRoutingData = [];
 
-  constructor() { }
+  constructor(private routerModService: RouterModService) {
+    this.onelvlRoutingData = this.routerModService.GetOnelvlRoutingData();
+    console.log(this.onelvlRoutingData , 'onelvlRoutingData');
+   }
 
   ngOnInit() {
   }

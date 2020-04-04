@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: 'routing', component: RoutingComponent,
         children: [
-          {path: 'onelvl', component : OneLvlRotuingComponent}
+          {path: 'onelvl/:id', component : OneLvlRotuingComponent}
         ]
       },
       {path: 'modules', component: ModulesComponent},
