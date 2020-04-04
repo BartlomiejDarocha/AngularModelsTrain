@@ -11,30 +11,7 @@
     <app-header [menuList]="menuList" (mobileMenuExecuter)="openMenu($event, sidenav)"></app-header>
     <!-- <button (click)="openMenu($event, leftSidenav)">Opel left Menu</button> -->
     <app-loader></app-loader>
-    <!-- <div class="d-flex justify-content-start">
-      <div class="row">
-        <div class="col-xl-4"> -->
 
-    <!-- <button mat-button>Click me!</button>
-            <app-login></app-login>
-        <app-dialogs></app-dialogs>
-        <div class="d-flex justify-content-center">
-          <ngb-datepicker #dp [(ngModel)]="dataModel" (navigate)="date = $event.next"></ngb-datepicker>
-        </div>
-        <hr />
-        <div class="d-flex justify-content-center">
-          <div>
-            <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
-            <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
-            <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb
-              2013</button>
-            </div>
-          </div> -->
-    <!-- </div>
-    <div class="col-xl-8">
-    </div>
-  </div>
-</div> -->
   <div class="pr-2">
     <router-outlet></router-outlet>
   </div>
