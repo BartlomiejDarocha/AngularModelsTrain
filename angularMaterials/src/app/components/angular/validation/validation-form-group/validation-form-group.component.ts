@@ -19,6 +19,7 @@ export class ValidationFormGroupComponent implements OnInit {
   public ngOnInit(): void {
     this.getterSetterService.loadData().subscribe((data: any) => {
       this.getterSetterService.setStarWarsPeople(data);
+      // zastoswoanie prostego gettera;
     });
     this.form1 = new FormGroup({
       name: new FormControl('test', [Validators.required]),
