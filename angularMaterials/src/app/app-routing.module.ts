@@ -12,7 +12,7 @@ const routes: Routes = [
   // {path: 'fruts-list', component: FrutsListComponent},
   // {path: 'apple/:id', component: AppleComponent},
   {path: '', redirectTo: '/home' , pathMatch: 'full'},
-  {path: '**', component: NonePageComponent}
+  {path: '**', component: NonePageComponent},
   // pusty link przkerowuje do home
   // ** brak strony przekierwuje do brak NonePageComponent
 ];

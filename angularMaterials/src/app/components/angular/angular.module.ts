@@ -20,6 +20,7 @@ import { VievchildComponent } from './vievchild/vievchild.component';
 import { ViewchildModule } from './vievchild/viewchild.module';
 import { FormsModule } from '@angular/forms';
 import { ValidationModule } from './validation/validation.module';
+import { RoutingModule } from './routing/routing.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -33,7 +34,7 @@ import { ValidationModule } from './validation/validation.module';
     DirectivesComponent,
     IntercereptorsComponent,
     PromiseComponent,
-    VievchildComponent,
+    VievchildComponent
     ],
   imports: [
     CommonModule,
@@ -44,7 +45,8 @@ import { ValidationModule } from './validation/validation.module';
     InputOutputModule,
     ServpageModule,
     ViewchildModule,
-    ValidationModule
+    ValidationModule,
+    RoutingModule
   ],
   exports: [
     AngularHomeComponent,
