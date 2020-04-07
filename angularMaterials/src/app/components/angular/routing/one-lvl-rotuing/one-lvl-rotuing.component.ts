@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModService } from '../router-mod.service';
 
@@ -7,24 +7,22 @@ import { RouterModService } from '../router-mod.service';
   templateUrl: './one-lvl-rotuing.component.html',
   styleUrls: ['./one-lvl-rotuing.component.less']
 })
-export class OneLvlRotuingComponent implements OnInit {
+export class OneLvlRotuingComponent {
   private onelvlRoutingData: Array<any>;
-  private boxId: number;
+  public routingBox: any;
 
   constructor(
     private route: ActivatedRoute,
     private routerModService: RouterModService
   ) {
-    this.route.params.subscribe((data: any) => {
-      console.log(data, 'data params');
-    });
     this.onelvlRoutingData = this.routerModService.GetOnelvlRoutingData();
-    console.log(this.onelvlRoutingData, 'onleLvlRoutingData component');
+    this.route.params.subscribe((data: any) => {
+      if (this.onelvlRoutingData) {
+        // tslint:disable-next-line:radix
+        this.routingBox = this.searchbox(parseInt(data.id));
+      }
+    });
    }
-
-  ngOnInit() {
-
-  }
 
   private searchbox(boxId: number) {
     return this.onelvlRoutingData.find(box => box.id === boxId);
