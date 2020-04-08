@@ -3,18 +3,23 @@ import { CommonModule } from '@angular/common';
 import { OneLvlRotuingComponent } from './one-lvl-rotuing/one-lvl-rotuing.component';
 import { RouterModService } from './router-mod.service';
 import { TwolvlRoutingComponent } from './twolvlRouting/twolvl-routing/twolvl-routing.component';
+import { GrandChildComponent } from './twolvlRouting/grand-child/grand-child.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     OneLvlRotuingComponent,
-    TwolvlRoutingComponent
+    TwolvlRoutingComponent,
+    GrandChildComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     OneLvlRotuingComponent,
-    TwolvlRoutingComponent
+    TwolvlRoutingComponent,
+    GrandChildComponent
   ],
   providers: [
     RouterModService

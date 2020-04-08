@@ -1,11 +1,14 @@
 <div>
   <h4>To jest dziecko Poziomu drugiego <br>
-    Nazwa listy to {{listName.name}}
+    Nazwa listy to {{dataElement.name}}
   </h4>
   <div>
+    <li *ngFor="let item of dataElement.list">
+      <a [routerLink]="'twolvlGrand/' + item.id">{{item.name}} o kolorze {{item.color}}</a>
+    </li>
     tu bedzie lista wnuków
   </div>
 </div>
-<!-- <div>
+<div>
   <router-outlet></router-outlet>
-</div> -->
+</div>

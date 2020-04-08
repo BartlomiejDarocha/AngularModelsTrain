@@ -9,15 +9,15 @@ import { RouterModService } from '../../router-mod.service';
 })
 export class TwolvlRoutingComponent implements OnInit {
   private twolvlRoutingData = [];
-  public listName: any;
+  public dataElement: any;
   constructor(
     private route: ActivatedRoute,
     private routerModService: RouterModService
   ) {
     this.twolvlRoutingData = this.routerModService.GetTwolvlRoutingData();
     this.route.params.subscribe((data: any) => {
-      this.listName = this.twoLvlRutingChildFilterHandler(data.id);
-      console.log(this.listName, 'listName');
+      this.dataElement = this.twoLvlRutingChildFilterHandler(data.id);
+      console.log(this.dataElement, 'dataElement');
     });
    }
 
