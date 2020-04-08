@@ -36,4 +36,7 @@ export class RouterModService {
   public GetOnelvlRoutingData(): Array<any> {
     return this.onelvlRoutingData;
   }
+  public GetTwolvlRoutingData(): Array<any> {
+    return this.twolvlRoutingData;
+  }
 }
