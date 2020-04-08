@@ -12,6 +12,7 @@ export class RouterModService {
   ];
   private twolvlRoutingData = [
     {
+      id: 1,
       name: 'name1',
       list: [
         { id: 1, name: 'box1name1', color: 'red' },
@@ -21,6 +22,7 @@ export class RouterModService {
       ]
     },
     {
+      id: 2,
       name: 'name2',
       list: [
         { id: 1, name: 'box1name2', color: 'red' },

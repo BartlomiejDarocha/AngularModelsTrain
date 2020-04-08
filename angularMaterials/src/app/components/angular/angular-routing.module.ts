@@ -13,6 +13,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PromiseComponent } from './promise/promise.component';
 import { VievchildComponent } from './vievchild/vievchild.component';
 import { OneLvlRotuingComponent } from './routing/one-lvl-rotuing/one-lvl-rotuing.component';
+import { TwolvlRoutingComponent } from './routing/twolvlRouting/twolvl-routing/twolvl-routing.component';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
@@ -21,7 +22,13 @@ const routes: Routes = [
       {
         path: 'routing', component: RoutingComponent,
         children: [
-          {path: 'onelvl/:id', component : OneLvlRotuingComponent}
+          {path: 'onelvl/:id', component : OneLvlRotuingComponent},
+          {
+            path: 'twolvl/:id', component : TwolvlRoutingComponent,
+            // children: [
+            //   {path: 'twolvlGrand/:id', component : OneLvlRotuingComponent}
+            // ]
+          }
         ]
       },
       {path: 'modules', component: ModulesComponent},

@@ -19,6 +19,11 @@
     <h4>
       Poziom drugi Lista elemtów, <br>
       Wyszukiwanie po id z tablicy filtr po w dziecku nastepnie szukanie po id i filtr w wnuczku
+      <ul>
+        <li *ngFor="let item of twolvlRoutingData">
+          <a [routerLink]="'twolvl/' + item.id">Nazwa Listy boksów {{item.name}}</a>
+        </li>
+      </ul>
     </h4>
   </div>
   <div>
