@@ -31,12 +31,24 @@ export class RouterModService {
     }
   ];
 
+  private childLvlTwo: any;
+
   constructor() { }
 
   public GetOnelvlRoutingData(): Array<any> {
     return this.onelvlRoutingData;
   }
+
   public GetTwolvlRoutingData(): Array<any> {
     return this.twolvlRoutingData;
   }
+
+  public setChildlvlTwo(child: any): void {
+    this.childLvlTwo = child;
+  }
+
+  public getChildlvlTwo(): any {
+    return this.childLvlTwo;
+  }
+
 }
