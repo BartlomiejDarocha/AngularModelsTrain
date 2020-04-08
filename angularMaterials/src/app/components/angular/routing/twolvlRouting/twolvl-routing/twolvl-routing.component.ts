@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModService } from '../../router-mod.service';
 
@@ -7,7 +7,7 @@ import { RouterModService } from '../../router-mod.service';
   templateUrl: './twolvl-routing.component.html',
   styleUrls: ['./twolvl-routing.component.less']
 })
-export class TwolvlRoutingComponent implements OnInit {
+export class TwolvlRoutingComponent {
   private twolvlRoutingData = [];
   public dataElement: any;
   constructor(
@@ -17,12 +17,9 @@ export class TwolvlRoutingComponent implements OnInit {
     this.twolvlRoutingData = this.routerModService.GetTwolvlRoutingData();
     this.route.params.subscribe((data: any) => {
       this.dataElement = this.twoLvlRutingChildFilterHandler(data.id);
-      console.log(this.dataElement, 'dataElement');
+      this.routerModService.setChildlvlTwo(this.dataElement);
     });
    }
-
-  ngOnInit() {
-  }
 
   private twoLvlRutingChildFilterHandler(id: string) {
     return this.twolvlRoutingData.find((el: any) => {

@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RouterModService } from '../../router-mod.service';
 
 @Component({
   selector: 'app-grand-child',
   templateUrl: './grand-child.component.html',
   styleUrls: ['./grand-child.component.less']
 })
-export class GrandChildComponent implements OnInit {
+export class GrandChildComponent {
+  private twoLvlGrandData: any;
+  public routingBox;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private routerModService: RouterModService
+  ) {
+    this.twoLvlGrandData = this.routerModService.getChildlvlTwo();
+    this.route.params.subscribe((data: any) => {
+      if (this.twoLvlGrandData) {
+        // tslint:disable-next-line:radix
+        this.routingBox = this.searchbox(parseInt(data.id));
+      }
+    });
+   }
 
-  ngOnInit() {
+  private searchbox(boxId: number) {
+    return this.twoLvlGrandData.list.find(box => box.id === boxId);
   }
 
 }
