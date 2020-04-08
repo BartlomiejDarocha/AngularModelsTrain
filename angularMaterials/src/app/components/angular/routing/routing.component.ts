@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class RoutingComponent implements OnInit {
 
   public onelvlRoutingData = [];
+  public twolvlRoutingData = [];
 
   constructor(
     private routerModService: RouterModService,
