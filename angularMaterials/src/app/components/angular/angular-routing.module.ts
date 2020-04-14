@@ -15,24 +15,25 @@ import { VievchildComponent } from './vievchild/vievchild.component';
 import { OneLvlRotuingComponent } from './routing/one-lvl-rotuing/one-lvl-rotuing.component';
 import { TwolvlRoutingComponent } from './routing/twolvlRouting/twolvl-routing/twolvl-routing.component';
 import { GrandChildComponent } from './routing/twolvlRouting/grand-child/grand-child.component';
-import { RoutingRoutingModule } from './routing/routing-routing.module';
+import { routingChildren } from './routing/routing-routing.module';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
     children: [
-      // {path: 'inOutPut', component: InoutPutComponent},
-      // {
-      //   path: 'routing', component: RoutingComponent,
-      //   children: [
-      //     {path: 'onelvl/:id', component: OneLvlRotuingComponent},
-      //     {
-      //       path: 'twolvl/:id', component: TwolvlRoutingComponent,
-      //       children: [
-      //         {path: 'twolvlGrand/:id', component: GrandChildComponent}
-      //       ]
-      //     }
-      //   ]
-      // },
+      {path: 'inOutPut', component: InoutPutComponent},
+      {
+        path: 'routing', component: RoutingComponent,
+        // loadChildren:
+        // children: [
+        //   {path: 'onelvl/:id', component: OneLvlRotuingComponent},
+        //   {
+        //     path: 'twolvl/:id', component: TwolvlRoutingComponent,
+        //     children: [
+        //       {path: 'twolvlGrand/:id', component: GrandChildComponent}
+        //     ]
+        //   }
+        // ]
+      },
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},
       {path: 'validation', component: ValidationComponent},
@@ -48,7 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RoutingRoutingModule,
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule]

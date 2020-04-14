@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModService } from '../../router-mod.service';
+import { RoutingRoutingModule } from '../../routing-routing.module';
+
+// const testRouterImported = RoutingRoutingModule.prototype.routes;
 
 @Component({
   selector: 'app-twolvl-routing',
@@ -26,6 +29,12 @@ export class TwolvlRoutingComponent {
       // tslint:disable-next-line:radix
       return el.id === parseInt(id);
     });
+  }
+
+  public testRouter() {
+    console.log(RoutingRoutingModule);
+    // const testRouterInMethod = testRouterImported.prototype.getRouters();
+    // console.log(testRouterInMethod, 'testRouterInMethod');
   }
 
 }
