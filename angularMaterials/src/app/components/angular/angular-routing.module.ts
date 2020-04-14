@@ -23,8 +23,11 @@ const routes: Routes = [
       {path: 'inOutPut', component: InoutPutComponent},
       {
         path: 'routing', component: RoutingComponent,
-        // użycie loadChildren ładuje dzieci z innego modułu
-        // loadChildren:
+        children: routingChildren
+        // użycie imporotwanie z innego pliku /\
+
+        // użycie standartowe ale utrudnia czytanie kodu \/
+
         // children: [
         //   {path: 'onelvl/:id', component: OneLvlRotuingComponent},
         //   {
