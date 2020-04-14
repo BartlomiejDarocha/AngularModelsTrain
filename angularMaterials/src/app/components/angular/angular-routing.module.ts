@@ -15,7 +15,7 @@ import { VievchildComponent } from './vievchild/vievchild.component';
 import { OneLvlRotuingComponent } from './routing/one-lvl-rotuing/one-lvl-rotuing.component';
 import { TwolvlRoutingComponent } from './routing/twolvlRouting/twolvl-routing/twolvl-routing.component';
 import { GrandChildComponent } from './routing/twolvlRouting/grand-child/grand-child.component';
-import { routingChildren } from './routing/routing-routing.module';
+import { routingChildren } from './routing/lvlTwoChildren.routing';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
@@ -23,6 +23,7 @@ const routes: Routes = [
       {path: 'inOutPut', component: InoutPutComponent},
       {
         path: 'routing', component: RoutingComponent,
+        // użycie loadChildren ładuje dzieci z innego modułu
         // loadChildren:
         // children: [
         //   {path: 'onelvl/:id', component: OneLvlRotuingComponent},
