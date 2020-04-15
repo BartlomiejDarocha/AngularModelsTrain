@@ -9,6 +9,7 @@ export class AngularHomeComponent implements OnInit {
   public subMenu = [
     {url: 'inOutPut', name: 'Input i Output'},
     {url: 'routing', name: 'Routing'},
+    {url: 'lazyRouting', name: 'LazyRouting'},
     {url: 'modules', name: 'Modułowość'},
     {url: 'services', name: 'Servisy'},
     {url: 'validation', name: 'Validacja'},
