@@ -34,7 +34,7 @@ import { RoutingModule } from './routing/routing.module';
     DirectivesComponent,
     IntercereptorsComponent,
     PromiseComponent,
-    VievchildComponent
+    VievchildComponent,
     ],
   imports: [
     CommonModule,
