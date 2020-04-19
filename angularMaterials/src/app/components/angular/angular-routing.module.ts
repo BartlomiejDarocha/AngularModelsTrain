@@ -38,10 +38,10 @@ const routes: Routes = [
         //   }
         // ]
       },
-      // {
-      //   path: 'lazyRouting',
-      //   loadChildren:
-      // },
+      {
+        path: 'lazyRouting',
+        loadChildren: () => import('./lazy-routing/lazy-routing.module').then(m => m.LazyRoutingModule)
+      },
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},
       {path: 'validation', component: ValidationComponent},
