@@ -21,6 +21,7 @@ import { ViewchildModule } from './vievchild/viewchild.module';
 import { FormsModule } from '@angular/forms';
 import { ValidationModule } from './validation/validation.module';
 import { RoutingModule } from './routing/routing.module';
+import { LazyRoutingComponentTwoComponent } from './lazy-routing/lazy-routing-component-two/lazy-routing-component-two.component';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -35,6 +36,7 @@ import { RoutingModule } from './routing/routing.module';
     IntercereptorsComponent,
     PromiseComponent,
     VievchildComponent,
+    LazyRoutingComponentTwoComponent,
     ],
   imports: [
     CommonModule,
