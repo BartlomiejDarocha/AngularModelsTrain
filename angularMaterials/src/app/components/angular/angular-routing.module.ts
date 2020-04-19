@@ -39,6 +39,8 @@ const routes: Routes = [
         // ]
       },
       {
+        // dzięki temu rozwiązaniu wszytskie moduły sa załadowne gdy zostanie wywłoany dany routing
+        // zwiększa to wydajność aplikaci i jest polecne w dużych projektach
         path: 'lazyRouting',
         loadChildren: './lazy-routing/lazy-routing-component/lazy-routing.module#LazyRoutingModule'
         // te rozwiązanie dale anglara 8 plus dodanie do tsconfigu  "module": "esnext", // add this line
