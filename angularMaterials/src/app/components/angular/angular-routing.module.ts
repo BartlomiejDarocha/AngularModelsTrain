@@ -40,7 +40,9 @@ const routes: Routes = [
       },
       {
         path: 'lazyRouting',
-        loadChildren: () => import('./lazy-routing/lazy-routing.module').then(m => m.LazyRoutingModule)
+        loadChildren: './lazy-routing/lazy-routing-component/lazy-routing.module#LazyRoutingModule'
+        // te rozwiązanie dale anglara 8 plus dodanie do tsconfigu  "module": "esnext", // add this line
+        // loadChildren: () => import('./lazy-routing/lazy-routing-component/lazy-routing.module').then(m => m.LazyRoutingModule)
       },
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},
