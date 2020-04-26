@@ -10,6 +10,7 @@ export class AngularHomeComponent implements OnInit {
     {url: 'inOutPut', name: 'Input i Output'},
     {url: 'routing', name: 'Routing'},
     {url: 'lazyRouting', name: 'LazyRouting'},
+    {url: 'rxjs', name: 'rxjs obs, sub, event'}
     {url: 'modules', name: 'Modułowość'},
     {url: 'services', name: 'Servisy'},
     {url: 'validation', name: 'Validacja'},
