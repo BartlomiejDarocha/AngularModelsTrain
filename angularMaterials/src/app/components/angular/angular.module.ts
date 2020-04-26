@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { ValidationModule } from './validation/validation.module';
 import { RoutingModule } from './routing/routing.module';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { RxjsModule } from './rxjs/rxjs.module';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -48,7 +49,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ServpageModule,
     ViewchildModule,
     ValidationModule,
-    RoutingModule
+    RoutingModule,
+    RxjsModule
   ],
   exports: [
     AngularHomeComponent,
