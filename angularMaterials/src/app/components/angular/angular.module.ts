@@ -21,6 +21,7 @@ import { ViewchildModule } from './vievchild/viewchild.module';
 import { FormsModule } from '@angular/forms';
 import { ValidationModule } from './validation/validation.module';
 import { RoutingModule } from './routing/routing.module';
+import { RxjsComponent } from './rxjs/rxjs.component';
 @NgModule({
   declarations: [
     AngularHomeComponent,
@@ -35,6 +36,7 @@ import { RoutingModule } from './routing/routing.module';
     IntercereptorsComponent,
     PromiseComponent,
     VievchildComponent,
+    RxjsComponent,
     ],
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { RoutingModule } from './routing/routing.module';
     DirectivesComponent,
     IntercereptorsComponent,
     PromiseComponent,
-    VievchildComponent
+    VievchildComponent,
+    RxjsComponent
   ]
 })
 export class AngularModule { }
