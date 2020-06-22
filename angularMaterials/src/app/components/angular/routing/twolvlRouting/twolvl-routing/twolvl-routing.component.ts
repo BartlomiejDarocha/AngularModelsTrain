@@ -17,6 +17,7 @@ export class TwolvlRoutingComponent {
   ) {
     this.twolvlRoutingData = this.routerModService.GetTwolvlRoutingData();
     this.route.params.subscribe((data: any) => {
+      // można subskrybować params żeby w celu posiadania na bierząco wartosci z params
       this.dataElement = this.twoLvlRutingChildFilterHandler(data.id);
       this.routerModService.setChildlvlTwo(this.dataElement);
     });

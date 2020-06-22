@@ -9,6 +9,7 @@ export const routingChildren: Routes = [
   { path: 'onelvl/:id', component: OneLvlRotuingComponent },
   {
     path: 'twolvl/:id', component: TwolvlRoutingComponent,
+    // w html <router-outlet></router-outlet> ponieważ są dzieci
     children: [
       { path: 'twolvlGrand/:id', component: GrandChildComponent }
     ]

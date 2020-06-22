@@ -21,7 +21,7 @@ const routes: Routes = [
       {path: 'inOutPut', component: InoutPutComponent },
       {
         path: 'routing', component: RoutingComponent,
-        children: routingChildren
+        children: routingChildren  // dodanie do html <router-outlet></router-outlet> ponieważ komponen ma dzieci (children:)
         // użycie imporotwanie z innego pliku /\
 
         // użycie standartowe ale utrudnia czytanie kodu \/
@@ -44,10 +44,10 @@ const routes: Routes = [
         // te rozwiązanie dale anglara 8 plus dodanie do tsconfigu  "module": "esnext", // add this line
         // loadChildren: () => import('./lazy-routing/lazy-routing-component/lazy-routing.module').then(m => m.LazyRoutingModule)
       },
-      // {
-      //   path: 'lazyRoutingComp2',
-      //   loadChildren:
-      // },
+      {
+        path: 'lazyRoutingComp2',
+        loadChildren: './lazy-routing/lazy-routing-component-two/lazy-routing-comp-two.module#LazyRoutingCompTwoModule'
+      },
       {path: 'rxjs', component: RxjsComponent},
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},
