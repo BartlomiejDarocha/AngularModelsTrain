@@ -12,16 +12,13 @@ import { PipesComponent } from './pipes/pipes.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PromiseComponent } from './promise/promise.component';
 import { VievchildComponent } from './vievchild/vievchild.component';
-import { OneLvlRotuingComponent } from './routing/one-lvl-rotuing/one-lvl-rotuing.component';
-import { TwolvlRoutingComponent } from './routing/twolvlRouting/twolvl-routing/twolvl-routing.component';
-import { GrandChildComponent } from './routing/twolvlRouting/grand-child/grand-child.component';
 import { routingChildren } from './routing/lvlTwoChildren.routing';
 import { RxjsComponent } from './rxjs/rxjs.component';
 const routes: Routes = [
   {
     path: 'angular', component: AngularHomeComponent,
     children: [
-      {path: 'inOutPut', component: InoutPutComponent},
+      {path: 'inOutPut', component: InoutPutComponent },
       {
         path: 'routing', component: RoutingComponent,
         children: routingChildren
@@ -47,6 +44,10 @@ const routes: Routes = [
         // te rozwiązanie dale anglara 8 plus dodanie do tsconfigu  "module": "esnext", // add this line
         // loadChildren: () => import('./lazy-routing/lazy-routing-component/lazy-routing.module').then(m => m.LazyRoutingModule)
       },
+      // {
+      //   path: 'lazyRoutingComp2',
+      //   loadChildren:
+      // },
       {path: 'rxjs', component: RxjsComponent},
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},
