@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LazyProvidersService } from '../lazy-providers.service';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lazy-routing',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LazyRoutingComponent implements OnInit {
 
-  constructor() { }
+  private dataSubject$: Subscription;
+  public data: any;
+
+  constructor(
+    private lazyProvidersService: LazyProvidersService
+  ) { }
 
   ngOnInit() {
+    this.data
+    console.log(this.data, 'lazy Component GET DATA');
+  }
+
+  ngOnDestroy(): void {
+    this.dataSubject$.unsubscribe();
   }
 
 }

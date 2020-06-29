@@ -9,10 +9,26 @@ export class LazyProvidersService {
   private trainData = new Subject<any>();
 
   constructor(
-    private service: ApiService;
+    private service: ApiService
   ) { }
 
+  private loadData(): Observable<any> {
+    return this.service.get('https://swapi.co/api/people');
+  }
+
+
+  private setData(data: any): void {
+    this.trainData.next(data);
+  }
+
   public getData(): Observable<any> {
-    return this.trainData.asObservable();
+    if(this.trainData) {
+      return this.trainData.asObservable();
+    } else {
+      this.loadData().subscribe((data: any) => {
+        this.setData(data);
+        return this.trainData.asObservable();
+      });
+    }
   }
 }
