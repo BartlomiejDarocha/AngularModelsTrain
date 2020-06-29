@@ -10,15 +10,23 @@ import { Subject, Subscription } from 'rxjs';
 export class LazyRoutingComponent implements OnInit {
 
   private dataSubject$: Subscription;
-  public data: any;
+  public data: any; // to jest nie dopracowane
+  public data2: any;
 
   constructor(
     private lazyProvidersService: LazyProvidersService
   ) { }
 
   ngOnInit() {
-    this.data
-    console.log(this.data, 'lazy Component GET DATA');
+    // to jest nie dopracowane
+    this.dataSubject$ = this.lazyProvidersService.getDataAsObservable().subscribe((data: any) => {
+      this.data = data;
+      console.log(this.data, 'lazy Component GET DATA');
+    });
+
+    this.data2 = this.lazyProvidersService.getData().subscribe(data => {
+      console.log(data, 'data, getData()');
+    });
   }
 
   ngOnDestroy(): void {
