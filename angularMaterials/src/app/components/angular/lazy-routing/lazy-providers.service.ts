@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/providers/api.service';
 })
 export class LazyProvidersService {
   private trainData = new Subject<any>();
-  private data: any;
+  private data: any = {test: 'test'};
 
   constructor(
     private service: ApiService

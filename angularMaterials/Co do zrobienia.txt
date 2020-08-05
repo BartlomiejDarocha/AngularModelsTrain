@@ -1,0 +1,9 @@
+
+naprawiæ pobieranie danych na observable
+zrobiæ z 10 przyk³adów dla utrwalenia tego co wy¿ej
+
+dok³adnie powtórzyæ promise, oraz async await, try catch, then
+
+powtórzyæ lazy routing i zorbiæ 5 ró¿ny powtórzeñ (dodaæ to tego potworka :D)
+
+przekazywanie danych przez querySelector w html jak i ts, powtó¿yæ activatedRoute po 10 przyk³adów z tego dodaæ do potworka
