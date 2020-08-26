@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  private headers = new HttpHeaders({
+    'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    'x-rapidapi-key': '473bd91c3fmsh3c098e68091a926p1d8c12jsnc4ee49567e71',
+    'useQueryString': 'true'
+    // 'content-type': 'application/x-www-form-urlencoded',
+    // 'content-type': 'application/json',
+  });
+
+  //lotr api HuNvf-JEWj4m52To0tTw
 
   constructor(private http: HttpClient) { }
+
+  public newGet(url: string): Observable<any> {
+    return this.http.get(url, {headers: this.headers});
+  }
 
   public get(url: string, param: any = null): Observable<any> {
     const paramTeset = {'people1': '1', 'people2': '3' };

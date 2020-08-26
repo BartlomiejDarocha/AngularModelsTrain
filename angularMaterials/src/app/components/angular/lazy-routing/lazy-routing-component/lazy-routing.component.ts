@@ -18,6 +18,9 @@ export class LazyRoutingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.lazyProvidersService.loadData().subscribe(data => {
+      console.log(data, 'data');
+    });
     // to jest nie dopracowane
     // this.dataSubject$ = this.lazyProvidersService.getDataAsObservable().subscribe((data: any) => {
     //   this.data = data;
@@ -25,13 +28,13 @@ export class LazyRoutingComponent implements OnInit {
     // });
 
     // to tez   jest zle do poprawy
-    this.data2 = this.lazyProvidersService.getData().subscribe(data => {
-      console.log(data, 'data, getData()');
-    });
+    // this.data2 = this.lazyProvidersService.getData().subscribe(data => {
+    //   console.log(data, 'data, getData()');
+    // });
   }
 
   ngOnDestroy(): void {
-    this.dataSubject$.unsubscribe();
+    // this.dataSubject$.unsubscribe();
   }
 
 }

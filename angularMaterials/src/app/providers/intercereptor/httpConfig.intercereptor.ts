@@ -23,13 +23,15 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         this.loaderService.show();
         const token: string = localStorage.getItem('token');
         if (token) {
+          console.log('tooken?');
             request = request.clone({headers: request.headers.set('Authorization', 'test' + token )});
         }
-        if (!request.headers.has('Content-Type')) {
-            request = request.clone({headers: request.headers.set('Content-Type', 'application/json')});
-        }
+        // to wyłączone bo content type jest w api Service dodawany do hederów
+        // if (!request.headers.has('Content-Type')) {
+        //     request = request.clone({headers: request.headers.set('Content-Type', 'application/json')});
+        // }
         // request = request.clone({headers: request.headers.set('Accept', 'application/json')});
-        console.log(next.handle(request), 'next handl(request)');
+        console.log(next.handle(request), 'next handl(request) Intercepor');
         return next.handle(request).pipe(
 
             // przechwycenia eventu

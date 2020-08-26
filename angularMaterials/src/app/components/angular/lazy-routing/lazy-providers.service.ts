@@ -13,8 +13,8 @@ export class LazyProvidersService {
     private service: ApiService
   ) { }
 
-  private loadData(): Observable<any> {
-    return this.service.get('https://swapi.co/api/people');
+  public loadData(): Observable<any> {
+    return this.service.newGet('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer');
   }
 
   private setData(data: any): void {
