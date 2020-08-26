@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(
     private calendar: NgbCalendar,
   ) {
-    // this.testIncrementation1();
+    //this.testIncrementation1();
   }
   public openMenu(value: boolean, menu: MatSidenav): void {
     if (value) {
