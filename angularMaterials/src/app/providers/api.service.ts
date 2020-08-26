@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private headers = new HttpHeaders({
-    'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-    'x-rapidapi-key': '473bd91c3fmsh3c098e68091a926p1d8c12jsnc4ee49567e71',
-    'useQueryString': 'true'
+    // 'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    // 'x-rapidapi-key': '473bd91c3fmsh3c098e68091a926p1d8c12jsnc4ee49567e71',
+    // 'useQueryString': 'true'
     // 'content-type': 'application/x-www-form-urlencoded',
-    // 'content-type': 'application/json',
+    'Authorization': 'Bearer HuNvf-JEWj4m52To0tTw',
+    'content-type': 'application/json',
   });
 
   //lotr api HuNvf-JEWj4m52To0tTw

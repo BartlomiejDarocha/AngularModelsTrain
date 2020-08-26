@@ -14,7 +14,8 @@ export class LazyProvidersService {
   ) { }
 
   public loadData(): Observable<any> {
-    return this.service.newGet('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer');
+    // return this.service.newGet('https://the-one-api.herokuapp.com/v1/book/5cf5805fb53e011a64671582');
+    return this.service.newGet('https://the-one-api.herokuapp.com/v1/movie');
   }
 
   private setData(data: any): void {
