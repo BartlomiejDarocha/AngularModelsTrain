@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: LazyRoutingComponentTwoComponent,
+    // ten komponent ma router outlet /\
     children: [
       {
         path: 'firstChild',
