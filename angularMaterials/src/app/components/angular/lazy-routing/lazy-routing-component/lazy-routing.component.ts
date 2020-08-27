@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LazyProvidersService } from '../lazy-providers.service';
 import { Subject, Subscription } from 'rxjs';
 
@@ -7,19 +7,20 @@ import { Subject, Subscription } from 'rxjs';
   templateUrl: './lazy-routing.component.html',
   styleUrls: ['./lazy-routing.component.less']
 })
-export class LazyRoutingComponent implements OnInit {
+export class LazyRoutingComponent implements OnInit, OnDestroy {
 
   private dataSubject$: Subscription;
-  public data: any; // to jest nie dopracowane
-  public data2: any;
+  public dataFromService: any;
 
   constructor(
     private lazyProvidersService: LazyProvidersService
   ) { }
 
-  ngOnInit() {
-    this.lazyProvidersService.loadData().subscribe(data => {
-      console.log(data, 'data w komponencie lazy');
+  ngOnInit() {}
+  public getData(): void {
+    this.lazyProvidersService.getData().subscribe((data: any) => {
+      this.dataFromService = data;
+      console.log(this.dataFromService, 'dataFromService');
     });
   }
 

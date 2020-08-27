@@ -14,8 +14,8 @@ export class LazyProvidersService {
   ) { }
 
   public loadData(): Observable<any> {
-    // return this.service.newGet('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
-    return this.service.newGet('https://the-one-api.dev/movie');
+    return this.service.newGet('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
+    // return this.service.newGet('https://the-one-api.dev/movie');
     // return this.service.newGet('https://the-one-api.herokuapp.com/v1/book/5cf5805fb53e011a64671582');
     // return this.service.newGet('https://the-one-api.herokuapp.com/v1/movie');
   }
