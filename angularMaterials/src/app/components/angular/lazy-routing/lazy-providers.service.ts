@@ -35,4 +35,16 @@ export class LazyProvidersService {
     return this.trainData.asObservable();
   }
 
+  public combineTwoUpperMethod(): Observable<any> | any {
+    if (this.data) {
+      return this.data;
+    } else {
+      this.loadData().subscribe((data: any) => {
+        this.data = data;
+        this.trainData.next(data);
+      });
+      return this.trainData.asObservable();
+    }
+  }
+
 }

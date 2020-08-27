@@ -11,12 +11,14 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
 
   private dataSubject$: Subscription;
   public dataFromService: any;
+  public monsteryData: any;
 
   constructor(
     private lazyProvidersService: LazyProvidersService
   ) { }
 
   ngOnInit() {}
+
   public getDataService(): void {
     if (this.lazyProvidersService.getData()) {
       this.dataFromService = this.lazyProvidersService.getData();
@@ -27,6 +29,20 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
         console.log(data, 'component fechuje dane');
       });
     }
+  }
+
+  public combinieDataService(): void {
+    console.log(typeof this.lazyProvidersService.combineTwoUpperMethod(), 'TyPE OF');
+    if (typeof this.lazyProvidersService.combineTwoUpperMethod() === 'object') {
+      this.lazyProvidersService.combineTwoUpperMethod().subscribe((data: any) => {
+        console.log(data, 'EUREKA TEN POTWÓR ŻYJE!!!');
+      });
+    } else {
+      this.monsteryData = this.lazyProvidersService.combineTwoUpperMethod();
+      console.log(this.monsteryData, 'EUREKA MOSNTERY DATA JEST I JEST TYPE OF ANY');
+    }
+
+    console.log('combinie func');
   }
   ngOnDestroy(): void {
     // this.dataSubject$.unsubscribe();
