@@ -28,9 +28,10 @@ export class LazyProvidersService {
     this.loadData().subscribe((data: any) => {
       this.data = data;
       console.log(data, 'data z serwera przypisuje i zwraca');
+      console.log(0);
       this.trainData.next(data);
     });
-    console.log(0);
+    console.log(1);
     return this.trainData.asObservable();
   }
 

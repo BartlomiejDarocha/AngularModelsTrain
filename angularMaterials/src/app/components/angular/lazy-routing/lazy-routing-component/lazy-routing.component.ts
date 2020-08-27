@@ -23,6 +23,7 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
       console.log(this.dataFromService, 'pobiera istniejące dane');
     } else {
       this.lazyProvidersService.fetchData().subscribe((data: any) => {
+        console.log(2);
         console.log(data, 'component fechuje dane');
       });
     }
