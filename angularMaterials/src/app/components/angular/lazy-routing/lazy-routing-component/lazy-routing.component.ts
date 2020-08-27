@@ -17,13 +17,16 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {}
-  public getData(): void {
-    this.lazyProvidersService.getData().subscribe((data: any) => {
-      this.dataFromService = data;
-      console.log(this.dataFromService, 'dataFromService');
-    });
+  public getDataService(): void {
+    if (this.lazyProvidersService.getData()) {
+      this.dataFromService = this.lazyProvidersService.getData();
+      console.log(this.dataFromService, 'pobiera istniejące dane');
+    } else {
+      this.lazyProvidersService.fetchData().subscribe((data: any) => {
+        console.log(data, 'component fechuje dane');
+      });
+    }
   }
-
   ngOnDestroy(): void {
     // this.dataSubject$.unsubscribe();
   }
