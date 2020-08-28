@@ -20,6 +20,11 @@ export class LazyProvidersService {
     // return this.service.newGet('https://the-one-api.herokuapp.com/v1/movie');
   }
 
+  private loadDataOnPromiser(): any {
+
+    return this.service.getOnPromise('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
+  }
+
   public getData(): any {
     return this.data;
   }
@@ -46,5 +51,6 @@ export class LazyProvidersService {
       return this.trainData.asObservable();
     }
   }
+
 
 }
