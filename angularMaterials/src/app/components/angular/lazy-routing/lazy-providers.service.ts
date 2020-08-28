@@ -39,13 +39,12 @@ export class LazyProvidersService {
     return this.trainData.asObservable();
   }
 
-  public async fetchDataOnPromise(): Promise<Observable<any>> {
+  public async fetchDataOnPromise(): Promise<any> {
     try {
       const dataPromise = await this.loadDataOnPromiser();
-      console.log(dataPromise, 'dataPromise');
+      console.log(dataPromise, 'dataPromise SERVICE');
       this.data = dataPromise;
       this.trainData.next(dataPromise);
-      return this.trainData.asObservable();
     } catch (err) {
       console.log(err);
     }

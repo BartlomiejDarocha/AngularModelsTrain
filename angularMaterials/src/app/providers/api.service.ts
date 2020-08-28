@@ -15,7 +15,7 @@ export class ApiService {
   //   'content-type': 'application/json',
   // });
 
-  //lotr api HuNvf-JEWj4m52To0tTw
+  // lotr api HuNvf-JEWj4m52To0tTw
 
   constructor(private http: HttpClient) { }
 

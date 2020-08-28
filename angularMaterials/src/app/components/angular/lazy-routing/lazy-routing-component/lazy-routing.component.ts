@@ -11,6 +11,7 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
 
   private dataSubject$: Subscription;
   public dataFromService: any;
+  public dataFromServicePromis: any;
   public monsteryData: any;
 
   constructor(
@@ -41,8 +42,17 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
       this.monsteryData = this.lazyProvidersService.combineTwoUpperMethod();
       console.log(this.monsteryData, 'EUREKA MOSNTERY DATA JEST I JEST TYPE OF ANY');
     }
-
     console.log('combinie func');
+  }
+
+  public getDataServicePromise(): void {
+    if (this.lazyProvidersService.getData()) {
+      this.dataFromServicePromis = this.lazyProvidersService.getData();
+    } else {
+      this.lazyProvidersService.fetchDataOnPromise().then((dataFormPromise: any) => {
+        console.log(dataFormPromise, 'FETCH z Componnetu On promis');
+      });
+    }
   }
   ngOnDestroy(): void {
     // this.dataSubject$.unsubscribe();
