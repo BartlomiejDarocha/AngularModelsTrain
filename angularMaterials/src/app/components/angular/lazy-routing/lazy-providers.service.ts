@@ -20,9 +20,8 @@ export class LazyProvidersService {
     // return this.service.newGet('https://the-one-api.herokuapp.com/v1/movie');
   }
 
-  private loadDataOnPromiser(): any {
-
-    return this.service.getOnPromise('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
+  private async loadDataOnPromiser(): Promise<any> {
+    return await this.service.getOnPromise('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
   }
 
   public getData(): any {
@@ -39,6 +38,13 @@ export class LazyProvidersService {
     console.log(1);
     return this.trainData.asObservable();
   }
+
+  // public async fetchDataOnPromise(): Promise<any> {
+  //   try {
+
+  //   }
+
+  // }
 
   public combineTwoUpperMethod(): Observable<any> | any {
     if (this.data) {
