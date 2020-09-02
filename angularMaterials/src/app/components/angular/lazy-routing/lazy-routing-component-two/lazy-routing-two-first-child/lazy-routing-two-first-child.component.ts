@@ -17,7 +17,16 @@ export class LazyRoutingTwoFirstChildComponent implements OnInit {
   public getDataPromisType(): void {
     this.service.getOnPromise('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582').then((data: any) => {
       this.dataService = data;
+      console.log(this.dataService, 'dataService');
     });
+  }
+
+  public async getDataPromisTypeTry(): Promise<void> {
+    try {
+      this.dataService = await this.service.getOnPromise('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
+    } catch (error) {
+      console.error(error, 'error');
+    }
   }
 
 }
