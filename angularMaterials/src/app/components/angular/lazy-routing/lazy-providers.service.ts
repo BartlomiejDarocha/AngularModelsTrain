@@ -44,7 +44,7 @@ export class LazyProvidersService {
       const dataPromise = await this.loadDataOnPromiser();
       console.log(dataPromise, 'dataPromise SERVICE');
       this.data = dataPromise;
-      this.trainData.next(dataPromise);
+      return this.data;
     } catch (err) {
       console.log(err);
     }
