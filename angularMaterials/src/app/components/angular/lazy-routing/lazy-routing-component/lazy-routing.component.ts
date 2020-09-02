@@ -45,13 +45,15 @@ export class LazyRoutingComponent implements OnInit, OnDestroy {
     console.log('combinie func');
   }
 
-  public getDataServicePromise(): void {
+  public async getDataServicePromise(): Promise<void> {
     if (this.lazyProvidersService.getData()) {
       this.dataFromServicePromis = this.lazyProvidersService.getData();
     } else {
-      this.lazyProvidersService.fetchDataOnPromise().then((dataFormPromise: any) => {
-        console.log(dataFormPromise, 'FETCH z Componnetu On promis');
-      });
+      const dataPromis = await this.lazyProvidersService.fetchDataOnPromise();
+      console.log(dataPromis, 'Promis');
+      // this.lazyProvidersService.fetchDataOnPromise().then((dataFormPromise: any) => {
+      //   console.log(dataFormPromise, 'FETCH z Componnetu On promis');
+      // });
     }
   }
   ngOnDestroy(): void {
