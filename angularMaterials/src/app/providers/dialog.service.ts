@@ -36,6 +36,7 @@ export class DialogService {
         color: serviceColor
       }
     });
+    // to działa jak dissmis w Ionic
     dialogReferance.afterClosed().subscribe(result => {
       console.log(result, 'result dialog z inputem');
       serviceColor = result;
