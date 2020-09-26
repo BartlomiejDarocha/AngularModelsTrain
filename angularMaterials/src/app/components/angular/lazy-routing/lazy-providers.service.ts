@@ -13,6 +13,8 @@ export class LazyProvidersService {
     private service: ApiService
   ) { }
 
+// singleton
+
   private loadData(): Observable<any> {
     return this.service.newGet('https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582');
     // return this.service.newGet('https://the-one-api.dev/movie');
