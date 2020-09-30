@@ -38,7 +38,8 @@ export class UserService {
     if (!this.intervalRuning) {
       this.userInterval$ = setInterval(async() => {
         try {
-          const user = await this.apiService.get('https://api.fungenerators.com/fact/fod');
+          // tslint:disable-next-line:max-line-length
+          const user = await this.apiService.get('https://api.spoonacular.com/recipes/complexSearch?query=pizza&apiKey=8682375027e9489ba9b324bf8efd84d0').toPromise();
           this.user = {...user, number: user};
           this.user$.next(user);
           console.log(user, 'user interval');
