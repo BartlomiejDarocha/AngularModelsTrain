@@ -33,8 +33,16 @@ export class LazyRoutingTwoFirstChildComponent implements OnInit {
       console.error(error, 'error');
     }
   }
-  public getuserTest() {
-    this.user = this.userService.getUser();
+  public async getuserTest(): Promise<void> {
+    try {
+      this.user = await this.userService.getUser();
+      console.log(this.user, 'user z componentu');
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  public logout(): void {
+    this.userService.logout();
   }
 
 }
