@@ -18,6 +18,7 @@ export class UserService {
 
   public async getUser(): Promise<any> {
     const token: string = localStorage.getItem('token');
+    console.log(token);
     if (this.user.userId || token) {
       return this.user;
     }
@@ -31,6 +32,7 @@ export class UserService {
   }
 
   private refreshUser(): void {
+    console.log('refresh user');
   }
 
 

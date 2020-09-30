@@ -1,3 +1,4 @@
+import { UserService } from './../../../../../providers/users/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/providers/api.service';
 
@@ -9,7 +10,11 @@ import { ApiService } from 'src/app/providers/api.service';
 export class LazyRoutingTwoFirstChildComponent implements OnInit {
 
   private dataService: any;
-  constructor(private service: ApiService) { }
+  public user: any;
+  constructor(
+    private service: ApiService,
+    private userService: UserService
+    ) { }
 
   ngOnInit() {
   }
@@ -27,6 +32,9 @@ export class LazyRoutingTwoFirstChildComponent implements OnInit {
     } catch (error) {
       console.error(error, 'error');
     }
+  }
+  public getuserTest() {
+    this.user = this.userService.getUser();
   }
 
 }
