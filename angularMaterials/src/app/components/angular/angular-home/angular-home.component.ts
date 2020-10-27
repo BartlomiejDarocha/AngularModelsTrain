@@ -11,6 +11,7 @@ export class AngularHomeComponent implements OnInit {
     {url: 'routing', name: 'Routing'},
     {url: 'lazyRouting', name: 'LazyRouting'},
     {url: 'lazyRoutingComp2', name: 'lazyRoutingChildren'},
+    {url: 'routingTrainAngular', name: 'routing train angular'},
     {url: 'rxjs', name: 'rxjs obs, sub, event'},
     {url: 'modules', name: 'Modułowość'},
     {url: 'services', name: 'Servisy'},
