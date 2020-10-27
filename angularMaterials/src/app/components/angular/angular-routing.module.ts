@@ -48,10 +48,10 @@ const routes: Routes = [
         path: 'lazyRoutingComp2',
         loadChildren: './lazy-routing/lazy-routing-component-two/lazy-routing-comp-two.module#LazyRoutingCompTwoModule'
       },
-      // {
-      //   path: 'routingTrainAngular',
-      //   loadChildren:
-      // },
+      {
+        path: 'routingTrainAngular',
+        loadChildren: './routing-train-angular/rout-train-angular.module#RoutTrainAngularModule'
+      },
       {path: 'rxjs', component: RxjsComponent},
       {path: 'modules', component: ModulesComponent},
       {path: 'services', component: ServicesComponent},

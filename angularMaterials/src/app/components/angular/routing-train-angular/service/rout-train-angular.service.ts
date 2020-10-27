@@ -1,7 +1,8 @@
+import { RoutTrainAngularModule } from './../rout-train-angular.module';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: RoutTrainAngularModule
 })
 export class RoutTrainAngularService {
 
