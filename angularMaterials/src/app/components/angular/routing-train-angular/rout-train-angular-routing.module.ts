@@ -1,3 +1,4 @@
+import { RtcRouterModule } from './components/rot-train-creator/components/rtc-router.module';
 import { RotTrainSummaryComponent } from './components/rot-train-summary/rot-train-summary.component';
 import { RotTrainCreatorComponent } from './components/rot-train-creator/rot-train-creator.component';
 import { RotTrainMainComponent } from './components/rot-train-main/rot-train-main.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
       {
         path: 'creator',
         component: RotTrainCreatorComponent,
-        data: { name: 'Stwórz bohatera'}
+        loadChildren: './components/rot-train-creator/components/rtcreator.module.ts#RTCreatorModule',
+        data: { name: 'Stwórz bohatera'},
       },
       {
         path: 'summary',

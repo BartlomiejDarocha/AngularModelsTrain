@@ -1,3 +1,4 @@
+import { RtcRouterModule } from './rtc-router.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RTCBasicComponent } from './rtcbasic/rtcbasic.component';
@@ -7,9 +8,23 @@ import { RTCskillsComponent } from './rtcskills/rtcskills.component';
 import { RTCEquipmentsComponent } from './rtcequipments/rtcequipments.component';
 
 @NgModule({
-  declarations: [RTCBasicComponent, RTCClassComponent, RTCAttributesComponent, RTCskillsComponent, RTCEquipmentsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RtcRouterModule
+  ],
+  declarations: [
+    RTCBasicComponent,
+    RTCClassComponent,
+    RTCAttributesComponent,
+    RTCskillsComponent,
+    RTCEquipmentsComponent
+  ],
+  exports: [
+    RTCBasicComponent,
+    RTCClassComponent,
+    RTCAttributesComponent,
+    RTCskillsComponent,
+    RTCEquipmentsComponent
   ]
 })
 export class RTCreatorModule { }
