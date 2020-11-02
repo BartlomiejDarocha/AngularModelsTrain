@@ -1,0 +1,20 @@
+<div>
+  <div>
+    <ul>
+      <li *ngFor="let bOptions of basicBarOptions">
+        <div>
+          <div [innerText]="bOptions.name"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let options of barOptions">
+        <div>
+          <div [innerText]="options.name"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
