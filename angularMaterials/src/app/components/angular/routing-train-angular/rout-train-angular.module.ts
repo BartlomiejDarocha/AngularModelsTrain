@@ -9,7 +9,7 @@ import { RotTrainSummaryComponent } from './components/rot-train-summary/rot-tra
 @NgModule({
   imports: [
     CommonModule,
-    RoutTrainAngularRoutingModule
+    RoutTrainAngularRoutingModule,
   ],
   declarations: [
     RotTrainMainComponent,
@@ -22,7 +22,7 @@ import { RotTrainSummaryComponent } from './components/rot-train-summary/rot-tra
     RotTrainSummaryComponent
   ],
   providers: [
-    RoutTrainAngularService
+    // RoutTrainAngularService
   ]
 })
 export class RoutTrainAngularModule { }
