@@ -1,11 +1,21 @@
-<h1>Main component RTM</h1>
-<ul>
-  <li>
-    <a routerLink="creator">creator</a>
-  </li>
-  <li>
-    <a routerLink="summary">summary</a>
-  </li>
-</ul>
+<div class="mainBox">
+  <div class="mainWrapper">
+    <div class="headerWrapper">
+      <h1>Tworzenie Bohatera</h1>
+    </div>
+    <div class="actionBar">
+      <ul>
+        <li>
+          <a routerLink="creator">creator</a>
+        </li>
+        <li>
+          <a routerLink="summary">summary</a>
+        </li>
+      </ul>
+    </div>
+    <div class="workingCompWrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
 
-<router-outlet></router-outlet>
