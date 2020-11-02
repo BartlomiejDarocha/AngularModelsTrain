@@ -1,4 +1,7 @@
 <h1>Main component RTM</h1>
+<div class="h1Red">
+  <h1>Main component RTM RED</h1>
+</div>
 <ul>
   <li>
     <a routerLink="creator">creator</a>
@@ -7,4 +10,21 @@
     <a routerLink="summary">summary</a>
   </li>
 </ul>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Imię</th>
+      <th>praca</th>
+      <th>color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let member of familyTable">
+      <td>{{member.name}}</td>
+      <td>{{member.job}}</td>
+      <td>{{member.color}}</td>
+    </tr>
+  </tbody>
+</table>
+
 <router-outlet></router-outlet>
