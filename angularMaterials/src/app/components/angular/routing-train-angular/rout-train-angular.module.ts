@@ -10,7 +10,7 @@ import { ActionBarComponent } from './components/action-bar/action-bar.component
 @NgModule({
   imports: [
     CommonModule,
-    RoutTrainAngularRoutingModule,
+    RoutTrainAngularRoutingModule
   ],
   declarations: [
     RotTrainMainComponent,
