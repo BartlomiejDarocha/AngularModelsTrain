@@ -1,15 +1,8 @@
 <div>
   <div class="barList">
     <ul>
-      <li [class.active]="bOptions.active" (click)="setHandler(i, 'basicBarOptions')" *ngFor="let bOptions of basicBarOptions; let i=index">
-        <a [innerText]="bOptions.name"></a>
-      </li>
-    </ul>
-  </div>
-  <div *ngIf="showBottonBar" class="barList">
-    <ul>
-      <li [class.active]="options.active" (click)="setHandler(i, 'barOptions')" *ngFor="let options of barOptions; let i=index">
-        <a [innerText]="options.name"></a>
+      <li [class.active]="option.active" (click)="setHandler(option)" *ngFor="let option of options">
+        <a [innerText]="option.name"></a>
       </li>
     </ul>
   </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
-interface BarOptionsInterface {
+export interface BarOptionsInterface {
   id: number;
   name: string;
   url: string;
@@ -14,38 +14,26 @@ interface BarOptionsInterface {
 })
 
 export class ActionBarComponent implements OnInit {
-  @Output() public settingsEmit = new EventEmitter<string>();
+  @Input() public options: BarOptionsInterface[]  = [];
+  @Output() public settingsEmit = new EventEmitter<BarOptionsInterface>();
 
-  public showBottonBar = true;
-  public basicBarOptions: BarOptionsInterface[] = [
-    { id: 1, name: 'Kreator', url: '', active: true },
-    { id: 2, name: 'Bohaterowie', url: '', active: false },
-  ];
-
-  public barOptions: BarOptionsInterface[] = [
-    { id: 1, name: 'Podstawowe', url: '', active: true },
-    { id: 2, name: 'Atrybuty', url: '', active: false },
-    { id: 3, name: 'Klasa', url: '', active: false },
-    { id: 4, name: 'Umiejętności', url: '', active: false },
-    { id: 5, name: 'Ekwipunek', url: '', active: false },
-    { id: 6, name: 'Podsumowanie', url: '', active: false },
-  ];
+  // public barOptions: BarOptionsInterface[] = [
+  //   { id: 1, name: 'Podstawowe', url: '', active: true },
+  //   { id: 2, name: 'Atrybuty', url: '', active: false },
+  //   { id: 3, name: 'Klasa', url: '', active: false },
+  //   { id: 4, name: 'Umiejętności', url: '', active: false },
+  //   { id: 5, name: 'Ekwipunek', url: '', active: false },
+  //   { id: 6, name: 'Podsumowanie', url: '', active: false },
+  // ];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public setHandler(index: number, table: string): void {
-    this[table] = this[table].map((el: BarOptionsInterface) => el = {...el, active: false});
-    this[table][index]['active'] = true;
-    if (table === 'basicBarOptions') {
-      if (this[table][index]['id'] === 2) {
-        this.showBottonBar = false;
-      } else {
-        this.showBottonBar = true;
-      }
-    }
-    this.settingsEmit.next(this[table][index]['url']);
+  public setHandler(option: BarOptionsInterface ): void {
+    this.options = this.options.map((el: BarOptionsInterface) => el = {...el, active: false});
+    this.options[this.options.findIndex((elLooking: BarOptionsInterface) => option.id === elLooking.id)].active = true;
+    this.settingsEmit.next(option);
   }
 }

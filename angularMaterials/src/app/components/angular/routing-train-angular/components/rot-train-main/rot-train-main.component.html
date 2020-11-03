@@ -4,7 +4,7 @@
       <h1>Tworzenie Bohatera</h1>
     </div>
     <div class="actionBar">
-      <app-action-bar></app-action-bar>
+      <app-action-bar [options]="basicBarOptions" (settingsEmit)="actionBarHandler($event)"></app-action-bar>
     </div>
     <div class="workingCompWrapper">
       <router-outlet></router-outlet>
