@@ -32,8 +32,6 @@ export class ActionBarComponent implements OnInit {
   }
 
   public setHandler(option: BarOptionsInterface ): void {
-    this.options = this.options.map((el: BarOptionsInterface) => el = {...el, active: false});
-    this.options[this.options.findIndex((elLooking: BarOptionsInterface) => option.id === elLooking.id)].active = true;
     this.settingsEmit.next(option);
   }
 }

@@ -1,6 +1,6 @@
 import { BarOptionsInterface } from './../action-bar/action-bar.component';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rot-train-main',
@@ -12,16 +12,27 @@ export class RotTrainMainComponent implements OnInit {
     { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator', active: false },
     { id: 2, name: 'Bohaterowie', url: '/angular/routingTrainAngular/summary', active: false },
   ];
-  constructor(private router: Router, private route: ActivatedRoute) {
-
-   }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    let newlist = false;
+    this.basicBarOptions.forEach((el: BarOptionsInterface, i: number) => {
+      if (this.router.url.includes(el.url)) {
+        this.basicBarOptions[i].active = true;
+        newlist = true;
+      }
+    });
+    if (newlist) {
+      this.basicBarOptions = [...this.basicBarOptions];
+    }
   }
 
   public actionBarHandler(option: BarOptionsInterface ): void {
-    console.log(option);
-    // this.router.navigate([url]);
+    const lookingIndex = this.basicBarOptions.findIndex((el: BarOptionsInterface) => el.id === +option.id);
+    this.basicBarOptions = this.basicBarOptions.map((el: BarOptionsInterface) => el = {...el, active: false});
+    this.basicBarOptions[lookingIndex].active = true;
+    this.basicBarOptions = [...this.basicBarOptions];
+    this.router.navigate([option.url]);
   }
 
 }
