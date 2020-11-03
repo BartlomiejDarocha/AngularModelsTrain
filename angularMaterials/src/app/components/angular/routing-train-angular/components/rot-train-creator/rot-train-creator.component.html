@@ -1,3 +1,6 @@
-<p>
-  rot-train-creator works!
-</p>
+<div>
+  <app-action-bar [options]="options" (settingsEmit)="actionBarHandler($event)"></app-action-bar>
+</div>
+<div class="workingCompWrapper">
+  <router-outlet></router-outlet>
+</div>
