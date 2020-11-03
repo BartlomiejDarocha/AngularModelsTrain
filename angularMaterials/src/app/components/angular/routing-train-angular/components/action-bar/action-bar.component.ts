@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 interface BarOptionsInterface {
+  id: number;
   name: string;
   url: string;
   active: boolean;
@@ -13,18 +14,21 @@ interface BarOptionsInterface {
 })
 
 export class ActionBarComponent implements OnInit {
+  @Output() public settingsEmit = new EventEmitter<string>();
+
+  public showBottonBar = true;
   public basicBarOptions: BarOptionsInterface[] = [
-    { name: 'Kreator', url: '', active: true },
-    { name: 'Bohaterowie', url: '', active: false },
+    { id: 1, name: 'Kreator', url: '', active: true },
+    { id: 2, name: 'Bohaterowie', url: '', active: false },
   ];
 
   public barOptions: BarOptionsInterface[] = [
-    { name: 'Podstawowe', url: '', active: true },
-    { name: 'Atrybuty', url: '', active: false },
-    { name: 'Klasa', url: '', active: false },
-    { name: 'Umiejętności', url: '', active: false },
-    { name: 'Ekwipunek', url: '', active: false },
-    { name: 'podsumowanie', url: '', active: false },
+    { id: 1, name: 'Podstawowe', url: '', active: true },
+    { id: 2, name: 'Atrybuty', url: '', active: false },
+    { id: 3, name: 'Klasa', url: '', active: false },
+    { id: 4, name: 'Umiejętności', url: '', active: false },
+    { id: 5, name: 'Ekwipunek', url: '', active: false },
+    { id: 6, name: 'Podsumowanie', url: '', active: false },
   ];
 
   constructor() { }
@@ -32,9 +36,16 @@ export class ActionBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  public setHandler(index: number, table: 'string'): void {
+  public setHandler(index: number, table: string): void {
     this[table] = this[table].map((el: BarOptionsInterface) => el = {...el, active: false});
     this[table][index]['active'] = true;
+    if (table === 'basicBarOptions') {
+      if (this[table][index]['id'] === 2) {
+        this.showBottonBar = false;
+      } else {
+        this.showBottonBar = true;
+      }
+    }
+    this.settingsEmit.next(this[table][index]['url']);
   }
-
 }
