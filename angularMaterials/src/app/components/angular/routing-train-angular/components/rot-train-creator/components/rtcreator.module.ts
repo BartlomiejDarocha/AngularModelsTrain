@@ -1,4 +1,4 @@
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { RtcRouterModule } from './rtc-router.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,9 @@ import { RTCEquipmentsComponent } from './rtcequipments/rtcequipments.component'
   imports: [
     CommonModule,
     RtcRouterModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   declarations: [
     RTCBasicComponent,

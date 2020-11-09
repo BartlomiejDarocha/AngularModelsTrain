@@ -1,16 +1,41 @@
-
 <div>
-  <div>
-    <form action="">
+  <form action="">
+    <div>
+      <div>
+        <mat-form-field>
+          <mat-label>Imię</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div>
+        <label>Płeć: </label>
+        <mat-radio-group [value]="'auto'">
+          <mat-radio-button value="man">Koleś</mat-radio-button>
+          <mat-radio-button value="woman">Laseczka</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Rasa</mat-label>
+          <mat-select>
+            <mat-option value="black">Mudzin</mat-option>
+            <mat-option value="white">Białas</mat-option>
+            <mat-option value="yellow">Żółtek</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Wiek</mat-label>
+          <input type="number" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
       <mat-form-field>
-        <mat-label>Imię</mat-label>
-        <input type="text" matInput>
+        <mat-label>Foteczka</mat-label>
+        <input type="file" matInput>
       </mat-form-field>
-      <label>Float label: </label>
-      <!-- <mat-radio-group>
-        <mat-radio-button value="auto">Auto</mat-radio-button>
-        <mat-radio-button value="always">Always</mat-radio-button>
-      </mat-radio-group> -->
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
