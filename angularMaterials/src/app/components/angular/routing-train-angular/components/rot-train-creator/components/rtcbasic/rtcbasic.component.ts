@@ -12,4 +12,8 @@ export class RTCBasicComponent implements OnInit {
   ngOnInit() {
   }
 
+  public fileHandler(event): void {
+    console.log(event, 'event');
+  }
+
 }
