@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RotTrainMainComponent implements OnInit {
   public basicBarOptions: BarOptionsInterface[] = [
-    { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator', active: false },
+    { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator/basic', active: false },
     { id: 2, name: 'Bohaterowie', url: '/angular/routingTrainAngular/summary', active: false },
   ];
   constructor(private router: Router) {}
