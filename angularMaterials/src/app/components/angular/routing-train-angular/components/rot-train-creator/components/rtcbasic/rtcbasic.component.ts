@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class RTCBasicComponent implements OnInit {
   public photoURL;
 
+  public fileBlob;
+
   constructor() { }
 
   ngOnInit() {
@@ -30,6 +32,27 @@ export class RTCBasicComponent implements OnInit {
     reader.onload = () => {
       this.photoURL = reader.result;
     };
+  }
+
+  // oczytywanie pliku w formie promise;
+
+  public changeFile(file): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+  }
+
+  public fileHandler2(event): void {
+    const file = event.target.files[0];
+    const type = file.type;
+    this.changeFile(file).then((base64: string): any => {
+      console.log(base64, 'BASED 64');
+      this.fileBlob = new Blob([base64], type);
+      console.log(this.fileBlob, 'FileBloB');
+    });
 
   }
 
