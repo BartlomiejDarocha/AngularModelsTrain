@@ -31,6 +31,9 @@
         </mat-form-field>
       </div>
     </div>
+    <div class="middleContent">
+      <div><img [src]="photoURL" *ngIf="photoURL"></div>
+    </div>
     <div>
       <mat-label>Zdjęcie</mat-label>
       <input (change)="fileHandler($event)" type="file">

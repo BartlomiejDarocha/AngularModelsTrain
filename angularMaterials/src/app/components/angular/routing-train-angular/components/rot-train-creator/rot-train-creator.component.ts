@@ -22,7 +22,6 @@ export class RotTrainCreatorComponent implements OnInit {
     let newlist = false;
     this.options.forEach((el: BarOptionsInterface, i: number) => {
       if (this.router.url.includes(el.url)) {
-        console.log('???');
         this.options[i].active = true;
         newlist = true;
       }

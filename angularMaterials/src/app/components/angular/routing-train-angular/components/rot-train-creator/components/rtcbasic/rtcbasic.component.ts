@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rtcbasic.component.less']
 })
 export class RTCBasicComponent implements OnInit {
-  public photoURL: '';
+  public photoURL;
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class RTCBasicComponent implements OnInit {
 
   public fileHandler(event): void {
     console.log(event, 'event');
-    if (event.target.files[0] || event.target.files.length) {
+    if (!event.target.files[0] || !event.target.files.length) {
       console.error('Możesz dodać plik');
       return;
     }
@@ -24,6 +24,12 @@ export class RTCBasicComponent implements OnInit {
       console.error('Możesz dodać tylko zdjęcie');
       return;
     }
+
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = () => {
+      this.photoURL = reader.result;
+    };
 
   }
 
