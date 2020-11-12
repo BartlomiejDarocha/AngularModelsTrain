@@ -19,6 +19,12 @@ export class RTCBasicComponent implements OnInit {
       console.error('Możesz dodać plik');
       return;
     }
+
+    if (event.target.files[0].type.match(/image\/*/) === null) {
+      console.error('Możesz dodać tylko zdjęcie');
+      return;
+    }
+
   }
 
 }
