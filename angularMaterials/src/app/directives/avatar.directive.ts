@@ -17,6 +17,12 @@ export class AvatarDirective implements OnInit {
    }
 
   ngOnInit(): void {
+    if (this.imgSrc) {
+      this.renderer.setAttribute(this.imgBox, 'src', this.imgSrc);
+      this.renderer.appendChild(this.element.nativeElement, this.imgBox);
+      return;
+    }
+
   }
 
 }
