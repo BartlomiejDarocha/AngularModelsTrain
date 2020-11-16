@@ -5,7 +5,7 @@ import { LevelBarDirective } from './level-bar.directive';
 import { AvatarDirective } from './avatar.directive';
 
 @NgModule({
-  declarations: [CollapseDirective, LevelBarDirective, AvatarDirective],
+  declarations: [CollapseDirective, LevelBarDirective],
   imports: [
     CommonModule,
   ],
@@ -15,3 +15,11 @@ import { AvatarDirective } from './avatar.directive';
   ]
 })
 export class DirectivesModule { }
+
+@NgModule({
+  declarations: [AvatarDirective],
+  imports: [CommonModule],
+  exports: [AvatarDirective]
+})
+export class AvatarDirectiveModule { }
+
