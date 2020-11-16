@@ -65,13 +65,14 @@ export class TaskslistComponent implements OnInit {
   }
 
   public removeTaskhandler(task: TaskMedium): void  {
-    const tempTaskList = this.taskList.tasks.slice();
+    const tempTaskList = this.taskList.tasks.slice(); // moża też za pomocą destruktyruzacji czyli [...this.taskList.tasks]
     let indexId = 0;
     this.taskList.tasks.forEach((el, index) => {
       if (el.id === task.id) {
         indexId = index;
       }
     });
+    // to wyżej za pomocą findIndex, lepsze rozwiązanie
     tempTaskList.splice(indexId, 1);
     this.taskList.tasks = tempTaskList;
   }
