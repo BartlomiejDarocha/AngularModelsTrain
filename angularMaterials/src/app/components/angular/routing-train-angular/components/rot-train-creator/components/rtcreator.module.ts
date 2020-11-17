@@ -7,6 +7,7 @@ import { RTCClassComponent } from './rtcclass/rtcclass.component';
 import { RTCAttributesComponent } from './rtcattributes/rtcattributes.component';
 import { RTCskillsComponent } from './rtcskills/rtcskills.component';
 import { RTCEquipmentsComponent } from './rtcequipments/rtcequipments.component';
+import { AvatarDirectiveModule } from 'src/app/directives/directives.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RTCEquipmentsComponent } from './rtcequipments/rtcequipments.component'
     RtcRouterModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    AvatarDirectiveModule
   ],
   declarations: [
     RTCBasicComponent,
