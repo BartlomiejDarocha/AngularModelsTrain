@@ -7,13 +7,15 @@ export class AvatarDirective implements OnInit {
   @Input() name = '';
   @Input() imgSrc = '';
   private imgBox: HTMLElement;
+  private divName: HTMLElement;
+  private backGroundColors = [];
 
   constructor(
     private renderer: Renderer2,
     private element: ElementRef
   ) {
     this.imgBox = this.renderer.createElement('img');
-    console.log(this.imgBox, 'imgBox');
+    this.imgBox = this.renderer.createElement('div');
    }
 
   ngOnInit(): void {
@@ -22,7 +24,6 @@ export class AvatarDirective implements OnInit {
       this.renderer.appendChild(this.element.nativeElement, this.imgBox);
       return;
     }
-
   }
 
 }
