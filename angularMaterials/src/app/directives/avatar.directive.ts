@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
   selector: '[appAvatar]'
 })
 export class AvatarDirective implements OnInit {
-  @Input() name = '';
+  @Input() name = 'Name';
   @Input() imgSrc = '';
   private imgBox: HTMLElement;
   private divName: HTMLElement;
@@ -30,11 +30,10 @@ export class AvatarDirective implements OnInit {
       return;
     }
     const randomIndex = Math.round(Math.random() * (this.backGroundColors.length - 1));
-    this.renderer.setProperty(this.divNameFirstLetter, 'innerText', 'B');
+    this.renderer.setProperty(this.divNameFirstLetter, 'innerText', this.name.charAt(0));
     this.renderer.setStyle(this.divName, 'background-color', this.backGroundColors[randomIndex]);
     this.renderer.appendChild(this.divName, this.divNameFirstLetter);
     this.renderer.appendChild(this.element.nativeElement, this.divName);
-    console.log(randomIndex, 'randomIndex');
   }
 
 }
