@@ -16,11 +16,11 @@ export class AvatarDirective implements OnInit {
     private renderer: Renderer2,
     private element: ElementRef
   ) {
-    this.element.nativeElement.classList.add('avatarDirectiveTest');
+    this.element.nativeElement.classList.add('avatarDirective');
     this.imgBox = this.renderer.createElement('img');
     this.divName = this.renderer.createElement('div');
+    this.divNameFirstLetter = this.renderer.createElement('div');
     this.divName.classList.add('avatarNoImg');
-    // this.renderer.appendChild(this.divName,)
    }
 
   ngOnInit(): void {
@@ -30,6 +30,9 @@ export class AvatarDirective implements OnInit {
       return;
     }
     const randomIndex = Math.round(Math.random() * (this.backGroundColors.length - 1));
+    this.renderer.setProperty(this.divNameFirstLetter, 'innerText', 'B');
+    this.renderer.appendChild(this.divName, this.divNameFirstLetter);
+    this.renderer.appendChild(this.element.nativeElement, this.divName);
     console.log(randomIndex, 'randomIndex');
   }
 
