@@ -17,15 +17,16 @@ export class AvatarDirective implements OnInit {
     private element: ElementRef
   ) {
     this.element.nativeElement.classList.add('avatarDirective');
-    this.imgBox = this.renderer.createElement('img');
+    this.imgBox = this.renderer.createElement('div');
     this.divName = this.renderer.createElement('div');
     this.divName.classList.add('avatarNoImg');
+    this.imgBox.classList.add('avatarImg');
     this.divNameFirstLetter = this.renderer.createElement('div');
    }
 
   ngOnInit(): void {
     if (this.imgSrc) {
-      this.renderer.setAttribute(this.imgBox, 'src', this.imgSrc);
+      this.renderer.setStyle(this.imgBox, 'background-image', this.imgSrc);
       this.renderer.appendChild(this.element.nativeElement, this.imgBox);
       return;
     }
