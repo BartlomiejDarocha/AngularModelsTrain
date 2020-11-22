@@ -35,8 +35,8 @@
       <div *ngIf="photoURL" class="imgBox" [ngStyle]="{'background-image': 'url(' + photoURL + ')'}"></div>
     </div>
     <div>
-      <mat-label>Zdjęcie</mat-label>
-      <input (change)="fileHandler3($event)" type="file">
+      <label for="photoAvatarId" [innerText]="photoName ? 'Plik: ' + photoName : 'Przeglądaj'"></label>
+      <input id="photoAvatarId" hidden (change)="fileHandler3($event)" type="file">
     </div>
     <div *ngIf="photoURL">
       <div appAvatar [name]="'Bartek'" [imgSrc]="photoURL"></div>

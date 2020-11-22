@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RTCBasicComponent implements OnInit {
   public photoURL;
+  public photoName: '';
 
   public fileBlob;
   public fileBlob2;
@@ -17,7 +18,7 @@ export class RTCBasicComponent implements OnInit {
   }
 
   public fileHandler(event): void {
-    console.log(event, 'event');
+    // console.log(event, 'event');
     if (!event.target.files[0] || !event.target.files.length) {
       console.error('Możesz dodać plik');
       return;
@@ -51,15 +52,14 @@ export class RTCBasicComponent implements OnInit {
     const fileType = file.type;
     console.log(fileType, 'fileType');
     this.changeFile(file).then((base64: string): any => {
-      console.log(base64, 'BASED 64');
+      // console.log(base64, 'BASED 64');
       this.fileBlob = new Blob([base64], {type: fileType });
-      console.log(this.fileBlob, 'FileBloB');
+      // console.log(this.fileBlob, 'FileBloB');
     });
   }
 
   // połączenie 2 na raz? bez promise;
   public fileHandler3(event): void {
-    console.log(event, 'event 2');
     if (!event.target.files[0] || !event.target.files.length) {
       console.error('Możesz dodać plik');
       return;
@@ -69,7 +69,8 @@ export class RTCBasicComponent implements OnInit {
       console.error('Możesz dodać tylko zdjęcie');
       return;
     }
-
+    console.log(event.target.files[0], 'event.target.files[0]');
+    this.photoName = event.target.files[0].name;
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = () => {
