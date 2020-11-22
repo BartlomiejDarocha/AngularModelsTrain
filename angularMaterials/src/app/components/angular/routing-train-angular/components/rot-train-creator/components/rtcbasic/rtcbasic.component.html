@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="middleContent">
-      <div><img [src]="photoURL" *ngIf="photoURL"></div>
+      <div *ngIf="photoURL" class="imgBox" [ngStyle]="{'background-image': 'url(' + photoURL + ')'}"></div>
     </div>
     <div>
       <mat-label>Zdjęcie</mat-label>
