@@ -38,8 +38,8 @@
       <mat-label>Zdjęcie</mat-label>
       <input (change)="fileHandler3($event)" type="file">
     </div>
-    <div>
-      <div appAvatar [name]="'Bartek'"></div>
+    <div *ngIf="photoURL">
+      <div appAvatar [name]="'Bartek'" [imgSrc]="photoURL"></div>
     </div>
   </form>
 </div>
