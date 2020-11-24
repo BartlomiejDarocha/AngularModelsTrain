@@ -16,12 +16,13 @@ export class Animal {
 export class MyPet extends Animal {
   private petName: string;
   private petAge: string;
-  // constructor() {
-
-  // }
-
+  constructor(spice, furColor, petName, petAge) {
+    super(spice, furColor); // tu moze być każdy string jaki podamy, nie tylko spice, furColor, to zwykły arg funckji jest
+    this.petName = petName;
+    this.petAge = petAge;
+  }
   public printMyPetInfo() {
-    console.log(`My pet name: ${this.petName}, `)
+    console.log(`My pet name: ${this.petName}, pet age: ${this.petAge} year, ${this.printInfo()}`);
   }
 }
 
@@ -44,6 +45,8 @@ export class ActionBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const myCat = new MyPet('Kot', 'Rudy', 'Bambruch', '0,5');
+    myCat.printMyPetInfo();
   }
 
   public setHandler(option: BarOptionsInterface ): void {
