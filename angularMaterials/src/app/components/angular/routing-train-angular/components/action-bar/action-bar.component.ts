@@ -2,11 +2,27 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 // class extend train
 export class Animal {
-  constructor() {
+  private spice: string;
+  private furColor: string;
+  constructor(spice: string, furColor: string) {
+    this.spice = spice;
+    this.furColor = furColor;
+  }
+
+  public printInfo(): string {
+    return `Spice: ${this.spice}, Fur color: ${this.furColor}`;
   }
 }
-export class MyPet {
-  
+export class MyPet extends Animal {
+  private petName: string;
+  private petAge: string;
+  // constructor() {
+
+  // }
+
+  public printMyPetInfo() {
+    console.log(`My pet name: ${this.petName}, `)
+  }
 }
 
 export interface BarOptionsInterface {
