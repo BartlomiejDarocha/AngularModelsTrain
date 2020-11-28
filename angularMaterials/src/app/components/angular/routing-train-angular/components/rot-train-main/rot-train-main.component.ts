@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RotTrainMainComponent implements OnInit {
   public basicBarOptions: BarOptionsInterface[] = [
-    { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator/basic', active: false },
+    { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator', active: false },
     { id: 2, name: 'Bohaterowie', url: '/angular/routingTrainAngular/summary', active: false },
   ];
   constructor(private router: Router) {}
@@ -28,6 +28,7 @@ export class RotTrainMainComponent implements OnInit {
   }
 
   public actionBarHandler(option: BarOptionsInterface ): void {
+    console.log(option, ' option');
     const lookingIndex = this.basicBarOptions.findIndex((el: BarOptionsInterface) => el.id === +option.id);
     this.basicBarOptions = this.basicBarOptions.map((el: BarOptionsInterface) => el = {...el, active: false});
     this.basicBarOptions[lookingIndex].active = true;

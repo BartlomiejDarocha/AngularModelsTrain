@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'basic',
+    path: '',
     component: RTCBasicComponent
   },
   {
