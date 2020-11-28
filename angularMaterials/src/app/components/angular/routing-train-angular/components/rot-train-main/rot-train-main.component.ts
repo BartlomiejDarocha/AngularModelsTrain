@@ -28,7 +28,6 @@ export class RotTrainMainComponent implements OnInit {
   }
 
   public actionBarHandler(option: BarOptionsInterface ): void {
-    console.log(option, ' option');
     const lookingIndex = this.basicBarOptions.findIndex((el: BarOptionsInterface) => el.id === +option.id);
     this.basicBarOptions = this.basicBarOptions.map((el: BarOptionsInterface) => el = {...el, active: false});
     this.basicBarOptions[lookingIndex].active = true;
