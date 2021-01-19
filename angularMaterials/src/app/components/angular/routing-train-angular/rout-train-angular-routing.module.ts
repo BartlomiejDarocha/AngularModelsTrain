@@ -20,7 +20,6 @@ const routes: Routes = [
         component: RotTrainSummaryComponent,
         data: { name: 'Podsumowanie nowego bohatera'}
       }
-
     ]
   }
 ];

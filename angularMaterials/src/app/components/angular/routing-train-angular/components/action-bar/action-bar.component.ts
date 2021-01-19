@@ -50,6 +50,6 @@ export class ActionBarComponent implements OnInit {
   }
 
   public setHandler(option: BarOptionsInterface ): void {
-    this.settingsEmit.next(option);
+    this.settingsEmit.emit(option); // emit bo nie jest z rxjs biblioteki
   }
 }

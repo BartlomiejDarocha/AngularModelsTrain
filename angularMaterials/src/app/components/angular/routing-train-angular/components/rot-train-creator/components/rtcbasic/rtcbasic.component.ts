@@ -76,7 +76,7 @@ export class RTCBasicComponent implements OnInit {
     reader.onload = () => {
       this.photoURL = reader.result; // to jako do wyświetlanie,
       this.fileBlob2 = new Blob([reader.result], {type: event.target.files[0].type}); // to na server jeśli bombel
-      console.log(this.fileBlob2, 'blob2');
+      console.log(this.fileBlob2, 'blob2 na server');
     };
   }
 
