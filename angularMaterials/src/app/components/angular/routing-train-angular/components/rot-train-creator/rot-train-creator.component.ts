@@ -34,13 +34,55 @@ export class RotTrainCreatorComponent implements OnInit {
 
   public async testJsonServer(): Promise<void> {
     try {
-      const jsonServerData = await this.api.getOnPromise(' http://localhost:3000/posts');
+      const jsonServerData = await this.api.getOnPromise('http://localhost:3000/posts');
       console.log(jsonServerData, 'JSonServerDataa');
 
     } catch(err) {
       console.error('test Json Server ', err)
     }
-    this.api.getOnPromise()
   }
+
+  public async jsonServerPost(): Promise<void> {
+    const testBody = {
+      title: 'Test2',
+      author: 'Bartek'
+    }
+    try {
+      const postJson = await this.api.postOnPromise('http://localhost:3000/posts', testBody);
+      console.log(postJson, 'Post Json Data');
+
+    } catch(err) {
+      console.error('Json post err', err);
+    }
+  }
+
+  public async jsonServerPut(): Promise<void> {
+    const testBody = {
+      id: 7,
+      title: 'Test2',
+      author: 'Bartekkkkkk'
+    }
+    try {
+      const putJson = await this.api.putOnPromise('http://localhost:3000/posts/7', testBody);
+      console.log(putJson, 'Put Json Data');
+
+    } catch(err) {
+      console.error('Json post err', err);
+    }
+  }
+
+  // public async jsonServerPost(): Promise<void> {
+  //   const testBody = {
+  //     title: 'Test2',
+  //     author: 'Bartek'
+  //   }
+  //   try {
+  //     const postJson = await this.api.postOnPromise('http://localhost:3000/posts', testBody);
+  //     console.log(postJson, 'Post Json Data');
+
+  //   } catch(err) {
+  //     console.error('Json post err', err);
+  //   }
+  // }
 
 }

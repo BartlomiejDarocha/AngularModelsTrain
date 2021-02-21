@@ -32,4 +32,12 @@ export class ApiService {
     return await this.http.get(url, {params: param}).toPromise();
     // toPromise i teraz jakos pormis i musi byc async i await
   }
+
+  public async postOnPromise(url: string, body: any): Promise<any> {
+    return await this.http.post(url, body).toPromise();
+  }
+
+  public async putOnPromise(url: string, body: any): Promise<any> {
+    return await this.http.put(url, body).toPromise();
+  }
 }
