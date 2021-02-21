@@ -67,22 +67,18 @@ export class RotTrainCreatorComponent implements OnInit {
       console.log(putJson, 'Put Json Data');
 
     } catch(err) {
-      console.error('Json post err', err);
+      console.error('Json put err', err);
     }
   }
 
-  // public async jsonServerPost(): Promise<void> {
-  //   const testBody = {
-  //     title: 'Test2',
-  //     author: 'Bartek'
-  //   }
-  //   try {
-  //     const postJson = await this.api.postOnPromise('http://localhost:3000/posts', testBody);
-  //     console.log(postJson, 'Post Json Data');
+  public async jsonServerDelete(): Promise<void> {
+    try {
+      const deleteJson = await this.api.deleteOnPromise('http://localhost:3000/posts/7');
+      console.log(deleteJson, 'delete Json Data');
 
-  //   } catch(err) {
-  //     console.error('Json post err', err);
-  //   }
-  // }
+    } catch(err) {
+      console.error('Json delete err', err);
+    }
+  }
 
 }

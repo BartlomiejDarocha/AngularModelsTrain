@@ -40,4 +40,8 @@ export class ApiService {
   public async putOnPromise(url: string, body: any): Promise<any> {
     return await this.http.put(url, body).toPromise();
   }
+
+  public async deleteOnPromise(url: string): Promise<any> {
+    return await this.http.delete(url).toPromise();
+  }
 }
