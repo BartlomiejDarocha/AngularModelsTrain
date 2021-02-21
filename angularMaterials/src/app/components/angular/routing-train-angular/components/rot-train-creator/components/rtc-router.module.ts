@@ -9,23 +9,28 @@ import { NgModule } from '@angular/core';
 const routes: Routes = [
   {
     path: 'basic',
-    component: RTCBasicComponent
+    component: RTCBasicComponent,
+    data: { name: 'basic'}
   },
   {
     path: 'class',
-    component: RTCClassComponent
+    component: RTCClassComponent,
+    data: { name: 'class'}
   },
   {
     path: 'attributes',
-    component: RTCAttributesComponent
+    component: RTCAttributesComponent,
+    data: { name: 'attributes'}
   },
   {
     path: 'skills',
-    component: RTCskillsComponent
+    component: RTCskillsComponent,
+    data: { name: 'skills'}
   },
   {
     path: 'equipments',
-    component: RTCEquipmentsComponent
+    component: RTCEquipmentsComponent,
+    data: { name: 'equipments' }
   }
 ];
 

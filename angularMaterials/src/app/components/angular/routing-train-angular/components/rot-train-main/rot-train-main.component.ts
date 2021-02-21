@@ -1,6 +1,6 @@
 import { BarOptionsInterface } from './../action-bar/action-bar.component';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-rot-train-main',
@@ -12,9 +12,21 @@ export class RotTrainMainComponent implements OnInit {
     { id: 1, name: 'Kreator', url: '/angular/routingTrainAngular/creator/basic', active: false },
     { id: 2, name: 'Bohaterowie', url: '/angular/routingTrainAngular/summary', active: false },
   ];
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+    ) {
+      this.router.events.subscribe(routesEvents => {console.log(routesEvents)});
+
+      // this.router.events.pipe()
+      this.route.data.subscribe((dataValue: any) => {
+        // no to to jest fajne do przekazywania przez state date,
+        console.log(dataValue, 'dataValue');
+      });
+  }
 
   ngOnInit() {
+    // to jest bez sensu lepiej przekazywac dane i ustawiać przez state
     let newlist = false;
     this.basicBarOptions.forEach((el: BarOptionsInterface, i: number) => {
       if (this.router.url.includes(el.url)) {
@@ -32,6 +44,7 @@ export class RotTrainMainComponent implements OnInit {
     this.basicBarOptions = this.basicBarOptions.map((el: BarOptionsInterface) => el = {...el, active: false});
     this.basicBarOptions[lookingIndex].active = true;
     this.basicBarOptions = [...this.basicBarOptions];
+    // przekazać tu jakos dane przez state w kolejnej lekcji;
     this.router.navigate([option.url]);
   }
 

@@ -1,6 +1,7 @@
 import { BarOptionsInterface } from './../action-bar/action-bar.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/providers/api.service';
 
 @Component({
   selector: 'app-rot-train-creator',
@@ -16,19 +17,11 @@ export class RotTrainCreatorComponent implements OnInit {
     { id: 5, name: 'Ekwipunek', url: 'angular/routingTrainAngular/creator/equipments', active: false },
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
     // sparwdza na podstawie routingu jaki element menu jest aktywny
-    console.log(this.options, 'options');
-    this.options = this.options.map((el: BarOptionsInterface) => {
-      console.log(el, 'element');
-      return {
-        ...el,
-        active: this.router.url.includes(el.url) ? true : false
-      };
-    });
-    console.log(this.options, 'options');
+    this.options = this.options.map((el: BarOptionsInterface) => ({...el, active: this.router.url.includes(el.url) ? true : false }));
   }
 
   public actionBarHandler(option: BarOptionsInterface ): void {
@@ -37,6 +30,17 @@ export class RotTrainCreatorComponent implements OnInit {
     this.options[lookingIndex].active = true;
     this.options = [...this.options];
     this.router.navigate([option.url]);
+  }
+
+  public async testJsonServer(): Promise<void> {
+    try {
+      const jsonServerData = await this.api.getOnPromise(' http://localhost:3000/posts');
+      console.log(jsonServerData, 'JSonServerDataa');
+
+    } catch(err) {
+      console.error('test Json Server ', err)
+    }
+    this.api.getOnPromise()
   }
 
 }

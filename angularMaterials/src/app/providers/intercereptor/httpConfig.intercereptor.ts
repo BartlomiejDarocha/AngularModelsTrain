@@ -31,8 +31,9 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.show();
         const token: string = localStorage.getItem('token');
+        console.log('tooken?');
+        console.log(request.headers, 'request headers');
         if (token) {
-          console.log('tooken?');
             request = request.clone({headers: request.headers.set('Authorization', 'test' + token )});
         }
         // to wyłączone bo content type jest w api Service dodawany do hederów
