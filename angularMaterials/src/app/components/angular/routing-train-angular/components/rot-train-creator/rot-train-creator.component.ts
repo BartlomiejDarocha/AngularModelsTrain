@@ -34,7 +34,7 @@ export class RotTrainCreatorComponent implements OnInit {
 
   public async testJsonServer(): Promise<void> {
     try {
-      const jsonServerData = await this.api.getOnPromise('http://localhost:3000/api/posts');
+      const jsonServerData = await this.api.getOnPromise('http://localhost:3000/posts');
       console.log(jsonServerData, 'JSonServerDataa');
 
     } catch(err) {
@@ -44,7 +44,7 @@ export class RotTrainCreatorComponent implements OnInit {
 
   public async testJsonServerId(): Promise<void> {
     try {
-      const jsonGetById = await this.api.getOnPromise('http://localhost:3000/api/posts/1');
+      const jsonGetById = await this.api.getOnPromise('http://localhost:3000/posts/1');
       console.log(jsonGetById, 'jsonGetByID');
     } catch(err) {
       console.error('test Json ServerID', err);

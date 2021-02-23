@@ -21,7 +21,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     // 'useQueryString': 'true'
     // 'content-type': 'application/x-www-form-urlencoded',
     // 'Authorization': 'Bearer HuNvf-JEWj4m52To0tTw',
-    'content-type': 'application/json',
+    'Content-type': 'application/json',
   });
 
     constructor(
