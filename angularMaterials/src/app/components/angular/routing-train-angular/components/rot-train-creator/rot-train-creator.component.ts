@@ -34,11 +34,20 @@ export class RotTrainCreatorComponent implements OnInit {
 
   public async testJsonServer(): Promise<void> {
     try {
-      const jsonServerData = await this.api.getOnPromise('http://localhost:3000/posts');
+      const jsonServerData = await this.api.getOnPromise('http://localhost:3000/api/posts');
       console.log(jsonServerData, 'JSonServerDataa');
 
     } catch(err) {
       console.error('test Json Server ', err)
+    }
+  }
+
+  public async testJsonServerId(): Promise<void> {
+    try {
+      const jsonGetById = await this.api.getOnPromise('http://localhost:3000/api/posts/1');
+      console.log(jsonGetById, 'jsonGetByID');
+    } catch(err) {
+      console.error('test Json ServerID', err);
     }
   }
 
@@ -48,7 +57,7 @@ export class RotTrainCreatorComponent implements OnInit {
       author: 'Bartek'
     }
     try {
-      const postJson = await this.api.postOnPromise('http://localhost:3000/posts', testBody);
+      const postJson = await this.api.postOnPromise('http://localhost:3000/api/posts', testBody);
       console.log(postJson, 'Post Json Data');
 
     } catch(err) {
