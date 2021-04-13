@@ -31,14 +31,15 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.show();
         const token: string = localStorage.getItem('token');
-        console.log( token ,'tooken?');
-        console.log(request.headers, 'request headers');
+        // console.log( token ,'tooken?');
+        // console.log(request.headers, 'request headers');
         if (token) {
             request = request.clone({headers: request.headers.set('Authorization', 'test' + token )});
         }
         if (true) {
           request = request.clone({headers: request.headers.set('Authorization', 'Token123' )});
-      }
+          console.log( request,'test');
+        }
         // to wyłączone bo content type jest w api Service dodawany do hederów
         // if (!request.headers.has('Content-Type')) {
         //     request = request.clone({headers: request.headers.set('Content-Type', 'application/json')});
@@ -47,6 +48,14 @@ export class HttpConfigInterceptor implements HttpInterceptor {
 
         // dodanie Headers z pola
         request = request.clone({headers: this.headersFromInteceptor});
+        console.log( request,'czy nadpisuje headersy');
+        if (true) {
+          request = request.clone({headers: request.headers.set('Authorization', 'Token123' )});
+          console.log( request,'test');
+        }
+        // WAŻNE jeśli mamy jakieś headersy pewne należy je dodać na początku tak by 
+        //nie nadpisać je clonowaniem domyslnych
+        
         // console.log(next.handle(request), 'next handl(request) Intercepor');
         return next.handle(request).pipe(
 
