@@ -25,6 +25,7 @@ export class InoutPutComponent implements OnInit {
         targetIndex = index;
         box.infectedby = infectBox.infectorId;
         box.infectedColor = infectBox.color;
+        // newBox = box;
         newBox = { ...box}; // { ...box }budujne (spread podobne zastosowanie w tablicach)
         // nowy obiekt a nie zmienia refenrecje juz isnteiajcego
         // jest to kolejny spoosb na gleboko kopie obiektu ale to do sprawdznia;
